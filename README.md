@@ -1,3 +1,14 @@
+
+<p align="center">
+  <a href="https://www.startupengineer.io">
+  <img src="https://www.dropbox.com/s/rt6uknt4arnlhq6/logo.png?dl=0">
+  </a>
+</a>
+</p>
+
+Customized template for Institute of Entrepreneurship, Hamburg University of Technology: www.startupengineer.io
+
+
 <p align="center">
   <a href="https://revealjs.com">
   <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text.svg" alt="reveal.js" width="450">
