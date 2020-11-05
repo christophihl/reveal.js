@@ -1,0 +1,254 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+// Primary/body text
+$mainFont: 'News Cycle', 'Roboto', sans-serif;
+$mainFontSize: 32px;
+$mainColor: #000000;
+
+// Vertical spacing between blocks of text
+$blockMargin: 0;
+
+// Headings
+$headingMargin: 0;
+$headingFont: 'News Cycle', 'Montserrat', sans-serif;
+$headingColor: #71858e;
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextTransform: normal;
+$headingTextShadow: none;
+$headingFontWeight: 500;
+$heading1TextShadow: $headingTextShadow;
+
+$heading1Size: 3.052em;
+$heading2Size: 2.441em;
+$heading3Size: 1.953em;
+$heading4Size: 1.563em;
+$heading5Size: 1.250em;
+$heading6Size: 1.000em;
+
+$codeFont: monospace;
+
+// Links and actions
+$linkColor: #2DC6D6;
+$linkColorHover: lighten( $linkColor, 10% );
+
+
+// Text selection
+$selectionBackgroundColor: lighten( $linkColor, 10% );
+$selectionColor: $linkColor;
+
+
+
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#222);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+// Section.
+.reveal {
+
+	a.logo {
+		bottom: 3rem;
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		text-align: center;
+		img {
+			max-width: 40%;
+			height: auto;
+			margin: 0;
+
+			border: none;
+			background: none;
+			box-shadow: none;
+		}
+	}
+
+
+	section {
+		flex-direction: column;
+  		align-items: center;
+  		justify-content: center;
+		height: 100%;
+		text-align: left;
+		
+		.align-top {
+			justify-content: flex-start;
+			padding-top: 3rem;
+			text-align: left;
+		}
+
+		.align-center {
+			text-align: center;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: {
+				left: auto;
+				right: auto;
+				bottom: 2rem;
+			}
+		}
+
+		// Figures & images.
+		img {
+			max-width: 100%;
+			height: auto;
+			margin: 0;
+
+			border: none;
+			background: none;
+			box-shadow: none;
+		}
+	}
+
+	// Column.
+
+	.row-top {
+	  display: flex;
+	  flex-direction: row;
+	  flex-wrap: wrap;
+	  width: 90%;
+	  height: 65%;
+	}
+
+	.row-center {
+	  display: flex;
+	  flex-direction: row;
+	  flex-wrap: wrap;
+	  align-items: center;
+	  width: 90%;
+	  height: 65%;
+	}
+
+	.column {
+	  display: flex;
+	  ustify-content: flex-start;
+	  text-align: left;
+	  flex-direction: column;
+	  flex-basis: 100%;
+	  flex: 1;
+	  width: 50%;
+      padding-left: 0.5em; /* The size of a gap */
+      padding-right: 0.5em; /* The size of a gap */
+	}
+
+	.container {
+		justify-content: flex-start;
+		text-align: left;
+		flex-direction: column;
+		flex-basis: 100%;
+		flex: 1;
+		width: 90%;
+	    padding-left: 0.5em; /* The size of a gap */
+	    padding-right: 0.5em; /* The size of a gap */
+	}
+
+}	
+
+
+.reveal h5 {font-size: $heading5Size; }
+.reveal h6 {font-size: $heading6Size; }
+
+
+.reveal .small {
+	font-size: 22px;
+	margin-top: 0px;
+}
+
+.reveal .reference {
+	font-size: 20px;
+	color: $linkColor;
+	margin-top: 0px;
+}
+
+
+
+.reveal ul {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+.reveal ul ul {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+.reveal ul ul ul {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+
+
+.reveal ol {
+	list-style-position: inside;
+}
+
+.reveal ol ol {
+	list-style-position: inside;
+}
+
+.reveal ol ol ol {
+	list-style-position: inside;
+}
+
+
+
+.reveal li {
+	margin-top: 15px;
+}
+
+
+.reveal p {
+	margin-top: 15px;
+}
+
+
+.reveal li[id^='toc'] {
+	margin-top: 0px;
+	color: #fff;
+}
+
+
+
+.reveal mark {
+    background: transparent;
+    color: #2DC6D6;
+}
+
+
+.reveal .table {
+	font-size: 28px;
+}
+
