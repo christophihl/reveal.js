@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://www.startupengineer.io">
-  <img src="https://www.dropbox.com/s/rt6uknt4arnlhq6/logo.png?dl=0">
+  <img src="https://github.com/christophihl/revealjs_template/blob/master/img/logo.png">
   </a>
 </a>
 </p>
