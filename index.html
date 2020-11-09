@@ -86,7 +86,7 @@
 			        boardmarkerWidth: 3,
 			        chalkWidth: 3,
 			        chalkEffect: 0,
-			        src: "plugin/chalkboard/chalkboard.json",
+			        src: null, //"plugin/chalkboard/chalkboard.json",
 			        readOnly: undefined,
 			        toggleChalkboardButton: { left: "80px", bottom: "30px", top: "auto", right: "auto" },
 			        toggleNotesButton: { left: "130px", bottom: "30px", top: "auto", right: "auto" },
@@ -120,8 +120,7 @@
 
 				dependencies: [
 					{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(null ,'rgba(35, 37, 47, 1)'); } },
-					{ src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize('scroll', 'rgba(35, 37, 47, 1)', 'body'); toc_progress.create(); } }				],
-
+					{ src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize('scroll', 'rgba(35, 37, 47, 1)', 'body'); toc_progress.create(); } } ],
 				menu: {
 				    side: 'left',
 				    width: 'normal',
