@@ -36,7 +36,7 @@
 #### Prisioner's Dilemma Game
 
 
-<img data-src="/img/matrix_1.png"  height="200" width="600">
+<img data-src="img/matrix_1.png"  height="200" width="600">
 
 <br> 
 
@@ -69,7 +69,7 @@
 
 <br> 
 
-<img data-src="/img/matrix_2.png"  height="200" width="600">
+<img data-src="img/matrix_2.png"  height="200" width="600">
 
 <br> 
 
@@ -117,7 +117,7 @@ move was.
 
 
 
-<img data-src="/img/cake.png"  height="200" width="300">
+<img data-src="img/cake.png"  height="200" width="300">
 <br>
 
 * Let’s split a cake between 2 players
@@ -158,7 +158,7 @@ move was.
 ## Pareto Optimality in the PD Game
 <!-- .element: class="no-toc-progress" -->
 
-<img data-src="/img/matrix_1.png"  height="200" width="600">
+<img data-src="img/matrix_1.png"  height="200" width="600">
 
 <br>  
 
@@ -199,7 +199,7 @@ move game is Pareto optimal.*
 <!-- .element: class="no-toc-progress" -->
 
 
-<img data-src="/img/matrix_1.png"  height="200" width="600">
+<img data-src="img/matrix_1.png"  height="200" width="600">
 
 <br> 
 
@@ -232,7 +232,7 @@ src="https://youtube.com/embed/TKaYRH6E36U">
 
 <br> 
 
-<img data-src="/img/matrix_3.png"  height="200" width="900">
+<img data-src="img/matrix_3.png"  height="200" width="900">
 
 
 ----
@@ -243,7 +243,7 @@ src="https://youtube.com/embed/TKaYRH6E36U">
 
 ##### Matching Pennies Game
 
-<img data-src="/img/matrix_4.png"  height="200" width="400">
+<img data-src="img/matrix_4.png"  height="200" width="400">
 
 <br> 
 
@@ -287,7 +287,7 @@ src="https://youtube.com/embed/TKaYRH6E36U">
 
 <br> 
 
-<img data-src="/img/nash.png"  height="200" width="500">
+<img data-src="img/nash.png"  height="200" width="500">
 
 * Finding an MSNE = computationally hard (PPAD-complete; 2009-2018)
 
