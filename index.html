@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>StartupEngineer.io</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -69,11 +69,11 @@
 				center: false,
 
 				// Custom scaling
-				width: "100%",
-				height: "100%",
-				margin: 0,
-				minScale: 1,
-				maxScale: 1,
+				width: 1440,
+				height: 900,
+				margin: 0.04,
+				minScale: 0.1,
+				maxScale: 1.0,
 
 				math: {
 			      mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
@@ -86,14 +86,14 @@
 			        boardmarkerWidth: 3,
 			        chalkWidth: 3,
 			        chalkEffect: 0,
-			        src: null, //"plugin/chalkboard/chalkboard.json",
+			        src: "chalkboard/chalkboard.json",
 			        readOnly: undefined,
 			        toggleChalkboardButton: { left: "80px", bottom: "30px", top: "auto", right: "auto" },
 			        toggleNotesButton: { left: "130px", bottom: "30px", top: "auto", right: "auto" },
 			        transition: 800,
 			        theme: "whiteboard",
 			        background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ],
-			        grid: { color: 'rgba(50,50,10,0.5)', distance: 80, width: 2},
+			        grid: { color: 'rgba(50,50,10,0.1)', distance: 50, width: 1},
 			        eraser: { src: path + 'img/sponge.png', radius: 20},
 			        boardmarkers : [
 			                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
