@@ -139,7 +139,6 @@ $selectionColor: $linkColor;
 	  flex-direction: row;
 	  flex-wrap: wrap;
 	  width: 90%;
-	  height: 65%;
 	}
 
 	.row-center {
@@ -182,12 +181,12 @@ $selectionColor: $linkColor;
 
 
 .reveal .small {
-	font-size: 22px;
+	font-size: 24px;
 	margin-top: 0px;
 }
 
 .reveal .reference {
-	font-size: 20px;
+	font-size: 22px;
 	color: $linkColor;
 	margin-top: 0px;
 }
@@ -225,15 +224,13 @@ $selectionColor: $linkColor;
 
 
 
-
-
 .reveal li {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 
 .reveal p {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 
@@ -252,7 +249,7 @@ $selectionColor: $linkColor;
 .reveal blockquote {
     display: block;
     position: relative;
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     padding: 5px;
     font-style: italic;

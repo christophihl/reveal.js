@@ -139,7 +139,6 @@ $selectionColor: $linkColor;
 	  flex-direction: row;
 	  flex-wrap: wrap;
 	  width: 90%;
-	  height: 65%;
 	}
 
 	.row-center {
@@ -226,18 +225,35 @@ $selectionColor: $linkColor;
 
 
 .reveal li {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 
 .reveal p {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 
 .reveal li[id^='toc'] {
 	margin-top: 0px;
 	color: #fff;
+}
+
+
+
+.reveal blockquote {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    font-style: italic;
+    background: rgba(45, 198, 214, .20);
+    box-shadow:0 0 2px rgba(0, 0, 0, .2)
+}
+
+.reveal blockquote p:first-child, .reveal blockquote p:last-child {
+    display:inline-block
 }
 
 

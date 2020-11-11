@@ -7,12 +7,12 @@
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-## 2. Game Theory
+## 3. Peer-to-Peer File Sharing
 
 
 <br> 
 
-[Christoph Ihl][1] | 2020-11-06 | [Kühne Logistics University][2] | Hamburg
+[Christoph Ihl][1] | 2020-11-11 | [Kühne Logistics University][2] | Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
@@ -26,81 +26,157 @@
 
 <!-- .slide: class="align-center" -->
 
-# 3. Game Theory: Part 1
+# GT: Recap and Problems
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Simultaneous Move Games
-#### Prisioner's Dilemma Game
+## GT Recap
 
 
-<img data-src="img/matrix_1.png"  height="200" width="600">
+<img data-src="img/matrix_1.png"  height="200" width="300"><img data-src="img/matrix_3.png"  height="200" width="600">
+ 
 
-<br> 
-
-* Story? Outcomes? 
-* Preferences? Utilities? 
-* Actions? Action Profiles?
+1.  Players
+2.  Actions
+3.  Payoffs/Values/Utilities
+4.  Pareto optimality
+5.  Dominant strategy Equilibrium (DSE)
+6.  Nash Equilibrium
+  * Pure Strategy Nash Equilibrium (PSNE)
+  * Mixed Strategy Nash Equilibrium (MSNE)
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Simultaneous Move Games
+## Some Problems with Game Theory?
+
+
+Note:
+- Real life is very complex ... dynamic games
+- Actors (in real life) may not be rational
+- We have to model many aspects of the “game”
+- Many real life situations are not “simultaneous move games”
+- Social preferences, other regarding preferences  extension is possible
+- Utilities are not clearly defined
+- Interpersonal differences regarding how much utility people have for certain outcomes
+- a mixed strategy seems very artificial
+- punishment happens often in real life (repeated games)
+- information asymmetry amongst players
+- variance and randomness in human behavior
+
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Rationality Assumption
+#### Individual Rationality as a Useful Approximation
+
+<img data-src="img/cox.jpg"  height="200" width="150">
+
+<br>
+
+>"… it does not seem helpful just to say that all models are wrong. The very word model implies simplification and idealization. The idea that complex physical, biological or sociological systems can be exactly described by a few formulae is patently absurd. The construction of idealized representations that capture important stable aspects of such systems is, however, a vital part of general scientific analysis …" (David Cox)
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Individual Rationality as a Useful Approximation
 <!-- .element: class="no-toc-progress" -->
 
-> Definition (Simultaneous-move games). A simultaneous-move game, `$ (N, A, u) $`, has:
-> * `$ N = \{ 1, ..., n \} $` agents, indexed by `$ i $`.
-> * Each agent plays action `$ a_i \in A_i $`, where `$ A = A_1 \times ... \times A_n $`. The action profile is `$ a = (a_1, ... , a_n) \in A $`.
-> * `$ u = (u_1, ... , u_n) $`, where `$ u_i : A \rightarrow \mathbb{R} $` is a utility function (or payoff function) for agent `$ i $`, and assigns a utility (or payoff) to every action profile `$ a \in A $`.
+<img data-src="img/roth.jpg"  height="200" width="150">
+
+* Rational models as useful approximations (Alvin Roth)
+  * At some level of detail => “All models are wrong, but some are useful” (George Box)
+  * But they serve as good approximations for human behavior => good predictions
+
+* Different models:
+  * Risk neutral; expected utility maximizing; almost rational; psychological; neuro biological
+
+* The potential for non-rational models in economics (importance of the “non-rational” actions?)
+  * Extensions to utility function
+  * Adaptation, learning
+  * Complexity vs. prediction accuracy?
+
 
 
 ----
 
-
 <!-- .slide: class="align-top" -->
 
-## Dominant Strategies
-
-* What should the prisoner do in the PD game?
-* Dominant Strategy Equilibrium (DSE)
-
-<br> 
-
-<img data-src="img/matrix_2.png"  height="200" width="600">
-
-<br> 
-
-> Definition (Dominant-strategy equilibrium). Action profile `$ {a}^* = ({a_1}^*, ... , {a_n}^*) $` is a dominant strategy equilibrium of a simultaneous-move game `$ (N, A, u) $` if, and only if, we have
-> `$ u_i({a_i}^*, a_{-i}) \geq u_i(j, a_{-i}) $`,  <br>
-> for all `$ a_{-i} \in A_{-i} $`, all `$ j \in A_{i} $`, and all agents `$ i $`.
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-
-
-## Comprehension Question
+## Hyper-Rationality
 <!-- .element: class="no-toc-progress" -->
+
+<img data-src="img/varian.jpg"  height="200" width="150">
+
+<br>
+
+Hal Varian (1995, Economics Professor and Google’s Chief Economist):
+
+<br> 
+
+>"… hyper-rationality may actually be [an] appropriate model for software agents …The whole framework of game theory and mechanism design may well find its most exciting and practical application with computerized agents rather than human agents"
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# GT: Excercises
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## E1: Simultaneous-Move Games
+
 
 <div class="container">
 
-*In the __Prisoner's Dilemma Game__, assume that the other player has
-moved first. If you want to maximize your payoff, would it be helpful to
-know what your opponent played?*
-<br> <br> 
-* Yes, I would play different actions for each of my opponent's move.
-* No, I would play the same action no matter what my opponent
-played.
-* Whether that information is helpful depends on what his/her first
-move was.
-* None of the above answers is correct.
 
+<mark>Exercise:</mark>  
+Two prisoners who committed a crime are each interrogated in separate rooms. If they cooperate and tell a common story they can not be fully believe, but at least none will get accused of the entire crime, so they each get 4 years. If one of them defects, then he/she can go home and the other one will get 10 years for committing the crime alone. If both defect, then they get accused and they get a sentence of 8 years each.
+
+<br> 
+
+<mark>Questions:</mark>  
+a)  Write this game formally, as a simultaneous move game. Find its normal form representation.  
+b)  Find the Nash equilibria and Pareto optima for this game.  
+c)  Draw the best response graph.  
+
+</div>
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## E2: Mixed Nash Equilibria
+
+
+<div class="container">
+
+
+<mark>Exercise:</mark>  
+Alice and Bob would like to spend time together. If they both go to a football match, then Bob gets a utility of 3 while Alice gets utility of 1. If they both go to the opera, then Alice gets a utility of 3, while Bob gets only 1. If Bob goes to the match while Alice goes to the opera, both get a utility of 1. Vice versa, both get 0. Assume that they need to act simultaneously.
+
+<br> 
+
+<mark>Questions:</mark>  
+a)  Write this game formally, as a simultaneous move game. Find its normal form representation.  
+b)  Find the Nash equilibria and Pareto optima for this game.  
+c)  Draw the best response graph.  
 
 
 </div>
@@ -111,192 +187,121 @@ move was.
 
 <!-- .slide: class="align-top" -->
 
+## E3: Games with Multiple Actions
 
 
-## Pareto Optimality
+<div class="container">
 
 
+<mark>Exercise:</mark>  
 
-<img data-src="img/cake.png"  height="200" width="300">
-<br>
+<img data-src="img/scissors.png"  height="100" width="300">
 
-* Let’s split a cake between 2 players
-* Possible splits (outcomes): `$ (x\%, y\%)) $` such that `$ x + y = 100 $`
-* Which of these splits are Pareto optimal?
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-
-
-## Pareto Optimality: Actions
-<!-- .element: class="no-toc-progress" -->
-
-> Definition (Pareto dominated). An action profile `$ a \in A $` is Pareto dominated by action profile `$ a^{\prime} \in A $` if, and only if, `$ u_i( a^{\prime} ) \geq u_i(a) $` for all agents all agents `$ i \in N $`, and `$ u_i( a^{\prime} ) > u_i(a) $` for some agent `$ i \in N $`.
-
-<br>
-
-
-> Definition (Pareto optimality). An action profile `$ a \in A $` is Pareto optimal if, and only if, there is no action profile `$ a^{\prime} \in A $` that Pareto dominates `$ a $`.
-
-<br>  
-
-* Games we consider:
-  * Action profile uniquely determines the outcome of the game!
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-
-
-## Pareto Optimality in the PD Game
-<!-- .element: class="no-toc-progress" -->
-
-<img data-src="img/matrix_1.png"  height="200" width="600">
-
-<br>  
-
-1. What are the "Pareto dominated action profiles"?
-2. What are the "Pareto optimal outcomes"?
-3. What outcomes maximize social welfare = sum of
-4. What is the "Dilemma" of the "Prisoner’s Dilemma Game"?
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-
-
-## Comprehension Question
-<!-- .element: class="no-toc-progress" -->
-
-
-
-*The action profile of a dominant
-strategy equilibrium of a simultaneous
-move game is Pareto optimal.*
-<br> <br> 
-* This is true for all simultaneous move games.
-* This is false for all simultaneous move games.
-* This is true only for zero sum games. 
-* This is true for some simultaneous move games.
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## The Dilemma in the Prisioner's Dilemma
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/matrix_1.png"  height="200" width="600">
 
 <br> 
 
-* Does communication help?
-* Would it help one player if he knew what the other’s action is?
+<mark>Questions:</mark>  
+a)  Write this game formally, as a simultaneous move game. Find its normal form representation.  
+b)  Show that it is a zero-sum game.   
+c)  Find the Nash equilibria for this game.  
+
+
+</div>
+
 
 ----
 
+
 <!-- .slide: class="align-top" -->
 
-## Split or Steal (TV Show)
+## E4: Repeated (Prisoners' Dilemma) Games
+
+
+<div class="container">
+
+
+<mark>Exercise:</mark>  
+Play the prisoners’ dilemma game multiple times. Assume that the players discount their payoff (or utility) from future rounds by `$ \delta^n $`; where `$ \delta $` can be interpreted has probability of stopping the game because of impatience, or the lower value that players assign to payoffs obtainable further in the future; and `$ n $` is the number of rounds played in the future.
+
+
+
+
+<br> 
+
+<mark>Questions:</mark>  
+a)  If the game is repeated `$ m $` finite times, show that *Grim Trigger* strategy is not an NE for any `$ \delta $`.  
+
+(The Grim Trigger strategy implies that players cooperate until the other player defects for the first time. Then the player defects in all following rounds.)<!-- .element: class="small" -->
+
+b)  Prove that it is an NE for some `$ \delta $` in the infinitely repeated game. For which δ?  
+c)  Is the *Tit-for-Tat* strategy a NE in the finite and infinite case?  
+
+(The Tit-for-Tat strategy implies that players always play what the other one has played in the previous round.)<!-- .element: class="small" -->
+
+
+
+</div>
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Peer-to-Peer File Sharing
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## What is P2P File Sharing?
+#### Client Server Architecture
+
+
+<img data-src="img/client.png"  height="100" width="600">
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## What is P2P File Sharing?
 <!-- .element: class="no-toc-progress" -->
 
+#### Peer-to-Peer Architecture
 
 
-<iframe height="100%" width="100%" 
-src="https://youtube.com/embed/TKaYRH6E36U">
-</iframe>
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Pure-Strategy Nash Equilibrium
-
-> Definition (Nash equilibrium). Action profile `$ {a}^* = ({a}^*_1 , ... , {a}^*_n) $` is a Nash equilibrium of a simultaneous-move game `$ (N, A, u) $` if, and only if, we have  
-> `$ u_i({a_i}^*, {a}^*_{-i}) \geq u_i(j, {a}^*_{-i} ) $`,  <br>
-> for all actions `$ j \in A_{i} $`, and all agents `$ i $`, where `$ {a}^*_{-i} = ({a}^*_1, ... , {a}^*_{i-1}, {a}^*_{i+1}, ... {a}^*_n) $`.
-
-<br> 
-
-<img data-src="img/matrix_3.png"  height="200" width="900">
+<img data-src="img/p2p_1.png"  height="100" width="600">
 
 
 ----
 
-<!-- .slide: class="align-top" -->
-
-## Mixed Nash Equilibrium
-
-##### Matching Pennies Game
-
-<img data-src="img/matrix_4.png"  height="200" width="400">
-
-<br> 
-
-> Definition (Mixed strategy). A mixed strategy `$ s_i : A \rightarrow [0,1] $` for agent `$ i $`, with `$ s_i \in \triangle(A_i) $`, assigns a probability `$ s_{ij} > 0 $` to each action `$ j \in A_{i} $`, with the sum `$ \sum_{j \in A_i} s_{ij} = 1 $`.
-
-<br> 
-
-> Definition (Mixed-strategy Nash equilibrium). A strategy profile `$ {s}^* = ({s}^*_1 , ... , {s}^*_n) $` is a mixed-strategy Nash equilibrium in game `$ (N, A, u) $` if, and only if, we have  
-> `$ u_i({s_i}^*, {s}^*_{-i}) \geq u_i(s_i, {s}^*_{-i} ) $`,  
-> for all mixed strategies `$ s_i $` of player `$ i $`, and for all agents `$ i $`.
-
-
-----
 
 <!-- .slide: class="align-top" -->
 
-## Mixed Nash Equilibrium
+## Advantages of P2P File Sharing
 <!-- .element: class="no-toc-progress" -->
 
-> Definition (Support). The support of mixed strategy `$ s_i $` is the set of actions played with strictly-positive probability,  
-> `$ \sigma(s_i) = \{ j : s_{ij} >0, j \in A_i \} \subseteq A_i $`.     <br>
-> Let `$ u_i(j, s_{-i}) $` denote the expected utility for action `$ j $`, given that the others play `$ s_{-i} $`.
-
- <br>
-
-> Theorem. A strategy profile `$ {s}^* $` is a mixed-strategy Nash equilibrium `$ {s}^* $` if and only if we have
-> `$ u_i(j, {s}^*_{-i}) \geq u_i(j^{\prime}, {s}^*_{-i} ) $`,     <br>
-> for all `$ j \in \sigma({s}^*_i) $`, all `$ j^{\prime} \in A_i $`, and all agents `$ i $`.
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Existence of Mixed Nash Equilibria
-<!-- .element: class="no-toc-progress" -->
-
-
-> Theorem (Existence of mixed-strategy Nash equilibrium). Every finite simultaneous move game `$ (N, A, u) $` has at least one mixed-strategy Nash equilibrium.
+* no costs of running and maintaining a central server
+* no single bottleneck => increased robistness
+* no / less worries about whether content is legal
+* download rate non-decreasing / increasing with users
 
 <br> 
 
-<img data-src="img/nash.png"  height="200" width="500">
+<img data-src="img/rate.png"  height="100" width="600">
 
-* Finding an MSNE = computationally hard (PPAD-complete; 2009-2018)
 
 
 ----
 
+
 <!-- .slide: class="align-top" -->
 
-## Summary and Outlook
+### P2P in the Language of Game Theory
 <!-- .element: class="no-toc-progress" -->
 
 
@@ -304,13 +309,13 @@ src="https://youtube.com/embed/TKaYRH6E36U">
 
 <div class="column">
 
-#### Core Takeaway
-
-These are all different:
-* Pareto Optimum (PO)
-* Dominant strategy Equilibrium (DSE)
-* Pure strategy Nash Equilibrium (PSNE)
-* Mixed strategy Nash Equilibrium (MSNE)
+* <mark>Protocol:</mark> 
+  *  <!-- .element: class="fragment" --> rules of the game defining actions available to players
+* <mark>Clients</mark> - software application installed on peer computer:
+  * <mark>Reference clients:</mark> 
+    *  <!-- .element: class="fragment" --> default strategy recommended by the protocol
+  * <mark>Other compatible clients:</mark>
+    *  <!-- .element: class="fragment" --> deviations from / manipulations of default strategy
 
 
 
@@ -318,13 +323,378 @@ These are all different:
 
 <div class="column">
 
-#### Upcoming
-* Best response analysis
-* Computing MSNE
-* Problems of Game Theory
-* P2P File Sharing
+* <mark>Design Goals:</mark> 
+  * <mark>Social Welfare:</mark> 
+    * <!-- .element: class="fragment" -->total download rate
+  * <mark>Incentive Properties:</mark> 
+    * <!-- .element: class="fragment" -->upload rate
+  * <mark>Fairness Properties:</mark> 
+    * <!-- .element: class="fragment" -->ratio of download / upload rate
+
+
+<br> 
+
+<img data-src="img/matrix_5.png"  height="100" width="500">
+
+
 
 </div>
+
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## BitTorrent
+
+
+<div class="container">
+
+
+* <mark>Gnutella</mark> suffered from free-riding
+  * simultaneeous move game: cooperation between two users based on different (whole) files 
+  * you rarely meet twice and have files of each others interest
+  * new clients to enforce cooperation not adopted if the old ones are still avaiable
+
+* <mark>BitTorrent</mark> made theory of repeated games applicable
+  * cooperation based on a single file among multiple users (swarm)
+  * files broken down in many pieces
+  * to download you need to upload
+
+</div>
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## BitTorrent
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/p2p_2.png"  height="100" width="500">
+
+<br> 
+
+<a href="http://mg8.org/processing/bt.html" >BitTorrent Simulation</a>
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## BitTorrent Protocol
+<!-- .element: class="no-toc-progress" -->
+
+
+<div class="row-top">
+
+<div class="column">
+
+1.  Find content:
+  * Go to websites that maintain searchable directory of torrents
+2.  Download a <mark>.torrent</mark> file, which includes:
+  * 160-bit SHA-1 digital fingerprint of data-blocks
+  * URL to <mark>tracker</mark> (i.e. server responsible for coordinating peers)
+3.  Announce yourself to tracker
+  * Re-announce periodically
+  * Announce when leaving
+  * Receive random (50) peers in swarm
+
+
+
+</div>
+
+<div class="column">
+
+
+<img data-src="img/protocol.png"  height="100" width="600">
+
+
+
+</div>
+
+
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## BitTorrent Protocol
+<!-- .element: class="no-toc-progress" -->
+
+
+<div class="row-top">
+
+<div class="column">
+
+4. Connect with peers:
+  * Either by initiate or respond
+  * Create <mark>local neighborhoods</mark> (peer + neighbors)
+  * Exchange <mark>bitfield</mark> (send have messages to peers)
+5. Ask for pieces:
+  * Rarest-first
+6. Unchoke peers:
+  * Via <mark>optimistic unchoking</mark>
+  * Take out peer giving content at lowest rate
+  * Unchoke randomly one peer
+  * See this as Tit-for-Tat or bidding for slots
+
+
+
+</div>
+
+<div class="column">
+
+
+<img data-src="img/protocol_2.png"  height="100" width="600">
+
+
+
+</div>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Strategic Behaviors (Attacks) on BitTorrent
+<!-- .element: class="no-toc-progress" -->
+
+The design of a BitTorrent client involves making the following decisions:
+1. How often to contact the tracker to receive a list of peers?
+2. Which pieces to reveal to which peers?
+3. How many upload slots to use?
+4. Which peers to unchoke, how much upload speed to give to each unchoked peer, and how often to make this decision?
+5. What pieces to allow an unchoked peer to download?
+6. What pieces to try to download?
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## BitThief
+
+
+<div class="row-top">
+
+<div class="column">
+
+* Exploit optimistic unchoking: 
+  * Increase chances of being optimistically unchoked
+* Differences to reference client:
+  * Ask tracker for more peers (200)
+  * Re-announce to tracker more frequently
+  * => increase awareness that you are there
+* Results:
+  * Achieving downloads while saving own upload time
+  * 2-4 times longer download time in general
+  * Slightly faster for small files b/c of advantage in early phase
+
+
+
+</div>
+
+<div class="column">
+
+
+<img data-src="img/thief.png"  height="100" width="500">
+
+
+
+</div>
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Strategic Piece Revelation
+
+
+* Remain as interesting as possible
+* Do not show everybody what you have
+* You want as man connections as possible
+  * But with peers that are not connected themselves
+
+
+<br> 
+
+<img data-src="img/revelation.png"  height="100" width="1000">
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## Strategic Piece Revelation
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/algo_1.png"  height="100" width="1000">
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## Effects of Strategic Piece Revelation
+<!-- .element: class="no-toc-progress" -->
+
+* Find more interested peers faster
+  * 30% reduction in download time
+
+
+<br> 
+
+<img data-src="img/effects_1.png"  height="100" width="600">
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## BitTyrant
+
+
+<div class="row-top">
+
+<div class="column">
+
+__Most sophisticated client - main ideas:__
+  * Maximize "bang (download speed) for the buck (upload speed)"  
+  * Threshold shaped reciprocation probability dependent on upload rate ("give just enough")
+
+</div>
+
+<div class="column">
+
+
+<img data-src="img/unchoked.png"  height="100" width="400">
+
+
+
+</div> 
+
+</div>
+
+<div class="container">
+
+<br>
+
+__Main differences to reference client:__
+  * Variable number of upload slots (not fixed to 4)  
+  * Allocate upload slots based on return = down/up ratio (instead of unchoking those peers from whom we get the fastest download speed)   
+  * Adjust upload speed dynamically: no equal split policy; instead, upload as much as necessary (i.e., the minimum necessary) 
+
+</div>
+
+
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## BitTyrant
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/algo_2.png"  height="100" width="1000">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## BitTyrant
+<!-- .element: class="no-toc-progress" -->
+
+#### Insitializing `$ d_{ij} $` and `$ u_{ij} $`
+
+<div class="row-top">
+
+<div class="column">
+
+<img data-src="img/initial.png"  height="100" width="600">
+
+</div>
+
+<div class="column">
+
+
+<img data-src="img/unchoked.png"  height="100" width="600">
+
+
+
+</div> 
+
+</div>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## BitTyrant - anaything wrong?
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/algo_3.png"  height="100" width="1000">
+
+
+
+----
+
+
+
+
+<!-- .slide: class="align-top" -->
+
+## BitTyrant - Results
+<!-- .element: class="no-toc-progress" -->
+
+<div class="row-top">
+
+<div class="column">
+
+#### Performance
+
+<img data-src="img/effects_2.png"  height="100" width="600">
+
+</div>
+
+<div class="column">
+
+#### Social Welfare
+
+<img data-src="img/effects_3.png"  height="100" width="600">
+
+
+
+</div> 
+
+</div>
+
 
 
 

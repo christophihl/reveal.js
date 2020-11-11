@@ -343,8 +343,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 90%;
-  height: 65%; }
+  width: 90%; }
 
 .reveal .row-center {
   display: flex;
@@ -386,11 +385,11 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-size: 1em; }
 
 .reveal .small {
-  font-size: 22px;
+  font-size: 24px;
   margin-top: 0px; }
 
 .reveal .reference {
-  font-size: 20px;
+  font-size: 22px;
   color: #2DC6D6;
   margin-top: 0px; }
 
@@ -416,10 +415,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
   list-style-position: outside; }
 
 .reveal li {
-  margin-top: 15px; }
+  margin-top: 10px; }
 
 .reveal p {
-  margin-top: 15px; }
+  margin-top: 10px; }
 
 .reveal li[id^='toc'] {
   margin-top: 0px; }
@@ -427,7 +426,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal blockquote {
   display: block;
   position: relative;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   padding: 5px;
   font-style: italic;
