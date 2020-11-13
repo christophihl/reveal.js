@@ -7,12 +7,12 @@
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-## 3. Peer-to-Peer File Sharing
+## 4. Auction Theory and Practice
 
 
 <br> 
 
-[Christoph Ihl][1] | 2020-11-11 | [Kühne Logistics University][2] | Hamburg
+[Christoph Ihl][1] | 2020-11-13 | [Kühne Logistics University][2] | Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
@@ -21,117 +21,547 @@
 [1]: https://www.startupengineer.io/authors/ihl/
 [2]: https://www.the-klu.org
 
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+## Quick Recap: P2P File Sharing
+<!-- .element: class="no-toc-progress" -->
+
+* Problem of earlier systems: Free riding
+* BitTorrent → Repeated game for each swarm
+* Strategic manipulation
+* BitThief Exploit optimistic unchoking
+* Strategic piece revelation Hide pieces to remain interesting to others
+* BitTyrant Maximize “bang (download speed) for buck (upload speed)”
+  * Threshold shaped reciprocation probability dependent on upload rate
 
 ----  ----
 
 <!-- .slide: class="align-center" -->
 
-# GT: Recap and Problems
+# Defining Auctions
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## GT Recap
+## What is an Auction?
 
 
-<img data-src="img/matrix_1.png"  height="200" width="300"><img data-src="img/matrix_3.png"  height="200" width="600">
- 
+<div class="fragment" />
 
-1.  Players
-2.  Actions
-3.  Payoffs/Values/Utilities
-4.  Pareto optimality
-5.  Dominant strategy Equilibrium (DSE)
-6.  Nash Equilibrium
-  * Pure Strategy Nash Equilibrium (PSNE)
-  * Mixed Strategy Nash Equilibrium (MSNE)
+* Procedure to determine how to assign goods to agents
+* Elicits information about agents’ willingness to pay in the form of bids
+* Has well defined rules for who wins and at what price
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Some Problems with Game Theory?
-
-
-Note:
-- Real life is very complex ... dynamic games
-- Actors (in real life) may not be rational
-- We have to model many aspects of the “game”
-- Many real life situations are not “simultaneous move games”
-- Social preferences, other regarding preferences  extension is possible
-- Utilities are not clearly defined
-- Interpersonal differences regarding how much utility people have for certain outcomes
-- a mixed strategy seems very artificial
-- punishment happens often in real life (repeated games)
-- information asymmetry amongst players
-- variance and randomness in human behavior
-
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Rationality Assumption
-#### Individual Rationality as a Useful Approximation
-
-<img data-src="img/cox.jpg"  height="200" width="150">
-
-<br>
-
->"… it does not seem helpful just to say that all models are wrong. The very word model implies simplification and idealization. The idea that complex physical, biological or sociological systems can be exactly described by a few formulae is patently absurd. The construction of idealized representations that capture important stable aspects of such systems is, however, a vital part of general scientific analysis …" (David Cox)
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-#### Individual Rationality as a Useful Approximation
+## Auctions: More Formally
 <!-- .element: class="no-toc-progress" -->
 
-<img data-src="img/roth.jpg"  height="200" width="150">
 
-* Rational models as useful approximations (Alvin Roth)
-  * At some level of detail => “All models are wrong, but some are useful” (George Box)
-  * But they serve as good approximations for human behavior => good predictions
+>Definition (Forward Auction). A forward auction is a procedure to determine how a single item will be exchanged between __1 seller__ (auctioneer) and __`$ N = \{ 1, ..., n \} $` potential buyers__ (bidders).
 
-* Different models:
-  * Risk neutral; expected utility maximizing; almost rational; psychological; neuro biological
 
-* The potential for non-rational models in economics (importance of the “non-rational” actions?)
-  * Extensions to utility function
-  * Adaptation, learning
-  * Complexity vs. prediction accuracy?
+<br> <br>
+
+
+<div class="fragment" />
+
+
+>Definition (Sealed-Bid Auction). Given a bid profile `$ b $` of `$ N $` __simultaneous__ bids, a sealed-bid auction is defined in terms of:  
+>* An allocation rule `$ x(b) \in \{0,1\}^n $`, where `$ x_i(b) $` for `$ i \in N $` picks out the `$ i $`th entry, and indicates whether or not >bidder `$ i $` is allocated the item.
+>* A payment rule `$ t(b) \in \mathbb{R} $`, where payment `$ t_i(b) $` for `$ i \in N $` picks out the ith entry, and is the payment made by bidder `$ i $`.
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Auctions: More Formally
+<!-- .element: class="no-toc-progress" -->
+
+
+>Definition (Sealed-Bid Auction) explained:
+>* private (.i.e. independent of values of others) __values__ of bidders `$ v := ( v_1 , ... , v_n ) \in \mathbb{R}_{+}^n $` 
+>* __bid profile__ `$ b := ( b_1 , ... , b_n ) \in \mathbb{R}_{+}^n $`
+>* __allocation__ `$ x(b) := ( x_1(b) , ... , x_n(b) ) \in \{0,1\}^n $`
+>* __payment__ `$ t(b) := ( t_1(b) , ... , t_n(b) ) \in \mathbb{R}^n $`
+>* __utility function__ `$ u(b) := ( u_1(b) , ... , u_n(b) ) \in \mathbb{R}_{+}^n \rightarrow \mathbb{R}^n $`
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## First and Second Price Auctions
+
+
+>Definition (First-Price Sealed-Bid (FPSB) Auction): 
+> Assume bids are ordered in decreasing order, with `$ b_1 \geq b_2 \geq ... b_n$`. The first-price sealed-bid auction allocates the item to bidder `$ 1 $` and collects as payment `$ b_1 $` from this bidder, with 0 payment from others.  
+> `$ x(b) = ( 1 , 0, ... , 0 ) $`  
+> `$ t(b) = ( b_1 , 0, ... , 0 ) $`
+
+<br> <br>
+
+
+<div class="fragment" />
+
+
+>Definition (Second-Price Sealed-Bid (SPSB) Auction): 
+> Assume bids are ordered in decreasing order, with `$ b_1 \geq b_2 \geq ... b_n$`. The second-price sealed-bid auction (or Vickrey auction) allocates the item to bidder `$ 1 $` and collects as payment `$ b_2 $` from this bidder (or 0 if there is only one bidder), with 0 payment from others.  
+> `$ x(b) = ( 1 , 0, ... , 0 ) $`  
+> `$ t(b) = ( \mathbf{b_2} , 0, ... , 0 ) $`
 
 
 
 ----
 
+
+
 <!-- .slide: class="align-top" -->
 
-## Hyper-Rationality
-<!-- .element: class="no-toc-progress" -->
+## Quasi-Linear Utility Function
 
-<img data-src="img/varian.jpg"  height="200" width="150">
 
-<br>
+>Definition (Quasi-Linear Utility): 
+> Given bid profile `$ b $`, the utility of bidder `$ i $` for the allocation `$ x_i(b) \in \{0,1\} $` and payment `$ t_i(b) $` is:  
 
-Hal Varian (1995, Economics Professor and Google’s Chief Economist):
+> `$ u_i(b) = x_i(b) \cdot v_i - t_i(b) $`.
 
 <br> 
 
->"… hyper-rationality may actually be [an] appropriate model for software agents …The whole framework of game theory and mechanism design may well find its most exciting and practical application with computerized agents rather than human agents"
+<div class="fragment" />
+
+* 	_Quasi-linear?_
+	* utility depends linearly (and negatively) on payment 
+	* only on payment and independent of value (which in turn may depend non-linearly on the number of items received e.g. in combinatorial auctions)
+	* increase in price from <span>$8,000</span> to <span>$9,000</span> has same effect as increase from <span>$28,000</span> to <span>$29,000</span>, irrespective of whether the bidder's value is <span>$30,000</span> or <span>$70,000</span>.
+	* no budget effects: value reflects willingness-to-pay
+
+
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## Bidder Value Models
+
+* __Private Values__ (our focus): bidders know their own value, but it is independent of knowledge about other bidders' value
+	* <!-- .element: class="fragment" --> e.g. shoes on ebay.
+* __Common Values__: all bidders would have the same value given the same information, so they seek to infer information from the other bidders' value to reduce their uncertainty
+	* <!-- .element: class="fragment" --> e.g. right to drill in an oil field.
+* __Interdependent Values__: bot private and common component
+	* <!-- .element: class="fragment" --> e.g. painting, art.
+
+<div class="fragment" />
+
+<img data-src="img/pennies.jpg"  height="200" width="200">
+
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## Design Goals
+
+* __Allocative efficiency:__ 
+	* Allocate the item to the bidder with the highest value. 
+	* This is the efficient allocation, and auctions with this property are referred to as _efficient auctions  
+* __Revenue maximization:__ 
+	* Maximize the expected revenue to the seller.
+	* Auctions with this property are referred to as _optimal auctions_
+* __Trade-off:__ cannot be simultaneously optimized in general
+ 
+ <br>
+
+<div class="fragment" />
+
+* Design incentives so that predicted equilibria can achieve these goals
 
 
 ----  ----
 
 <!-- .slide: class="align-center" -->
 
-# GT: Excercises
+# Dominant Strategy Equilibria
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Auction Strategies
+
+* Auctions are games of _incomplete information_
+	* bidders do not know each others' values and thus payoffs
+	* strategies must specify a bid for every possible value a bidder might have
+* Strategies are now functions that relate values to bids (not actions anymore!)
+* We focus on pure strategies!
+ 
+<br>
+
+<div class="fragment" />
+
+>Definition (Strategy): A strategy for bidder `$ i $` , `$ s_i(v_i) : [0, v_{max}] \rightarrow \mathbb{R}_{+} $`, defines a bid for every possible value of the bidder.  
+>`$ s_i(v_i) $` represents the bid of bidder `$ i $` when her value is `$ v_i $`
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Auction Strategies
+<!-- .element: class="no-toc-progress" -->
+
+
+> * Strategy profile:  
+> `$ s(v) := ( s_1(v_1) , ... , s_n(v_n) ) $`
+
+> * Strategy profile without `$ i $`:  <br>
+> `$ s_{-i}(v_{-i}) := ( s_1(v_1) , ... , s_{i-1}(v_{i-1}), s_{i+1}(v_{i+1}), ... , s_n(v_n) ) $`
+
+<br><br>
+
+
+> * Bid vector:  
+> `$ b := ( b_1 , ... , b_n ) $`
+
+> * Bid vector without `$ i $`:  <br>
+> `$ b_{-i} := ( b_1 , ... , b_{i-1}, b_{i+1}, ... , b_n ) $`
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Dominant Strategy Equilibrium
+
+>Definition (Dominant-Strategy Equilibrium). Strategy profile `$ s^* = ( s_1^* , ... , s_n^*)  $` is a dominant-strategy equilibrium (DSE) if, for all bidders `$ i $`,  <br>
+> `$ u_i( s_i^*(v_i), s_{-i}(v_{-i}) \geq u_i( b_i, s_{-i}(v_{-i})) $` <br> 
+> for all `$ v_i $`, all `$ b_i $`, all `$ v_{-i} $`, all `$ s_{-i} $`.
+
+<br>
+
+<div class="fragment" />
+
+* optimal strategy maximizes bidder's utility, whatever the value and whatever the bids of others. 
+* bidder does not need to reason about the values of others, or even believe that other bidders are rational.
+* special case:
+
+<br>
+<br>
+
+<div class="fragment" />
+
+>Definition (Strategy-proof): A strategy-proof auction is one in which truthful bidding, `$ s_i^*(v_i) = b_i = v_i $`, is a dominant-strategy equilibrium.
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## DSE in 2nd Price Auction
+
+>Theorem: The SPSB auction is strategy-proof and efficient.
+
+* Proof:
+  * Let's focus on bidder 1 out of m, with any value `$ v_1 $` (same can be done for any bidder)
+  * let `$ b^\prime = max_{j\neq1} (b_j) = max_{j\neq1} (s_j(v_j)) $` denote the maximum bid from another bidder for any `$ s_{-i}(v_{-i})) $`
+    * Case 1: `$ v_1 > b^\prime$`:
+      * <!-- .element: class="fragment" --> Best response is to bid anything larger than $ b^\prime$ to win because this generates utility $ v_1 - b^\prime > 0$
+    * Case 2: $ v_1 = b^\prime$:
+      * <!-- .element: class="fragment" --> Indifferent, will lose and make zero payment or win and pay an amount equal to their value.
+    * Case 3: $ v_1 < b^\prime$:
+      * <!-- .element: class="fragment" --> Best response is to bid anything smaller than $ b^\prime$ to lose and generate utility 0. Bidding more than $ b^\prime$ to win and pay $ b^\prime > v_1$ generates negative utility.
+
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Bayes-Nash Equilibria
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+
+## First-Price Sealed-Bid Auction
+<!-- .element: class="no-toc-progress" -->
+
+* No DSE and truthful bidding not a best response in a FPSB auction
+  * Example: two bidders, bid from bidder two is `$ b_2 = 0 $`. Now, bidder 1 with value `$ v_1 = 1 $` should bid just above 0.
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+
+## Relationship of Equilibria
+
+* DSE ⊆ ex-post NE ⊆ __ex-interim BNE__ ⊆ ex-ante BNE
+
+* DSE: 
+  * <!-- .element: class="fragment" -->optomal strategy/ bids regardless of the others' values and bids
+* ex-post NE: 
+  * <!-- .element: class="fragment" -->optimal strategy/ bids depends on knowing others' values 
+* ex-interim BNE:
+  * <!-- .element: class="fragment" -->bidders know their own value, but do not know other bidders’ values
+  * <!-- .element: class="fragment" -->only probability distributions over every other bidder’s value
+    * <!-- .element: class="fragment" -->independently sampled: independent private value (IPV)
+    * <!-- .element: class="fragment" -->special case: identical distributions for all other bidders (IID)
+    * <!-- .element: class="fragment" -->strategy = function: value → bid
+    * <!-- .element: class="fragment" -->bidders make assumption about other bidders’ strategies (like in ex-post NE)
+* ex-ante BNE:
+  * <!-- .element: class="fragment" -->bidders do not even know their own value strategy = bid
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+
+## A Model of Bidders' Value
+
+* CDF (cumulative distribution function):  `$ G(x) = P(X \leq x) $`
+* PDF (probability density function): `$ g(x) = \frac{d}{dx} G(x) = G^\prime(x) $`
+* `$ G(x) = \int_{-\infty}^{x} g(t) \,dt $`
+* Independent private value (IPV): Each bidder’s value `$ v_i \sim G_i $` sampled independently
+* Independent and identivally distributed (IID): `$ G_1 = G_2 = ... = G_n $`
+* We assume:
+  * `$ v_i \in [ 0, v_{max} ] $`
+  * `$ g(v_i) > 0 $`
+  * `$ G_i $` common knowledge
+  * Bidders risk neutral
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Bayes-Nash Equilibrium
+
+>Definition (Bayes-Nash Equilibrium). Strategy profile `$ s^* = ( s_1^* , ... , s_n^*)  $` is a Bayes-Nash equilibrium (BNE) in a sealed-bid auction if, for all bidders `$ i $`,  <br>
+> `$ \mathop{\mathbb{E}}_{v_{-i}}(u_i( s_i^*(v_i), s_{-i}(v_{-i})) \geq \mathop{\mathbb{E}}_{v_{-i}}(u_i( b_i, s_{-i}(v_{-i}))) $` <br> 
+> for all `$ v_i $`, all `$ b_i $`.
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Equilibrium of First Price Auctions
+
+> Theorem: For bidders with IID values, uniform on [0, 1], the BNE in the FPSB has strategy
+> `$ s^*(v_i) = (\frac{n-1}{n}) \cdot v_i $`.  <br>
+> The FPSB is efficient in this equilibrium.
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Visualization of Equilibrium Strategies
+<!-- .element: class="no-toc-progress" -->
+
+<img data-src="img/bne.png"  height="200" width="1000">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Equilibrium of First Price Auctions (more general)
+<!-- .element: class="no-toc-progress" -->
+
+> Theorem: For bidders with IID values, uniform on [a, b], the BNE in the FPSB has strategy
+> `$ s^*(v_i) = (\frac{n-1}{n}) \cdot v_i + \frac{a}{n}$`.  <br>
+> The FPSB is efficient in this equilibrium.
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Auction Revenue
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Revenue Maximization
+
+* Auction designer has certain goals:
+  * Design auction so that bidders’ strategies can be predicted
+  * Derive values from observed bids (by inverting `$ s^* $`) 
+* Efficiency
+* Revenue maximization
+  * Revenue will be determined by the equilibrium
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Revenue Order Statistics
+
+
+> Draw `$ n \text{ independent samples from a uniform distribution } G = U(0,1)$` denoted by `$ \{ Z_1, ... , Z_n \} $`.
+<br><br>
+> First-order statistic (maximum value := `$ Z_1 $`<br>
+> k-th-order statistic (k-th highest value) := `$ Z_k $`<br>
+> <br><br>
+> `$ \mathop{\mathbb{E}}[Z_{(k)} | n \text{ samples IID} \sim U(0,1) ] = (\frac{n-(k-1)}{n+1}) $`.  <br>
+
+<br>
+
+<div class="fragment" />
+
+<img data-src="img/order.png"  height="200" width="800">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Comparing Auction Revenue
+
+* Example: compare ...
+  * SPSB: equilibrium is DSE with truthful bids `$ s^*(v_i) = b_i = v_i $`.
+  * FPSB: equilibrium is BNE with `$ s^*(v_i) = (\frac{n-1}{n}) \cdot v_i $`.
+  * assuming uniform IID values 
+
+ <br>
+
+<div class="fragment" />
+
+> `$ \mathop{\mathbb{E}[ \text{ SPSB revenue } ] = \mathbb{E}}[ \text{ 2nd highest value } ] = (\frac{n-1)}{n+1}) $`  <br>
+
+ <br>
+
+<div class="fragment" />
+
+> `$ \mathop{\mathbb{E}[ \text{ FPSB revenue } ] = \mathbb{E}}[ \text{ highest value } ] = (\frac{n-1)}{n}) \cdot (\frac{n}{n + 1}) = (\frac{n-1)}{n+1})$`
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Revenue Equivalence
+
+>Theorem (Revenue equivalence). Any two normalized auctions that have the same interim allocation, for every bidder, and every value of the bidder, have the same expected revenue in equilibrium.
+
+<br>
+<br>
+
+* normalized auction: 
+  * bidders who have bid of zero have value zero
+* in words:
+  * if there is an auction outcome that is efficient but does not maximize revenue, then there is no other efficient auction (outcome) that maximizes revenue
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Revenue Maximization Actions
+
+* Auction designers can still do something:
+
+<div class="fragment" />
+
+<br>
+<br>
+
+* bidding fee: fixed vs. relative to your bid
+* hidden dummy bidder
+* hidden reserve price
+* open reserve price
+* => decreases efficiency
+
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Auction Excercises
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## E1: Find BNE in FPSB Auction
+
+* An auction with two players. <br>
+* Their values are distributed uniformely: `$ v_i \sim U[1,3]  $`. <br>
+* Player 2 plays the following strategy: `$ s_2(v_2) := \frac{v_2+1}{2} $`<br>
+* How should player 1 respond optimally? 
+* Is this a BNE?
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## E2: Calculate SPSB Auction Revenue I
+
+* Only one bidder, value <span>$10<span/> with probability 50% and <span>$22<span/> otherwise.
+* Which reserve price maximizes expected revenue?
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## E3: Calculate SPSB Auction Revenue II
+
+* Given IPV environment, the value of two bidders come from two different distributions:
+  * Bidder 1 has value <span>$2<span/> with probability 30% and <span>$5<span/> otherwise
+  * Bidder 2 has value <span>$3<span/> with probability 40% and <span>$4<span/> otherwise.
+* What is the Expected revenue for the auctioneer?
+* Can one increase expected revenue by a reserve price? How high should it be?
+
+
+
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# GT Excercises
+<!-- .element: class="no-toc-progress" -->
+
 
 ----
 
@@ -139,7 +569,7 @@ Hal Varian (1995, Economics Professor and Google’s Chief Economist):
 <!-- .slide: class="align-top" -->
 
 ## E1: Simultaneous-Move Games
-
+<!-- .element: class="no-toc-progress" -->
 
 <div class="container">
 
@@ -163,7 +593,7 @@ c)  Draw the best response graph.
 <!-- .slide: class="align-top" -->
 
 ## E2: Mixed Nash Equilibria
-
+<!-- .element: class="no-toc-progress" -->
 
 <div class="container">
 
@@ -188,7 +618,7 @@ c)  Draw the best response graph.
 <!-- .slide: class="align-top" -->
 
 ## E3: Games with Multiple Actions
-
+<!-- .element: class="no-toc-progress" -->
 
 <div class="container">
 
@@ -215,7 +645,7 @@ c)  Find the Nash equilibria for this game.
 <!-- .slide: class="align-top" -->
 
 ## E4: Repeated (Prisoners' Dilemma) Games
-
+<!-- .element: class="no-toc-progress" -->
 
 <div class="container">
 
@@ -243,457 +673,6 @@ c)  Is the *Tit-for-Tat* strategy a NE in the finite and infinite case?
 </div>
 
 
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Peer-to-Peer File Sharing
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## What is P2P File Sharing?
-#### Client Server Architecture
-
-
-<img data-src="img/client.png"  height="100" width="600">
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## What is P2P File Sharing?
-<!-- .element: class="no-toc-progress" -->
-
-#### Peer-to-Peer Architecture
-
-
-<img data-src="img/p2p_1.png"  height="100" width="600">
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Advantages of P2P File Sharing
-<!-- .element: class="no-toc-progress" -->
-
-* no costs of running and maintaining a central server
-* no single bottleneck => increased robistness
-* no / less worries about whether content is legal
-* download rate non-decreasing / increasing with users
-
-<br> 
-
-<img data-src="img/rate.png"  height="100" width="600">
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-### P2P in the Language of Game Theory
-<!-- .element: class="no-toc-progress" -->
-
-
-<div class="row-top">
-
-<div class="column">
-
-* <mark>Protocol:</mark> 
-  *  <!-- .element: class="fragment" --> rules of the game defining actions available to players
-* <mark>Clients</mark> - software application installed on peer computer:
-  * <mark>Reference clients:</mark> 
-    *  <!-- .element: class="fragment" --> default strategy recommended by the protocol
-  * <mark>Other compatible clients:</mark>
-    *  <!-- .element: class="fragment" --> deviations from / manipulations of default strategy
-
-
-
-</div>
-
-<div class="column">
-
-* <mark>Design Goals:</mark> 
-  * <mark>Social Welfare:</mark> 
-    * <!-- .element: class="fragment" -->total download rate
-  * <mark>Incentive Properties:</mark> 
-    * <!-- .element: class="fragment" -->upload rate
-  * <mark>Fairness Properties:</mark> 
-    * <!-- .element: class="fragment" -->ratio of download / upload rate
-
-
-<br> 
-
-<img data-src="img/matrix_5.png"  height="100" width="500">
-
-
-
-</div>
-
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## BitTorrent
-
-
-<div class="container">
-
-
-* <mark>Gnutella</mark> suffered from free-riding
-  * simultaneeous move game: cooperation between two users based on different (whole) files 
-  * you rarely meet twice and have files of each others interest
-  * new clients to enforce cooperation not adopted if the old ones are still avaiable
-
-* <mark>BitTorrent</mark> made theory of repeated games applicable
-  * cooperation based on a single file among multiple users (swarm)
-  * files broken down in many pieces
-  * to download you need to upload
-
-</div>
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## BitTorrent
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/p2p_2.png"  height="100" width="500">
-
-<br> 
-
-<a href="http://mg8.org/processing/bt.html" >BitTorrent Simulation</a>
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## BitTorrent Protocol
-<!-- .element: class="no-toc-progress" -->
-
-
-<div class="row-top">
-
-<div class="column">
-
-1.  Find content:
-  * Go to websites that maintain searchable directory of torrents
-2.  Download a <mark>.torrent</mark> file, which includes:
-  * 160-bit SHA-1 digital fingerprint of data-blocks
-  * URL to <mark>tracker</mark> (i.e. server responsible for coordinating peers)
-3.  Announce yourself to tracker
-  * Re-announce periodically
-  * Announce when leaving
-  * Receive random (50) peers in swarm
-
-
-
-</div>
-
-<div class="column">
-
-
-<img data-src="img/protocol.png"  height="100" width="600">
-
-
-
-</div>
-
-
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## BitTorrent Protocol
-<!-- .element: class="no-toc-progress" -->
-
-
-<div class="row-top">
-
-<div class="column">
-
-4. Connect with peers:
-  * Either by initiate or respond
-  * Create <mark>local neighborhoods</mark> (peer + neighbors)
-  * Exchange <mark>bitfield</mark> (send have messages to peers)
-5. Ask for pieces:
-  * Rarest-first
-6. Unchoke peers:
-  * Via <mark>optimistic unchoking</mark>
-  * Take out peer giving content at lowest rate
-  * Unchoke randomly one peer
-  * See this as Tit-for-Tat or bidding for slots
-
-
-
-</div>
-
-<div class="column">
-
-
-<img data-src="img/protocol_2.png"  height="100" width="600">
-
-
-
-</div>
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Strategic Behaviors (Attacks) on BitTorrent
-<!-- .element: class="no-toc-progress" -->
-
-The design of a BitTorrent client involves making the following decisions:
-1. How often to contact the tracker to receive a list of peers?
-2. Which pieces to reveal to which peers?
-3. How many upload slots to use?
-4. Which peers to unchoke, how much upload speed to give to each unchoked peer, and how often to make this decision?
-5. What pieces to allow an unchoked peer to download?
-6. What pieces to try to download?
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## BitThief
-
-
-<div class="row-top">
-
-<div class="column">
-
-* Exploit optimistic unchoking: 
-  * Increase chances of being optimistically unchoked
-* Differences to reference client:
-  * Ask tracker for more peers (200)
-  * Re-announce to tracker more frequently
-  * => increase awareness that you are there
-* Results:
-  * Achieving downloads while saving own upload time
-  * 2-4 times longer download time in general
-  * Slightly faster for small files b/c of advantage in early phase
-
-
-
-</div>
-
-<div class="column">
-
-
-<img data-src="img/thief.png"  height="100" width="500">
-
-
-
-</div>
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Strategic Piece Revelation
-
-
-* Remain as interesting as possible
-* Do not show everybody what you have
-* You want as man connections as possible
-  * But with peers that are not connected themselves
-
-
-<br> 
-
-<img data-src="img/revelation.png"  height="100" width="1000">
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Strategic Piece Revelation
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/algo_1.png"  height="100" width="1000">
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Effects of Strategic Piece Revelation
-<!-- .element: class="no-toc-progress" -->
-
-* Find more interested peers faster
-  * 30% reduction in download time
-
-
-<br> 
-
-<img data-src="img/effects_1.png"  height="100" width="600">
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## BitTyrant
-
-
-<div class="row-top">
-
-<div class="column">
-
-__Most sophisticated client - main ideas:__
-  * Maximize "bang (download speed) for the buck (upload speed)"  
-  * Threshold shaped reciprocation probability dependent on upload rate ("give just enough")
-
-</div>
-
-<div class="column">
-
-
-<img data-src="img/unchoked.png"  height="100" width="400">
-
-
-
-</div> 
-
-</div>
-
-<div class="container">
-
-<br>
-
-__Main differences to reference client:__
-  * Variable number of upload slots (not fixed to 4)  
-  * Allocate upload slots based on return = down/up ratio (instead of unchoking those peers from whom we get the fastest download speed)   
-  * Adjust upload speed dynamically: no equal split policy; instead, upload as much as necessary (i.e., the minimum necessary) 
-
-</div>
-
-
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## BitTyrant
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/algo_2.png"  height="100" width="1000">
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## BitTyrant
-<!-- .element: class="no-toc-progress" -->
-
-#### Insitializing `$ d_{ij} $` and `$ u_{ij} $`
-
-<div class="row-top">
-
-<div class="column">
-
-<img data-src="img/initial.png"  height="100" width="600">
-
-</div>
-
-<div class="column">
-
-
-<img data-src="img/unchoked.png"  height="100" width="600">
-
-
-
-</div> 
-
-</div>
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## BitTyrant - anaything wrong?
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/algo_3.png"  height="100" width="1000">
-
-
-
-----
-
-
-
-
-<!-- .slide: class="align-top" -->
-
-## BitTyrant - Results
-<!-- .element: class="no-toc-progress" -->
-
-<div class="row-top">
-
-<div class="column">
-
-#### Performance
-
-<img data-src="img/effects_2.png"  height="100" width="600">
-
-</div>
-
-<div class="column">
-
-#### Social Welfare
-
-<img data-src="img/effects_3.png"  height="100" width="600">
-
-
-
-</div> 
-
-</div>
 
 
 
