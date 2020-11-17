@@ -93,7 +93,7 @@ Today:
 
 
 * An auction with two players. <br>
-* Their values are distributed uniformely: 
+* Their values are distributed uniformely: `$ v_i \sim U[1,3] $`
 . <br>
 * Player 2 plays the following strategy: `$ s_2(v_2) := \frac{v_2+1}{2} $`<br>
 * How should player 1 respond optimally? 
@@ -242,10 +242,10 @@ Today:
 <!-- .element: class="no-toc-progress" -->
 
 
-(1) Suppose there is one bidder, with value `$ v_i \sim U[0,1]  $`. What is the optimal take-itor- leave-it price `$ r $` to offer to this bidder in order to maximize expected revenue?
-(2) Now suppose there are two bidders, with values uniformly distributed on `$ U[0,1]  $` Consider a SPSB auction with reserve price `$ r = 0.5 $`. What is the expected revenue?
-(3) Compare this with the expected revenue in the SPSB auction without a reserve. What do you find?
-(4) Relate your observations about the SPSB auction plus reserve and the SPSB auction to the revenue equivalence theorem.
+(1) Suppose there is one bidder, with value `$ v_i \sim U[0,1]  $`. What is the optimal take-it-or-leave-it price `$ r $` to offer to this bidder in order to maximize expected revenue? <br>
+(2) Now suppose there are two bidders, with values uniformly distributed on `$ U[0,1]  $` Consider a SPSB auction with reserve price `$ r = 0.5 $`. What is the expected revenue? <br>
+(3) Compare this with the expected revenue in the SPSB auction without a reserve. What do you find? <br>
+(4) Relate your observations about the SPSB auction plus reserve and the SPSB auction to the revenue equivalence theorem. <br>
 
 
 
