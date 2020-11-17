@@ -7,12 +7,12 @@
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-## 4. Auction Theory and Practice
+## 5. Auctions continued
 
 
 <br> 
 
-[Christoph Ihl][1] | 2020-11-13 | [Kühne Logistics University][2] | Hamburg
+[Christoph Ihl][1] | 2020-11-17 | [Kühne Logistics University][2] | Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
@@ -25,267 +25,20 @@
 
 <!-- .slide: class="align-center" -->
 
-## Quick Recap: P2P File Sharing
-<!-- .element: class="no-toc-progress" -->
-
-* Problem of earlier systems: Free riding
-* BitTorrent → Repeated game for each swarm
-* Strategic manipulation
-* BitThief Exploit optimistic unchoking
-* Strategic piece revelation Hide pieces to remain interesting to others
-* BitTyrant Maximize “bang (download speed) for buck (upload speed)”
-  * Threshold shaped reciprocation probability dependent on upload rate
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Defining Auctions
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## What is an Auction?
-
-
-<div class="fragment" />
-
-* Procedure to determine how to assign goods to agents
-* Elicits information about agents’ willingness to pay in the form of bids
-* Has well defined rules for who wins and at what price
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Auctions: More Formally
-<!-- .element: class="no-toc-progress" -->
-
-
->Definition (Forward Auction). A forward auction is a procedure to determine how a single item will be exchanged between __1 seller__ (auctioneer) and __`$ N = \{ 1, ..., n \} $` potential buyers__ (bidders).
-
-
-<br> <br>
-
-
-<div class="fragment" />
-
-
->Definition (Sealed-Bid Auction). Given a bid profile `$ b $` of `$ N $` __simultaneous__ bids, a sealed-bid auction is defined in terms of:  
->* An allocation rule `$ x(b) \in \{0,1\}^n $`, where `$ x_i(b) $` for `$ i \in N $` picks out the `$ i $`th entry, and indicates whether or not >bidder `$ i $` is allocated the item.
->* A payment rule `$ t(b) \in \mathbb{R} $`, where payment `$ t_i(b) $` for `$ i \in N $` picks out the ith entry, and is the payment made by bidder `$ i $`.
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Auctions: More Formally
-<!-- .element: class="no-toc-progress" -->
-
-
->Definition (Sealed-Bid Auction) explained:
->* private (.i.e. independent of values of others) __values__ of bidders `$ v := ( v_1 , ... , v_n ) \in \mathbb{R}_{+}^n $` 
->* __bid profile__ `$ b := ( b_1 , ... , b_n ) \in \mathbb{R}_{+}^n $`
->* __allocation__ `$ x(b) := ( x_1(b) , ... , x_n(b) ) \in \{0,1\}^n $`
->* __payment__ `$ t(b) := ( t_1(b) , ... , t_n(b) ) \in \mathbb{R}^n $`
->* __utility function__ `$ u(b) := ( u_1(b) , ... , u_n(b) ) \in \mathbb{R}_{+}^n \rightarrow \mathbb{R}^n $`
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## First and Second Price Auctions
-
-
->Definition (First-Price Sealed-Bid (FPSB) Auction): 
-> Assume bids are ordered in decreasing order, with `$ b_1 \geq b_2 \geq ... b_n$`. The first-price sealed-bid auction allocates the item to bidder `$ 1 $` and collects as payment `$ b_1 $` from this bidder, with 0 payment from others.  
-> `$ x(b) = ( 1 , 0, ... , 0 ) $`  
-> `$ t(b) = ( b_1 , 0, ... , 0 ) $`
-
-<br> <br>
-
-
-<div class="fragment" />
-
-
->Definition (Second-Price Sealed-Bid (SPSB) Auction): 
-> Assume bids are ordered in decreasing order, with `$ b_1 \geq b_2 \geq ... b_n$`. The second-price sealed-bid auction (or Vickrey auction) allocates the item to bidder `$ 1 $` and collects as payment `$ b_2 $` from this bidder (or 0 if there is only one bidder), with 0 payment from others.  
-> `$ x(b) = ( 1 , 0, ... , 0 ) $`  
-> `$ t(b) = ( \mathbf{b_2} , 0, ... , 0 ) $`
-
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Quasi-Linear Utility Function
-
-
->Definition (Quasi-Linear Utility): 
-> Given bid profile `$ b $`, the utility of bidder `$ i $` for the allocation `$ x_i(b) \in \{0,1\} $` and payment `$ t_i(b) $` is:  
-
-> `$ u_i(b) = x_i(b) \cdot v_i - t_i(b) $`.
-
-<br> 
-
-<div class="fragment" />
-
-* 	_Quasi-linear?_
-	* utility depends linearly (and negatively) on payment 
-	* only on payment and independent of value (which in turn may depend non-linearly on the number of items received e.g. in combinatorial auctions)
-	* increase in price from <span>$8,000</span> to <span>$9,000</span> has same effect as increase from <span>$28,000</span> to <span>$29,000</span>, irrespective of whether the bidder's value is <span>$30,000</span> or <span>$70,000</span>.
-	* no budget effects: value reflects willingness-to-pay
-
-
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Bidder Value Models
-
-* __Private Values__ (our focus): bidders know their own value, but it is independent of knowledge about other bidders' value
-	* <!-- .element: class="fragment" --> e.g. shoes on ebay.
-* __Common Values__: all bidders would have the same value given the same information, so they seek to infer information from the other bidders' value to reduce their uncertainty
-	* <!-- .element: class="fragment" --> e.g. right to drill in an oil field.
-* __Interdependent Values__: bot private and common component
-	* <!-- .element: class="fragment" --> e.g. painting, art.
-
-<div class="fragment" />
-
-<img data-src="img/pennies.jpg"  height="200" width="200">
-
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Design Goals
-
-* __Allocative efficiency:__ 
-	* Allocate the item to the bidder with the highest value. 
-	* This is the efficient allocation, and auctions with this property are referred to as _efficient auctions  
-* __Revenue maximization:__ 
-	* Maximize the expected revenue to the seller.
-	* Auctions with this property are referred to as _optimal auctions_
-* __Trade-off:__ cannot be simultaneously optimized in general
- 
- <br>
-
-<div class="fragment" />
-
-* Design incentives so that predicted equilibria can achieve these goals
-
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Dominant Strategy Equilibria
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Auction Strategies
-
-* Auctions are games of _incomplete information_
-	* bidders do not know each others' values and thus payoffs
-	* strategies must specify a bid for every possible value a bidder might have
-* Strategies are now functions that relate values to bids (not actions anymore!)
-* We focus on pure strategies!
- 
-<br>
-
-<div class="fragment" />
-
->Definition (Strategy): A strategy for bidder `$ i $` , `$ s_i(v_i) : [0, v_{max}] \rightarrow \mathbb{R}_{+} $`, defines a bid for every possible value of the bidder.  
->`$ s_i(v_i) $` represents the bid of bidder `$ i $` when her value is `$ v_i $`
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Auction Strategies
-<!-- .element: class="no-toc-progress" -->
-
-
-> * Strategy profile:  
-> `$ s(v) := ( s_1(v_1) , ... , s_n(v_n) ) $`
-
-> * Strategy profile without `$ i $`:  <br>
-> `$ s_{-i}(v_{-i}) := ( s_1(v_1) , ... , s_{i-1}(v_{i-1}), s_{i+1}(v_{i+1}), ... , s_n(v_n) ) $`
-
-<br><br>
-
-
-> * Bid vector:  
-> `$ b := ( b_1 , ... , b_n ) $`
-
-> * Bid vector without `$ i $`:  <br>
-> `$ b_{-i} := ( b_1 , ... , b_{i-1}, b_{i+1}, ... , b_n ) $`
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Dominant Strategy Equilibrium
-
->Definition (Dominant-Strategy Equilibrium). Strategy profile `$ s^* = ( s_1^* , ... , s_n^*)  $` is a dominant-strategy equilibrium (DSE) if, for all bidders `$ i $`,  <br>
-> `$ u_i( s_i^*(v_i), s_{-i}(v_{-i}) \geq u_i( b_i, s_{-i}(v_{-i})) $` <br> 
-> for all `$ v_i $`, all `$ b_i $`, all `$ v_{-i} $`, all `$ s_{-i} $`.
-
-<br>
-
-<div class="fragment" />
-
-* optimal strategy maximizes bidder's utility, whatever the value and whatever the bids of others. 
-* bidder does not need to reason about the values of others, or even believe that other bidders are rational.
-* special case:
-
-<br>
-<br>
-
-<div class="fragment" />
-
->Definition (Strategy-proof): A strategy-proof auction is one in which truthful bidding, `$ s_i^*(v_i) = b_i = v_i $`, is a dominant-strategy equilibrium.
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## DSE in 2nd Price Auction
-
->Theorem: The SPSB auction is strategy-proof and efficient.
-
-* Proof:
-  * Let's focus on bidder 1 out of m, with any value `$ v_1 $` (same can be done for any bidder)
-  * let `$ b^\prime = max_{j\neq1} (b_j) = max_{j\neq1} (s_j(v_j)) $` denote the maximum bid from another bidder for any `$ s_{-i}(v_{-i})) $`
-    * Case 1: `$ v_1 > b^\prime$`:
-      * <!-- .element: class="fragment" --> Best response is to bid anything larger than $ b^\prime$ to win because this generates utility $ v_1 - b^\prime > 0$
-    * Case 2: $ v_1 = b^\prime$:
-      * <!-- .element: class="fragment" --> Indifferent, will lose and make zero payment or win and pay an amount equal to their value.
-    * Case 3: $ v_1 < b^\prime$:
-      * <!-- .element: class="fragment" --> Best response is to bid anything smaller than $ b^\prime$ to lose and generate utility 0. Bidding more than $ b^\prime$ to win and pay $ b^\prime > v_1$ generates negative utility.
-
-
+## Quick Recap
+
+* Quasi linear utility assumption
+* IPV assumption
+* 2nd price ( Vickrey ) Auction: DSE
+* 1st price Auction: BNE
+
+Today:
+* 1st price Auction: BNE
+* Revenue Equivalence
+* Revenue maximizing reserve prices
+* Multiround Auctions
+* eBay
+* optional: Mechanism Design
 
 
 ----  ----
@@ -293,64 +46,6 @@
 <!-- .slide: class="align-center" -->
 
 # Bayes-Nash Equilibria
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-
-## First-Price Sealed-Bid Auction
-<!-- .element: class="no-toc-progress" -->
-
-* No DSE and truthful bidding not a best response in a FPSB auction
-  * Example: two bidders, bid from bidder two is `$ b_2 = 0 $`. Now, bidder 1 with value `$ v_1 = 1 $` should bid just above 0.
-
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-
-## Relationship of Equilibria
-
-* DSE ⊆ ex-post NE ⊆ __ex-interim BNE__ ⊆ ex-ante BNE
-
-* DSE: 
-  * <!-- .element: class="fragment" -->optomal strategy/ bids regardless of the others' values and bids
-* ex-post NE: 
-  * <!-- .element: class="fragment" -->optimal strategy/ bids depends on knowing others' values 
-* ex-interim BNE:
-  * <!-- .element: class="fragment" -->bidders know their own value, but do not know other bidders’ values
-  * <!-- .element: class="fragment" -->only probability distributions over every other bidder’s value
-    * <!-- .element: class="fragment" -->independently sampled: independent private value (IPV)
-    * <!-- .element: class="fragment" -->special case: identical distributions for all other bidders (IID)
-    * <!-- .element: class="fragment" -->strategy = function: value → bid
-    * <!-- .element: class="fragment" -->bidders make assumption about other bidders’ strategies (like in ex-post NE)
-* ex-ante BNE:
-  * <!-- .element: class="fragment" -->bidders do not even know their own value strategy = bid
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-
-## A Model of Bidders' Value
-
-* CDF (cumulative distribution function):  `$ G(x) = P(X \leq x) $`
-* PDF (probability density function): `$ g(x) = \frac{d}{dx} G(x) = G^\prime(x) $`
-* `$ G(x) = \int_{-\infty}^{x} g(t) \,dt $`
-* Independent private value (IPV): Each bidder’s value `$ v_i \sim G_i $` sampled independently
-* Independent and identivally distributed (IID): `$ G_1 = G_2 = ... = G_n $`
-* We assume:
-  * `$ v_i \in [ 0, v_{max} ] $`
-  * `$ g(v_i) > 0 $`
-  * `$ G_i $` common knowledge
-  * Bidders risk neutral
-
 
 
 ----
@@ -375,15 +70,6 @@
 > The FPSB is efficient in this equilibrium.
 
 
-----
-
-<!-- .slide: class="align-top" -->
-
-## Visualization of Equilibrium Strategies
-<!-- .element: class="no-toc-progress" -->
-
-<img data-src="img/bne.png"  height="200" width="1000">
-
 
 ----
 
@@ -396,6 +82,22 @@
 > `$ s^*(v_i) = (\frac{n-1}{n}) \cdot v_i + \frac{a}{n}$`.  <br>
 > The FPSB is efficient in this equilibrium.
 
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## A-E1: Find BNE in FPSB Auction
+<!-- .element: class="no-toc-progress" -->
+
+
+* An auction with two players. <br>
+* Their values are distributed uniformely: 
+. <br>
+* Player 2 plays the following strategy: `$ s_2(v_2) := \frac{v_2+1}{2} $`<br>
+* How should player 1 respond optimally? 
+* Is this a BNE?
 
 
 ----  ----
@@ -480,10 +182,11 @@
 <br>
 
 * normalized auction: 
-  * bidders who have bid of zero have value zero
+	* bidders who have bid of zero have value zero
 * in words:
-  * if there is an auction outcome that is efficient but does not maximize revenue, then there is no other efficient auction (outcome) that maximizes revenue
-
+	* if there is an auction outcome that is efficient but does not maximize revenue, then there is no other efficient auction (outcome) that maximizes revenue
+* "All pay" auctions (i.e. __all__ bidders pay their bid e.g. in lobbying) have the same BNE as FPSB auctions
+	* SPSB, FPSB and "All Pay" are all revenue equivalent 
 
 
 ----
@@ -505,34 +208,12 @@
 * open reserve price
 * => decreases efficiency
 
-
-
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Auction Excercises
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## E1: Find BNE in FPSB Auction
-
-* An auction with two players. <br>
-* Their values are distributed uniformely: `$ v_i \sim U[1,3]  $`. <br>
-* Player 2 plays the following strategy: `$ s_2(v_2) := \frac{v_2+1}{2} $`<br>
-* How should player 1 respond optimally? 
-* Is this a BNE?
-
-
 ----
 
 <!-- .slide: class="align-top" -->
 
-## E2: Calculate SPSB Auction Revenue I
+## A-E2: Calculate SPSB Auction Revenue I
+<!-- .element: class="no-toc-progress" -->
 
 * Only one bidder, value <span>$10<span/> with probability 50% and <span>$22<span/> otherwise.
 * Which reserve price maximizes expected revenue?
@@ -542,7 +223,9 @@
 
 <!-- .slide: class="align-top" -->
 
-## E3: Calculate SPSB Auction Revenue II
+## A-E3: Calculate SPSB Auction Revenue II
+<!-- .element: class="no-toc-progress" -->
+
 
 * Given IPV environment, the value of two bidders come from two different distributions:
   * Bidder 1 has value <span>$2<span/> with probability 30% and <span>$5<span/> otherwise
@@ -551,9 +234,278 @@
 * Can one increase expected revenue by a reserve price? How high should it be?
 
 
+----
+
+<!-- .slide: class="align-top" -->
+
+## A-E4 (optional): Revenue Comparison
+<!-- .element: class="no-toc-progress" -->
+
+
+(1) Suppose there is one bidder, with value `$ v_i \sim U[0,1]  $`. What is the optimal take-itor- leave-it price `$ r $` to offer to this bidder in order to maximize expected revenue?
+(2) Now suppose there are two bidders, with values uniformly distributed on `$ U[0,1]  $` Consider a SPSB auction with reserve price `$ r = 0.5 $`. What is the expected revenue?
+(3) Compare this with the expected revenue in the SPSB auction without a reserve. What do you find?
+(4) Relate your observations about the SPSB auction plus reserve and the SPSB auction to the revenue equivalence theorem.
 
 
 
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Multiround Auctions and eBay
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Multiround Auctions
+
+
+<img data-src="img/multiround.png"  height="200" width="800">
+
+<br>
+
+
+<div class="fragment" />
+
+* Strategic Equivalence: 
+  * two auctions have a strategy profile each such that the outcomes (allocations and payments) are the same for all value profiles.
+  * SPSB <-> Ascending clock
+  * SPSB <-> Second price descending clock
+  * FPSB <-> Descending clock (Dutch)
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## eBay's Auction Design
+
+* Californian / Proxy Auction
+  * Proxy agents bid on behalf of bidders in ascending clock auction up tp a given limit until auction closes at fixed time in the future
+
+<br>
+
+> Starting price: `$ r > 0 $`<br>
+> Current price: `$ p_t = min(b_t^{(2)} + \epsilon, b_t^{(1)}) $`<br>
+
+<br>
+
+<div class="fragment" />
+
+<br>
+
+* When auction closes, item is sold to leading bidder at price `$ p_t $`.
+* Bids can be placed at any time, but must be at least the ask price  `$ p_{ask,t} $` (initialized at `$ r > 0 $`):
+
+<br>
+
+> Ask Price: `$ p_{ask,t} = p_t + \epsilon $`
+
+<br>
+
+<div class="fragment" />
+
+<br>
+
+* Optional:
+  * Secret reserve price: `$ r_s > r $`<br>
+  * Buy-it-now price (BIN): `$ BIN \geq 1.1 \cdot r $`
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## eBay Bidding Dynamics
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/dynamics.png"  height="200" width="700">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## eBay's Auction Design: why?
+<!-- .element: class="no-toc-progress" -->
+
+<div class="fragment" />
+
+
+* __Simplicity__:
+  * "enter your maximum, then sit back and watch!"
+* __Transparency__: 
+  * Bidders can see the bid activity of others: legitimacy
+* __Simultaneous auctions__:
+  * explore other auctions for similar items
+* __Information aggregation__:
+  * refine own beliefs about item value (in a non-private/ common value model)
+* __Bidder engagement__:
+  * fun
+  * "endowment effect"
+  * bidding wars, leading to higher revenue
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## eBay': Hard vs. Soft Closing Rules
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/closing.png"  height="200" width="800">
+
+
+<br>
+
+<div class="fragment" />
+
+<br>
+
+* Pro: get attention at prime time
+* Con: less inference about common value
+
+* Bid sniping: bid at very last second
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## eBay: Learning from Seller Experiments
+<!-- .element: class="no-toc-progress" -->
+
+* Sellers' design choices:
+  * what starting price.
+  * whether to use a secret reserve and how to set it.
+  * whether to use a BIN price and how to set it.
+  * length of an auction and the day and time at which it will start (and thus close).
+
+
+<br>
+
+<div class="fragment" />
+
+
+<img data-src="img/experiments.png"  height="200" width="800">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## eBay: Auctions vs. Posted-price Listings
+<!-- .element: class="no-toc-progress" -->
+
+<br>
+<img data-src="img/listings.png"  height="200" width="1200">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## eBay: Auctions vs. Posted-price Listings for Concert Tickets
+<!-- .element: class="no-toc-progress" -->
+
+<br>
+<img data-src="img/concerts.png"  height="200" width="1200">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## A-E5: eBay Auction Design
+
+* Consider an eBay auction with a starting price of $5 and secret reserve of <span>$12.50<span/>.
+* Suppose the minimal bid increment is <span>$<span/>0.50 when the price is between <span>$<span/>5 and <span>$24.99<span/>, and <span>$<span/>1 when the price is higher than <span>$<span>25.
+* Suppose there are four bidders, and that the following bids are placed (in this sequence): 
+  * bidder 1 <span>$<span/>7.51; bidder 2 <span>$<span/>10.20; bidder 1 <span>$<span/>21.50; bidder 3 <span>$<span/>25.21; bidder 1 <span>$<span/>28.75; bidder 4 <span>$<span/>28.99; auction closes.
+* Report the new state of the auction after each bid:
+  * the provisional winner, or "reserve not met"
+  * the new price `$ p_t $`
+  * the new ask `$ p_{ask,t} $`
+* Who wins when the auction closes, and what does this bidder pay?
+
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Mechanims Design
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Nobel Prize: Auction Theory
+<!-- .element: class="no-toc-progress" -->
+
+<br>
+<img data-src="img/nobel_1.jpg"  height="200" width="1200">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Nobel Prize: Mechanism Design Theory
+<!-- .element: class="no-toc-progress" -->
+
+<br>
+<img data-src="img/nobel_2.jpg"  height="200" width="1200">
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Problem Domains of Mechanism Design
+
+<div class="fragment" />
+
+* When do we have a mechanism design problem?
+  * agents with private preferences/ values not known to designers
+  * designers want to make optimal decisions, choose best outcomes
+  * agents are self-interested and may not reveal true preferences/ values 
+
+<div class="fragment" />
+
+* What does a mechanism do?
+  * eliciting preferences / values; i.e. the way it is reported
+  * determine / choose outcomes among many; i.e. mapping between reports and outcomes
+  * sometimes: determine payments to elicit preferences
+
+<div class="fragment" />
+
+* "Inverse game theory"
+  * endogenous inputs (instead of given inputs / actions)
+  * choice of outcomes affect inputs and incentives 
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Problem Domains of Mechanism Design
+<!-- .element: class="no-toc-progress" -->
+
+* Examples for rules of a game:
+  * meeting scheduling
+  * doctors appointment
+  * booth allocation to firms in a job fair
+  * kidney / organ exchange
+  * voting / elections
+  * SBSB
+  * split a cake between two kids
+  * basketball: 24 seconds, no tie
 
 ----  ----
 
@@ -568,7 +520,7 @@
 
 <!-- .slide: class="align-top" -->
 
-## E1: Simultaneous-Move Games
+## G-E1: Simultaneous-Move Games
 <!-- .element: class="no-toc-progress" -->
 
 <div class="container">
@@ -592,7 +544,7 @@ c)  Draw the best response graph.
 
 <!-- .slide: class="align-top" -->
 
-## E2: Mixed Nash Equilibria
+## G-E2: Mixed Nash Equilibria
 <!-- .element: class="no-toc-progress" -->
 
 <div class="container">
@@ -617,7 +569,7 @@ c)  Draw the best response graph.
 
 <!-- .slide: class="align-top" -->
 
-## E3: Games with Multiple Actions
+## G-E3: Games with Multiple Actions
 <!-- .element: class="no-toc-progress" -->
 
 <div class="container">
@@ -644,7 +596,7 @@ c)  Find the Nash equilibria for this game.
 
 <!-- .slide: class="align-top" -->
 
-## E4: Repeated (Prisoners' Dilemma) Games
+## G-E4 (optional): Repeated (Prisoners' Dilemma) Games
 <!-- .element: class="no-toc-progress" -->
 
 <div class="container">
