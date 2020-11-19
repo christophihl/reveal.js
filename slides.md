@@ -7,12 +7,12 @@
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-## 5. Auctions continued
+## 6. Mechanism Design
 
 
 <br> 
 
-[Christoph Ihl][1] | 2020-11-17 | [Kühne Logistics University][2] | Hamburg
+[Christoph Ihl][1] | 2020-11-19 | [Kühne Logistics University][2] | Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
@@ -23,424 +23,10 @@
 
 ----  ----
 
-<!-- .slide: class="align-center" -->
-
-## Quick Recap
-
-* Quasi linear utility assumption
-* IPV assumption
-* 2nd price ( Vickrey ) Auction: DSE
-* 1st price Auction: BNE
-
-Today:
-* 1st price Auction: BNE
-* Revenue Equivalence
-* Revenue maximizing reserve prices
-* Multiround Auctions
-* eBay
-* optional: Mechanism Design
-
-
-----  ----
 
 <!-- .slide: class="align-center" -->
 
-# Bayes-Nash Equilibria
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Bayes-Nash Equilibrium
-
->Definition (Bayes-Nash Equilibrium). Strategy profile `$ s^* = ( s_1^* , ... , s_n^*)  $` is a Bayes-Nash equilibrium (BNE) in a sealed-bid auction if, for all bidders `$ i $`,  <br>
-> `$ \mathop{\mathbb{E}}_{v_{-i}}(u_i( s_i^*(v_i), s_{-i}(v_{-i})) \geq \mathop{\mathbb{E}}_{v_{-i}}(u_i( b_i, s_{-i}(v_{-i}))) $` <br> 
-> for all `$ v_i $`, all `$ b_i $`.
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Equilibrium of First Price Auctions
-
-> Theorem: For bidders with IID values, uniform on [0, 1], the BNE in the FPSB has strategy
-> `$ s^*(v_i) = (\frac{n-1}{n}) \cdot v_i $`.  <br>
-> The FPSB is efficient in this equilibrium.
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Equilibrium of First Price Auctions (more general)
-<!-- .element: class="no-toc-progress" -->
-
-> Theorem: For bidders with IID values, uniform on [a, b], the BNE in the FPSB has strategy
-> `$ s^*(v_i) = (\frac{n-1}{n}) \cdot v_i + \frac{a}{n}$`.  <br>
-> The FPSB is efficient in this equilibrium.
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## A-E1: Find BNE in FPSB Auction
-<!-- .element: class="no-toc-progress" -->
-
-
-* An auction with two players. <br>
-* Their values are distributed uniformely: `$ v_i \sim U[1,3] $`
-. <br>
-* Player 2 plays the following strategy: `$ s_2(v_2) := \frac{v_2+1}{2} $`<br>
-* How should player 1 respond optimally? 
-* Is this a BNE?
-
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Auction Revenue
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Revenue Maximization
-
-* Auction designer has certain goals:
-  * Design auction so that bidders’ strategies can be predicted
-  * Derive values from observed bids (by inverting `$ s^* $`) 
-* Efficiency
-* Revenue maximization
-  * Revenue will be determined by the equilibrium
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Revenue Order Statistics
-
-
-> Draw `$ n \text{ independent samples from a uniform distribution } G = U(0,1)$` denoted by `$ \{ Z_1, ... , Z_n \} $`.
-<br><br>
-> First-order statistic (maximum value := `$ Z_1 $`<br>
-> k-th-order statistic (k-th highest value) := `$ Z_k $`<br>
-> <br><br>
-> `$ \mathop{\mathbb{E}}[Z_{(k)} | n \text{ samples IID} \sim U(0,1) ] = (\frac{n-(k-1)}{n+1}) $`.  <br>
-
-<br>
-
-<div class="fragment" />
-
-<img data-src="img/order.png"  height="200" width="800">
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Comparing Auction Revenue
-
-* Example: compare ...
-  * SPSB: equilibrium is DSE with truthful bids `$ s^*(v_i) = b_i = v_i $`.
-  * FPSB: equilibrium is BNE with `$ s^*(v_i) = (\frac{n-1}{n}) \cdot v_i $`.
-  * assuming uniform IID values 
-
- <br>
-
-<div class="fragment" />
-
-> `$ \mathop{\mathbb{E}[ \text{ SPSB revenue } ] = \mathbb{E}}[ \text{ 2nd highest value } ] = (\frac{n-1)}{n+1}) $`  <br>
-
- <br>
-
-<div class="fragment" />
-
-> `$ \mathop{\mathbb{E}[ \text{ FPSB revenue } ] = \mathbb{E}}[ \text{ highest value } ] = (\frac{n-1)}{n}) \cdot (\frac{n}{n + 1}) = (\frac{n-1)}{n+1})$`
-
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Revenue Equivalence
-
->Theorem (Revenue equivalence). Any two normalized auctions that have the same interim allocation, for every bidder, and every value of the bidder, have the same expected revenue in equilibrium.
-
-<br>
-<br>
-
-* normalized auction: 
-	* bidders who have bid of zero have value zero
-* in words:
-	* if there is an auction outcome that is efficient but does not maximize revenue, then there is no other efficient auction (outcome) that maximizes revenue
-* "All pay" auctions (i.e. __all__ bidders pay their bid e.g. in lobbying) have the same BNE as FPSB auctions
-	* SPSB, FPSB and "All Pay" are all revenue equivalent 
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Revenue Maximization Actions
-
-* Auction designers can still do something:
-
-<div class="fragment" />
-
-<br>
-<br>
-
-* bidding fee: fixed vs. relative to your bid
-* hidden dummy bidder
-* hidden reserve price
-* open reserve price
-* => decreases efficiency
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## A-E2: Calculate SPSB Auction Revenue I
-<!-- .element: class="no-toc-progress" -->
-
-* Only one bidder, value <span>$10<span/> with probability 50% and <span>$22<span/> otherwise.
-* Which reserve price maximizes expected revenue?
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## A-E3: Calculate SPSB Auction Revenue II
-<!-- .element: class="no-toc-progress" -->
-
-
-* Given IPV environment, the value of two bidders come from two different distributions:
-  * Bidder 1 has value <span>$2<span/> with probability 30% and <span>$5<span/> otherwise
-  * Bidder 2 has value <span>$3<span/> with probability 40% and <span>$4<span/> otherwise.
-* What is the Expected revenue for the auctioneer?
-* Can one increase expected revenue by a reserve price? How high should it be?
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## A-E4 (optional): Revenue Comparison
-<!-- .element: class="no-toc-progress" -->
-
-
-(1) Suppose there is one bidder, with value `$ v_i \sim U[0,1]  $`. What is the optimal take-it-or-leave-it price `$ r $` to offer to this bidder in order to maximize expected revenue? <br>
-(2) Now suppose there are two bidders, with values uniformly distributed on `$ U[0,1]  $` Consider a SPSB auction with reserve price `$ r = 0.5 $`. What is the expected revenue? <br>
-(3) Compare this with the expected revenue in the SPSB auction without a reserve. What do you find? <br>
-(4) Relate your observations about the SPSB auction plus reserve and the SPSB auction to the revenue equivalence theorem. <br>
-
-
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Multiround Auctions and eBay
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Multiround Auctions
-
-
-<img data-src="img/multiround.png"  height="200" width="800">
-
-<br>
-
-
-<div class="fragment" />
-
-* Strategic Equivalence: 
-  * two auctions have a strategy profile each such that the outcomes (allocations and payments) are the same for all value profiles.
-  * SPSB <-> Ascending clock
-  * SPSB <-> Second price descending clock
-  * FPSB <-> Descending clock (Dutch)
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## eBay's Auction Design
-
-* Californian / Proxy Auction
-  * Proxy agents bid on behalf of bidders in ascending clock auction up tp a given limit until auction closes at fixed time in the future
-
-<br>
-
-> Starting price: `$ r > 0 $`<br>
-> Current price: `$ p_t = min(b_t^{(2)} + \epsilon, b_t^{(1)}) $`<br>
-
-<br>
-
-<div class="fragment" />
-
-<br>
-
-* When auction closes, item is sold to leading bidder at price `$ p_t $`.
-* Bids can be placed at any time, but must be at least the ask price  `$ p_{ask,t} $` (initialized at `$ r > 0 $`):
-
-<br>
-
-> Ask Price: `$ p_{ask,t} = p_t + \epsilon $`
-
-<br>
-
-<div class="fragment" />
-
-<br>
-
-* Optional:
-  * Secret reserve price: `$ r_s > r $`<br>
-  * Buy-it-now price (BIN): `$ BIN \geq 1.1 \cdot r $`
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## eBay Bidding Dynamics
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/dynamics.png"  height="200" width="700">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## eBay's Auction Design: why?
-<!-- .element: class="no-toc-progress" -->
-
-<div class="fragment" />
-
-
-* __Simplicity__:
-  * "enter your maximum, then sit back and watch!"
-* __Transparency__: 
-  * Bidders can see the bid activity of others: legitimacy
-* __Simultaneous auctions__:
-  * explore other auctions for similar items
-* __Information aggregation__:
-  * refine own beliefs about item value (in a non-private/ common value model)
-* __Bidder engagement__:
-  * fun
-  * "endowment effect"
-  * bidding wars, leading to higher revenue
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## eBay': Hard vs. Soft Closing Rules
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/closing.png"  height="200" width="800">
-
-
-<br>
-
-<div class="fragment" />
-
-<br>
-
-* Pro: get attention at prime time
-* Con: less inference about common value
-
-* Bid sniping: bid at very last second
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## eBay: Learning from Seller Experiments
-<!-- .element: class="no-toc-progress" -->
-
-* Sellers' design choices:
-  * what starting price.
-  * whether to use a secret reserve and how to set it.
-  * whether to use a BIN price and how to set it.
-  * length of an auction and the day and time at which it will start (and thus close).
-
-
-<br>
-
-<div class="fragment" />
-
-
-<img data-src="img/experiments.png"  height="200" width="800">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## eBay: Auctions vs. Posted-price Listings
-<!-- .element: class="no-toc-progress" -->
-
-<br>
-<img data-src="img/listings.png"  height="200" width="1200">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## eBay: Auctions vs. Posted-price Listings for Concert Tickets
-<!-- .element: class="no-toc-progress" -->
-
-<br>
-<img data-src="img/concerts.png"  height="200" width="1200">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## A-E5: eBay Auction Design
-
-* Consider an eBay auction with a starting price of $5 and secret reserve of <span>$12.50<span/>.
-* Suppose the minimal bid increment is <span>$<span/>0.50 when the price is between <span>$<span/>5 and <span>$24.99<span/>, and <span>$<span/>1 when the price is higher than <span>$<span>25.
-* Suppose there are four bidders, and that the following bids are placed (in this sequence): 
-  * bidder 1 <span>$<span/>7.51; bidder 2 <span>$<span/>10.20; bidder 1 <span>$<span/>21.50; bidder 3 <span>$<span/>25.21; bidder 1 <span>$<span/>28.75; bidder 4 <span>$<span/>28.99; auction closes.
-* Report the new state of the auction after each bid:
-  * the provisional winner, or "reserve not met"
-  * the new price `$ p_t $`
-  * the new ask `$ p_{ask,t} $`
-* Who wins when the auction closes, and what does this bidder pay?
-
-
-
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Mechanims Design
+# Defining Mechanism Design
 
 
 ----
@@ -459,7 +45,6 @@ Today:
 <!-- .slide: class="align-top" -->
 
 ## Nobel Prize: Mechanism Design Theory
-<!-- .element: class="no-toc-progress" -->
 
 <br>
 <img data-src="img/nobel_2.jpg"  height="200" width="1200">
@@ -472,46 +57,652 @@ Today:
 
 <div class="fragment" />
 
-* When do we have a mechanism design problem?
+* <mark>When do we have a mechanism design problem?</mark> 
   * agents with private preferences/ values not known to designers
   * designers want to make optimal decisions, choose best outcomes
   * agents are self-interested and may not reveal true preferences/ values 
 
 <div class="fragment" />
 
-* What does a mechanism do?
-  * eliciting preferences / values; i.e. the way it is reported
-  * determine / choose outcomes among many; i.e. mapping between reports and outcomes
-  * sometimes: determine payments to elicit preferences
+* <mark> What does a mechanism do?</mark> 
+  * rules of games under imperfect information
+  * actions are ways to report values / preferences for (many) outcomes
+  * ouctomes are selected based on these actions, i.e. mappings between reports and outcomes
+  * sometimes: payments associated with outcomes to elicit preferences (truthfully)
 
 <div class="fragment" />
 
-* "Inverse game theory"
-  * endogenous inputs (instead of given inputs / actions)
-  * choice of outcomes affect inputs and incentives 
+* <mark> "Inverse game theory"</mark>
+  * working backwards from a defined, desirable outcomes
+  * endogenous, "designed" actions (instead of given actions)
+  * to achieve the desirable outcome in equilibrium
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Problem Domains of Mechanism Design
-<!-- .element: class="no-toc-progress" -->
+## Examples of Mechanism Design
 
-* Examples for rules of a game:
-  * meeting scheduling
-  * doctors appointment
+* <mark> Examples for mechanism design:</mark> 
+  * auctions
+  * organ donor matching
+  * meeting scheduling (e.g. with doctors)
   * booth allocation to firms in a job fair
-  * kidney / organ exchange
   * voting / elections
-  * SBSB
   * split a cake between two kids
   * basketball: 24 seconds, no tie
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Formal Notation for Mechanism Design
+
+> * Agents: `$ N = \{ 1, ..., n \} $`
+> * Alternatives: `$ A = \{ a, b, c, ... \} $`; e.g. meeting times, destinations of a trip, allocations of resources, etc.
+> * Utility functions: `$ u_i \in U_i $` (utility domain of agent i)
+> * Utility profiles: `$ u = ( u_1, ..., u_n ) \in U = U_1 \times ... \times U_n $`
+
+<br>
+
+<div class="fragment" />
+
+> * <mark> Mechanisms __without__ payment: </mark> 
+>   * Utility for alternative `$ a $`: `$ u_i(a) \in \mathbb{R} $`
+>   * Strict preference orderings: `$ \succ_i \in P_{>} $` such that `$ a \succ_i b \iff u_i(a) > u_i(b) $`
+
+<br>
+
+<div class="fragment" />
+
+> * <mark> Mechanisms __with__ payment: </mark> 
+>   * (Quasi-linear) utility for alternative `$ a $`: `$ u_i(a, p_i) = v_i(a) - p_i $` 
+>   * `$ v_i(a) $` is intensity of preference / maximum willingness-to-pay of agent i for alternative a
+>   * Valuation function `$ v_i: A \rightarrow \mathbb{R} $`;  `$ v_i \in V_i $` (domain of valuation functions of agent i)
+>   * Valuation profiles: `$ v = ( v_1, ..., v_n ) \in V = V_1 \times ... \times V_n $`
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Example: Organ Donor Matching
+<!-- .element: class="no-toc-progress" -->
+
+
+<div class="row-top">
+
+<div class="column">
+
+* Goal: Maximizing Social Welfare
+  * match as many patients as possible
+  * reduce waiting time
+  * consider health status
+* Possible alternatives?
+  * match depending on bloodtype
+* Patient utility
+  * not paying for dialysis
+* Mechanism with/without money?
+  * avoid organ trafficking
+
+</div>
+
+
+<div class="column">
+
+<img data-src="img/nobel_3.png"  height="200" width="1200">
+
+</div>
+
+</div>
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Example: Scheduling a Meeting.
+<!-- .element: class="no-toc-progress" -->
+
+<div class="table">
+
+
+| Agent | 9am   | 10am   | 11am   | 
+|-------|-----|-----|-----|
+| 1     | -<span>$</span>5 | <span>$</span>0  | <span>$</span>2  |
+| 2     | <span>$</span>20  | <span>$</span>5 | <span>$</span>10  |
+| 3     | <span>$</span>5  | <span>$</span>10  | <span>$</span>2 |
+
+</div>
+
+----  ----
+
+
+<!-- .slide: class="align-center" -->
+
+# Revelation Mechanisms and Strategies
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Direct-revelation mechanisms
+
+* <mark>Direct-revelation mechanisms (DRMs)</mark>:  
+  * Agents send a single report that makes claim about their utility function:
+    * Reported utility profile: `$ \hat{u} = ( \hat{u}_1, ..., \hat{u}_n ) \neq u $`
+    * Reported valuation profile: `$ \hat{v} = ( \hat{v}_1, ..., \hat{v}_n ) \neq v $`
+
+<br>
+
+<div class="fragment" />
+
+> * <mark>Definition (Direct-revelation Mechanism (no money))</mark>: In a direct-revelation mechanism (DRM) without money, each agent `$ i $` makes a report `$ \hat{u}_i $` about its utility function (perhaps `$ \hat{u}_i \neq u_i $`), and the mechanism is defined in terms of
+>* an outcome rule `$ g : U \rightarrow A $`, where `$ g(\hat{u}) $` is the alternative selected for reported profile `$ \hat{u} $`.
+
+<br>
+
+<div class="fragment" />
+
+> * <mark> Definition (Direct-revelation Mechanism (money))</mark>: In a direct-revelation mechanism (DRM) with money, each agent `$ i $` makes a report `$ \hat{v}_i $` about its valuation function `$ \hat{v}_i \neq v_i $`), and the mechanism is defined in terms of:
+>* a choice rule `$ x : V \rightarrow A $`, where `$ x(\hat{v}) $` is the alternative selected for reports `$ \hat{v} $`; and
+>* a payment rule `$ t : V \rightarrow \mathbb{R}^n $`, where `$ t(\hat{v}) $` for `$ i \in N$` is the payment made by agent `$ i $`.
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Examples
+<!-- .element: class="no-toc-progress" -->
+
+
+* <mark>Example 1</mark>: 
+  * Consider a meeting scheduling problem with three possible times, 9am, 10am, and 11am and three agents. The mechanism selects the time that is top-ranked by the most agents, breaking ties in favor of earlier times. This is the plurality rule.
+  * Suppose the preferences are 11am `$ \succ_1 $` 10am `$ \succ_1 $` 9am, 9am `$ \succ_2 $` 11am `$ \succ_2 $` 10am, and 10am `$ \succ_3 $` 9am `$ \succ_3 $` 11am, for agents 1, 2 and 3 respectively. 
+  * <!-- .element: class="fragment" -->  For truthful reports, all times would be tied and the selected time would be 9am by tie breaking. We see that agent 1 has a useful deviation, by reporting 10am as its top choice, with 10am selected as the outcome.
+
+<br>
+
+* <mark>Example 2</mark>: 
+  * In a single-item auction with three agents, there are four alternatives: don't allocate, and assign the item to one of the three agents. For example, agent 1 may have valuation function: `$ v_1(a) = \begin{cases} 5 \text{ if assigned the item in alternative a} \\ 0 \text{ otherwise.} \end{cases} $`  
+  * <!-- .element: class="fragment" -->  In the SPSB auction, the choice rule x assigns the item to the agent with the highest reported value for the item, and the payment rule t charges the second-highest reported value to the selected agent and 0 to the others.
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Revelation Strategies
+
+* In a DRM, strategy `$ s_i : U_i \rightarrow U_i $` defines the report that agent i will make for every utility function: `$ s_i(u_i) = \hat{u}_i $`
+
+<br> 
+
+<div class="fragment" />
+
+> * <mark> Definition (Dominant strategy equilibrium):</mark> Strategy profile `$ {s}^* = ({s}^*_1 , ... , {s}^*_n) $` is a dominant-strategy equilibrium (DSE) in a DRM if  <br> 
+> `$ u_i( g( s_i^*(u_i), s_{-i}(u_{-i}) ) ) \geq g(u_i( \hat{u}_i, s_{-i}(u_{-i}))) $`  <br> 
+> for all agents `$ i $`, all utility functions `$ u_i $`, all reports `$ \hat{u}_i $`, all strategies `$ s_{-i} = ( s_1 , ... , s_{i-1}, s_{i+1}, ... , s_n ) $` and all utility functions  `$ u_{-i} = (u_1 , ... , u_{i-1}, u_{i+1}, ... , u_n ) $` of others.
+
+<br>
+
+<div class="fragment" />
+
+> * <mark> Definition (Strategy-proof):</mark> A mechanism is strategy-proof if it is a DRM and truthful reporting is a DSE.
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Revelation Strategies
+<!-- .element: class="no-toc-progress" -->
+
+
+* Synonyms for strategy-proof mechanism, where truthful reporting is the best response for each agent whatever the strategies of others:
+  * dominant-strategy incentive compatible (DSIC) mechanism
+  * truthful mechanism
+* Works also for BNE
+* Analogous definitions of DSE and strategy-proofness for mechanisms with money, 
+  * valuation reports in place of utility reports 
+  * choice rule x and payment rule t in place of outcome rule g.
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Examples
+<!-- .element: class="no-toc-progress" -->
+
+
+* <mark>Example 3</mark>: 
+  * Meeting scheduling problem with two possible times: 9am and 10am, and 101 agents. We use the plurality rule, breaking ties in favor of earlier times. Agent 1's top choice is 9am. 
+
+<br>
+
+<div class="fragment" />
+
+* Her report only matters if the others are split 50 : 50 on 9am and 10am. In this case, the time depends on agent 1's report, and truthful reporting is the best strategy. 
+* A similar analysis holds when she prefers 10am, as well as for an even number of agents.
+* We conclude from this example that the plurality rule is strategy-proof when there are only two possible alternatives.
+
+<br>
+
+
+Consider a meeting scheduling problem with two possible times: 9am and 10am,
+and 101 agents. We use the plurality rule, breaking ties in favor of earlier times. Agent 1's top
+choice is 9am. Her report only matters if the others are split 50 : 50 on 9am and 10am. In this
+case, the time depends on agent 1's report, and truthful reporting is the best strategy. A similar
+analysis holds when she prefers 10am, as well as for an even number of agents.
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Social Choice and Implementation 
+
+>* <mark>Definition (Social choice function)</mark>: A social choice function (SCF) `$ f : U \rightarrow A $` is a function from utility profiles to alternatives that defines the desired outcome of the designer of a mechanism.
+
+<br>
+
+* design objective: desirable outcome that designer would select if the preferences of each participant were truthfully known.
+
+<br>
+
+<div class="fragment" />
+
+> * <mark>Definition (Implementation)</mark>: A mechanism with outcome rule `$ g $` implements the SCF `$ f $` in dominant strategy when <br>
+> `$ f(u_1, ... , u_n) = g( {s}^*_1(u_1) , ... , {s}^*_n(u_n) ) $` <br>
+>   where `$ {s}^* $` is the DSE of the mechanism.
+
+<br>
+
+* desired outcome can only be achieved / implemented through the equilibrium of the game induced by a mechanism.
+
+* analogous for mechanisms with payment: use v instead of u.
+
+* Works also for BNE
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Indirect mechanisms
+<!-- .element: class="no-toc-progress" -->
+
+
+* Indirect mechanisms (that are not DRMs), e.g.:
+  * Query each agent about its preferences on subsets of alternatives before choosing an alternative.
+  * Place agents into a "priority order" and ask each agent in turn which item it wants from what is left.
+  * Ask agents to report "1" or "2" next to utility function, use outcome rule 1 or 2 depending on majority vote.
+  * English auction.
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Revelation Principle
+
+
+> * <mark>Theorem (Revelation principle)</mark>: Any SCF f that can be implemented in a DSE of a (possibly indirect) mechanism can be implemented by a strategy-proof mechanism.
+
+<br>
+
+* Equivalently: 
+  * If f cannot be implemented by strategy-proof mechanism, then f cannot be implemented (in DSE) by any mechanism.
+* Focus on DRM with truthful reporting as DSE!
+
+
+<br>
+
+<div class="fragment" />
+
+<img data-src="img/simulation.png"  height="200" width="700">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Revelation Principle: Example Reasoning
+
+
+* Suppose: auction for 1 item, 2 agents with v_1 = 8 and v_2 = 5
+* Requirements for SCF:
+  * Agent with highest value should win the item
+  * Winner should pay the value of the other agent, but at least $10
+* Task: Show that SCF cannot be implemented (in DSE) by any mechanism.
+<br>
+
+<div class="fragment" />
+* Suppose g is strategy-proof DRM that implements the DCF
+* But then agent 1 has an incentive to misreport a value < 5
+* Contradiction to g being a strategy-proof mechanism that implements SCF
+* By the revelation principle: no mechanism that implements SCF in DSE exists
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Desirable Properties of Mechanisms
+
+
+* __Strategy-proofness__: report true values ist dominant strategy
+* __Pareto optimal__: there is no other alternative that is weakly preferred by all agents and strictly preferred by one agent.
+* __Fair__: the selected alternative maximizes the minimum value across agents, over all possible alternatives.
+* __Efficient__: the selected alternative maximizes the total value of agents.
+* __Revenue optimal__: the mechanism maximizes expected revenue across all possible mechanisms.
+* __Individual rationality__: the utility to an agent from participating and making a truthful report is weakly greater than from not participating.
+* __No-deficit__: the total payment by agents is weakly positive.
+* __Budget balance__: the total payment by agents is exactly zero.
+
 
 ----  ----
 
 <!-- .slide: class="align-center" -->
 
-# GT Excercises
+# Vickrey-Clarke-Groves (VCG) Mechanism
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## VCG Mechanism Definition
+
+<br>
+
+> <mark>Definition (VCG mechanism)</mark>: Given reported valuation profile `$ \hat{v} = ( \hat{v}_1, ..., \hat{v}_n ) $`, the VCG mechanism is defined by:
+>* a choice rule `$ x(\hat{v}) \in arg\max\limits_{a \in A}( \sum\limits_{i \in N} \hat{v}_{i}(a) ) $`; and
+>* a payment rule `$ t $`, such that:  
+> `$ t_i(\hat{v}) = \sum\limits_{j \neq i} \hat{v}_{j}(a^{-i}) - \sum\limits_{j \neq i} \hat{v}_{j}(a^{*}) $`  
+>for every agent i, with selected alternative `$ a^{*} = x(\hat{v}) $`, and `$ a^{-i} \in arg\max\limits_{a \in A^{-i}}( \sum\limits_{j \neq i} \hat{v}_{j}(a) ) $`.
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## VCG Mechanism Intuition
+
+
+* agent i's payment is the difference in value to others between 
+  * (1) the alternative that would be selected without considering i's report and
+  * (2) the selected alternative
+* the __negative externality__ imposed on the rest of the system because of agent i's preferences.
+* applies to settings with money
+* generalizion of SPSB auction
+* strategy-proofness, efficiency and individual rationality, often no-deficit
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Examples
+
+<div class="table">
+
+* <mark>Example 5</mark>: 
+  * Scheduling problem with introduction of payments. 
+  * Agent preferences:
+
+ <br> 
+
+| Agent | 9am   | 10am   | 11am   | 
+|-------|-----|-----|-----|
+| 1     | -<span>$</span>5 | <span>$</span>0  | <span>$</span>2  |
+| 2     | <span>$</span>20  | <span>$</span>5 | <span>$</span>10  |
+| 3     | <span>$</span>5  | <span>$</span>10  | <span>$</span>2 |
+
+</div>
+
+ <br> 
+
+<div class="fragment" />
+
+* The alternative that maximizes the total value is 9am, providing total value $20 compared to <span>$</span>15 and <span>$</span>14 for 10am and 11am respectively. 
+* Neither agents 1 nor 3 are pivotal, since 9am would be selected with or without the report from either agent. Their payments are zero. 
+* For agent 2, payment is <span>$</span>10. VCG can run at a deficit!
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Properties of VCG
+<!-- .element: class="no-toc-progress" -->
+
+* __No-deficit__: only if "no positive externality"
+  * adding one agent i does not __increase__ the payment to another (by introducing a new alternative)
+
+ <br> 
+
+
+> * <mark>Definition (No positive externality)</mark>: There is no agent `$ i $`, no valuation profile `$ v_{-1} $` on the other agents, and no alternative `$ a \in A \setminus A^{-i} $`, for which  <br>  <br> 
+> `$ \sum\limits_{j \neq i} v_j(a) > \max\limits_{a^{\prime} \in A^{-i}}( \sum\limits_{j \neq i} v_j(a^{\prime}) ) $` 
+
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Examples
+<!-- .element: class="no-toc-progress" -->
+
+<div class="table">
+
+* <mark>Example 6</mark>: 
+  * Job fair with three firms and three possible locations in the room: front (F), middle (M) and rear (R).
+  * Firm preferences:
+
+ <br> 
+
+| Firm | F   | M   | R   | 
+|-------|-----|-----|-----|
+| 1     | <span>$</span>10 | <span>$</span>2  | <span>$</span>1  |
+| 2     | <span>$</span>100  | <span>$</span>100 | <span>$</span>100  |
+| 3     | <span>$</span>50  | <span>$</span>45  | <span>$</span>40 |
+
+</div>
+
+ <br> 
+
+<div class="fragment" />
+
+* The VCG mechanism selects alternative (1; F); (2;R) and (3;M), for total value $155.
+* The payments are 150-145 = 5, 55-55 = 0 and 110-110 = 0, for firms 1, 2 and 3 respectively.
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Properties of VCG
+
+
+* __Strategy-proofness__: yes (see proof in book)
+* __Fair__: depends
+* __Efficient__: yes
+  * Allocation rule: maximizes value according to thruthful reports
+* __Revenue optimal__: no
+* __Individual rationality__: yes (see proof in book)
+* __No-deficit__: only if no positive externality (adding one agent increases the payment to another)
+* __Budget balance__: no
+  * couldn't a positve budegt (net charge of all players) be redistributed?
+  * no (Hurwicz Green Laffont Theorem): creates incentive to misreport to increase other agents' payments
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Limits of VCG
+<!-- .element: class="no-toc-progress" -->
+
+
+#### VCG might not cover the costs:
+* Build a new sports stadium if citizens' total values are larger than costs:
+* 4 Agents: 3 ‘normal’ agents, 1 ‘cost’ agent 0
+* 2 Alternatives A = {Build, No Build}
+  * `$ v_i(Build) = v_b > 0 = v_i(No Build)$`
+  * `$ v_0(Build) = -C < 0 = v_0(No Build)$`
+<br> <br>
+* Case 1: `$ v_b > 0.5 * C$`
+  * Payment for i: `$ t_i(v) = 0 $` for all i
+<br> <br>
+* Case 2: `$ \frac{1}{3} * C < v_b < 0.5 * C $`
+  * Payment for i: `$ t_i(v) = 0 - (-C + \sum\limits_{j \neq i} v_j ) = C - \sum\limits_{j \neq i} v_j = C - 2 * v_b $` for all i
+  * Payment altogether: `$ 3 * t_i(v) = 3 * C - 3 * 2 * v_b = 3 * C - 6 * v_b < C $` for all i
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## M-E-1: VCG in Public Projects
+<!-- .element: class="no-toc-progress" -->
+
+
+* <mark>Excersice</mark>: 
+  * Public Project: Where should we locate the hospital?
+  * Three locations: A, B, C
+  * Outcome and payments using VCG?
+  * Agent preferences:
+
+<br> <br> 
+
+<div class="table">
+
+| Agent | A   | B   | C   | 
+|-------|-----|-----|-----|
+| 1     | <span>$</span>140 | <span>$</span>90  | <span>$</span>20  |
+| 2     | <span>$</span>40  | <span>$</span>200 | <span>$</span>30  |
+| 3     | <span>$</span>80  | <span>$</span>10  | <span>$</span>190 |
+
+</div>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## M-E-2: VCG for Tandem Biking
+<!-- .element: class="no-toc-progress" -->
+
+
+<br> <br> 
+
+<div class="table">
+
+| Agent | Biking  | Not Biking   |
+|-------|-----|-----|
+| 1     | 10 | 0  | 
+| 2     | -5  | 0 | 
+
+</div>
+
+* Which alternative is selected by VCG?
+* What are the payments of agents?
+* Is the budget for the mechanism balanced? Why not?
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## M-E-3: VCG for Skis and Poles
+<!-- .element: class="no-toc-progress" -->
+
+
+<br> <br> 
+
+
+<div class="table">
+
+| Agent | Skis  | Poles   | Skis + Poles  | 
+|-------|-----|-----|-----|
+| 1     | <span>$</span>0 | <span>$</span>0  | <span>$</span>100  |
+| 2     | <span>$</span>40  | <span>$</span>0 | <span>$</span>40  |
+| 3     | <span>$</span>0  | <span>$</span>40  | <span>$</span>40 |
+
+</div>
+
+
+
+* Do you see any problems if VCG would be applied here?
+* Suppose agent 2 and agent 3 collude
+* What happens if these values are reported instead?
+
+<br> 
+
+<div class="table">
+
+| Agent | Skis  | Poles   | Skis + Poles  | 
+|-------|-----|-----|-----|
+| 1     | <span>$</span>0 | <span>$</span>0  | <span>$</span>100  |
+| 2     | <span>$</span>40  | <span>$</span>0 | <span>$</span>100  |
+| 3     | <span>$</span>0  | <span>$</span>40  | <span>$</span>100 |
+
+</div>
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Bayesian Implementation
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Next time
+
+
+
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Impossibility Results
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Next time
+
+
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Excercises
 <!-- .element: class="no-toc-progress" -->
 
 
@@ -624,6 +815,80 @@ c)  Is the *Tit-for-Tat* strategy a NE in the finite and infinite case?
 
 </div>
 
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## A-E1: Find BNE in FPSB Auction
+<!-- .element: class="no-toc-progress" -->
+
+
+* An auction with two players. <br>
+* Their values are distributed uniformely: `$ v_i \sim U[1,3] $`
+. <br>
+* Player 2 plays the following strategy: `$ s_2(v_2) := \frac{v_2+1}{2} $`<br>
+* How should player 1 respond optimally? 
+* Is this a BNE?
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## A-E2: Calculate SPSB Auction Revenue I
+<!-- .element: class="no-toc-progress" -->
+
+* Only one bidder, value <span>$10<span/> with probability 50% and <span>$22<span/> otherwise.
+* Which reserve price maximizes expected revenue?
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## A-E3: Calculate SPSB Auction Revenue II
+<!-- .element: class="no-toc-progress" -->
+
+
+* Given IPV environment, the value of two bidders come from two different distributions:
+  * Bidder 1 has value <span>$2<span/> with probability 30% and <span>$5<span/> otherwise
+  * Bidder 2 has value <span>$3<span/> with probability 40% and <span>$4<span/> otherwise.
+* What is the Expected revenue for the auctioneer?
+* Can one increase expected revenue by a reserve price? How high should it be?
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## A-E4 (optional): Revenue Comparison
+<!-- .element: class="no-toc-progress" -->
+
+
+(1) Suppose there is one bidder, with value `$ v_i \sim U[0,1]  $`. What is the optimal take-it-or-leave-it price `$ r $` to offer to this bidder in order to maximize expected revenue? <br>
+(2) Now suppose there are two bidders, with values uniformly distributed on `$ U[0,1]  $` Consider a SPSB auction with reserve price `$ r = 0.5 $`. What is the expected revenue? <br>
+(3) Compare this with the expected revenue in the SPSB auction without a reserve. What do you find? <br>
+(4) Relate your observations about the SPSB auction plus reserve and the SPSB auction to the revenue equivalence theorem. <br>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## A-E5: eBay Auction Design
+<!-- .element: class="no-toc-progress" -->
+
+* Consider an eBay auction with a starting price of $5 and secret reserve of <span>$12.50<span/>.
+* Suppose the minimal bid increment is <span>$<span/>0.50 when the price is between <span>$<span/>5 and <span>$24.99<span/>, and <span>$<span/>1 when the price is higher than <span>$<span>25.
+* Suppose there are four bidders, and that the following bids are placed (in this sequence): 
+  * bidder 1 <span>$<span/>7.51; bidder 2 <span>$<span/>10.20; bidder 1 <span>$<span/>21.50; bidder 3 <span>$<span/>25.21; bidder 1 <span>$<span/>28.75; bidder 4 <span>$<span/>28.99; auction closes.
+* Report the new state of the auction after each bid:
+  * the provisional winner, or "reserve not met"
+  * the new price `$ p_t $`
+  * the new ask `$ p_{ask,t} $`
+* Who wins when the auction closes, and what does this bidder pay?
 
 
 
