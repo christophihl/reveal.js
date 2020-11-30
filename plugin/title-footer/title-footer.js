@@ -14,7 +14,7 @@
 var title_footer=
 {
 	title: '',
-	background:'rgba(0,0,0,0.1)',
+	background:'rgba(152,166,173,0.2)',
 };
 
 /* Function to obtain all child elements with any of the indicated tags (from http://www.quirksmode.org/dom/getElementsByTagNames.html) */
@@ -76,7 +76,7 @@ title_footer.initialize=function(title,background)
 
 	// Initialize properties according to parameters
 
-	this.background=background || 'rgba(0,0,0,0.1)';
+	this.background=background || 'rgba(152,166,173,0.2)';
 	var title=title || '';
 	if (title!='')
 	{

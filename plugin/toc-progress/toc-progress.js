@@ -15,7 +15,7 @@ var toc_progress=
 {
 	toc_progress_on:false,
 	reduceorscroll:'scroll',
-	background:'rgba(0,0,127,0.1)',
+	background:'rgba(152,166,173,0.1)',
 	viewport:'html',
 };
 
@@ -385,7 +385,7 @@ toc_progress.initialize=function(reducescroll,background,viewport)
 	// Initialize properties according to parameters
 
 	this.reduceorscroll=reducescroll || 'scroll';
-	this.background=background || 'rgba(0,0,127,0.1)';
+	this.background=background || 'rgba(152,166,173,0.1)';
 	this.viewport=viewport || 'html';
 
 	// Capture 'q' key to toggle the display of the TOC-Progress footer

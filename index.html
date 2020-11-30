@@ -48,6 +48,7 @@
 		<script src="plugin/menu/menu.js"></script>
 		<script src="plugin/math/math.js"></script>
 		<script src="plugin/chalkboard/plugin.js"></script>
+		<script src="plugin/pdfexport/pdfexport.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -66,7 +67,7 @@
 				
 				disableLayout: false,
 				display: 'flex',
-				center: false,
+				center: true,
 
 				// Custom scaling wide macbook
 				// width: 1440,
@@ -93,6 +94,7 @@
 			        readOnly: undefined,
 			        toggleChalkboardButton: { left: "80px", bottom: "30px", top: "auto", right: "auto" },
 			        toggleNotesButton: { left: "130px", bottom: "30px", top: "auto", right: "auto" },
+			        downloadButton: { left: "180px", bottom: "30px", top: "auto", right: "auto" },
 			        transition: 800,
 			        theme: "whiteboard",
 			        background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ],
@@ -119,11 +121,11 @@
 			    },
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu, RevealZoom, RevealSearch, RevealMath, RevealChalkboard ],
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu, RevealZoom, RevealSearch, RevealMath, RevealChalkboard, PdfExport ],
 
 				dependencies: [
-					{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(null ,'rgba(35, 37, 47, 1)'); } },
-					{ src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize('scroll', 'rgba(35, 37, 47, 1)', 'body'); toc_progress.create(); } } ],
+					{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(null ,null); } },
+					{ src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize('scroll', null, 'body'); toc_progress.create(); } } ],
 				menu: {
 				    side: 'left',
 				    width: 'normal',

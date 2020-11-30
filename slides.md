@@ -682,7 +682,7 @@ clicks and collect payments.
 
 
 > <mark>Definition (Balanced bidding)</mark>. A bid profile satisfies the balanced bidding requirement if: <br>
-> * All bidder i in positions `$ 2 leq i \leq m $` bid such that <br>
+> * All bidder i in positions `$ 2 \leq i \leq m $` bid such that <br>
 > `$$ \underbrace{pos_i \cdot Q_i \cdot (v_i - b_{i + 1})}_{\text{utility for current position}} = \underbrace{pos_{i-1} \cdot Q_i \cdot (v_i - b_{i})}_{\text{utility in case of retaliation}}   $$`
 > * Any unassigned bidder bids true value. There is no requirement on the bid for the bidder in position 1.
 

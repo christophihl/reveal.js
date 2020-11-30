@@ -100,6 +100,7 @@ const initChalkboard = function(Reveal){
 	var color = [0, 0];
 	var toggleChalkboardButton = true;
 	var toggleNotesButton = true;
+	var downloadButton = true;
 	var transition = 800;
 
 	var readOnly = undefined;
@@ -142,6 +143,7 @@ const initChalkboard = function(Reveal){
 
 		if (config.toggleChalkboardButton != undefined) toggleChalkboardButton = config.toggleChalkboardButton;
 		if (config.toggleNotesButton != undefined)  toggleNotesButton = config.toggleNotesButton;
+		if (config.downloadButton != undefined)  downloadButton = config.downloadButton;
 		if (config.transition) transition = config.transition;
 
 		if (config.readOnly) readOnly = config.readOnly;
@@ -203,6 +205,23 @@ console.log("Wait for pdf pages to be created and drawings to be loaded");
 		button.style.right = toggleNotesButton.right ||  "auto";
 
 		button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleNotesCanvas(); return false;"><i class="fa fa-pen"></i></a>'
+		document.querySelector(".reveal").appendChild( button );
+	}
+	if ( downloadButton ) {
+//console.log("downloadButton")
+		var button = document.createElement( 'div' );
+		button.className = "chalkboard-button";
+		button.id = "download";
+		button.style.position = "absolute";
+		button.style.zIndex = 30;
+		button.style.fontSize = "24px";
+
+		button.style.left = downloadButton.left || "70px";
+		button.style.bottom = downloadButton.bottom ||  "30px";
+		button.style.top = downloadButton.top ||  "auto";
+		button.style.right = downloadButton.right ||  "auto";
+
+		button.innerHTML = '<a href="#" onclick="RevealChalkboard.download(); return false;"><i class="fa fa-download"></i></a>'
 		document.querySelector(".reveal").appendChild( button );
 	}
 //alert("Buttons");
