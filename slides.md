@@ -7,12 +7,12 @@
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-## 8. Online Plattforms with Network Effects
+## 9. Recommender and Reputation Systems
 
 
 <br> 
 
-[Christoph Ihl][1] | 2020-12-01 | [Kühne Logistics University][2] | Hamburg
+[Christoph Ihl][1] | 2020-12-04 | [Kühne Logistics University][2] | Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
@@ -26,342 +26,201 @@
 
 <!-- .slide: class="align-center" -->
 
-# Platform-Mediated Networks
+# Intro
 
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Examples
+## Recommender vs Reputation Systems?
 
-
-#### Starting a Wine Website
-
-  <br> 
-
-* Idea: website that connects wine enthusiasts with wineries. 
-  * wine enthusiasts can search for wineries and local wine tastings
-  * wineries van keep track of which consumers are interested and contact them via targeted advertising
-
-  <br> 
-
-* Questions:
-  * how to attract your first customers on both sides: chicken-egg problem
-  * how tp make money? 
-    * charging wine enthusiasts, wineries, or both
-    * sign-up fee; charging a per-transaction fee; revenue from targeted advertising.
+* Recommender system is about taste
+  * idiosyncratic preferences, using the revealed
+  * preferences of many to recommend for you
+  * subjective evaluation
+  * horizontal differentiation (econ 101)
+* Reputation system is about quality
+  * objective evaluation
+  * everyone would agree if they had access to the same information
+  * vertical differentiation (econ 101)
 
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Hypothetical Example
+## Long Tail
+
+
+* Chris Anderson (2004). Wired magazine.
+
+  <br> 
+
+<img data-src="img/longtail.png"  height="200" width="800">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+## Value of Recommendations
+
+
+#### Improving Decision Quality
+
+
+  <br> 
+
+> A recommender system elicits the interests of individual consumers, and by making recommendations has the potential to support and improve the quality of the decisions that consumers make while searching for and selecting products.
+
+  <br> 
+
+
+<img data-src="img/recosys.png"  height="200" width="800">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Value of Recommendations
 <!-- .element: class="no-toc-progress" -->
 
-#### RingMe Competing with Skope
 
-  <br> 
-
-* RingMe, largest VoIP (voice-over-IP) networks in U.S. 
-* Recently, a new competitor called Skope to offer slightly better voice quality
-  * gained significant traction in Asia, but unknown in Europe and the US
-
-  <br> 
-
-* Questions:
-  * If you were running RingMe, would you make it compatible with Skope?
-  * Will opening up cause users to switch or help you grow?
-  * How can you best defend against inferior quality?
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Example
-<!-- .element: class="no-toc-progress" -->
-
-#### Mobile Payment Technology
-
-  <br> 
-
-* Idea: smart phone payment technology
-  * users can link their smart phones to their bank accounts, and pay at suitable payment stations. 
-  * cost close to zero and hence better than Visa or American Express
-
-  <br> 
-
-
-* Questions:
-  * How do you solve this chicken-egg problem? 
-    * users don't install app because there are only very few stores that have payment stations
-    * store owners are reluctant to buy the payment stations because nobody uses the app
-  * How will you make money with your system?
-    * fixed or percentage fee per transaction; app installation fee; monthly fee to retailers.
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Definition
-
-> <mark>Definition (Platform-Mediated Network)</mark>. A platform-mediated network consists of network users and a platform that mediates the interactions between those users. The platform itself consists of common components (hardware, software, and services) that all users need to be able to interact with each other, as well as a set of rules that specify how the network users are supposed to interact with each other.
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Components and Rules
-
-* __Common components__:
-  * __software__: website, app
-  * __hardware__: payment stations
-
-  <br> 
-
-* __Rules__ for access and interactions among users to balance quantity vs. quality and avoid market failure (“Market of Lemons”):
-  * __standards__: ensuring technical compatibility between the components of the platform (e.g., app and game developer platforms)
-  * __protocols__: specifying how information exchange happens on the platform (e.g., authentication procedures, screening questionnaires, rating systems on dating platforms to achieve social standards),
-  * __policies__: specifying which actions are allowed and which are forbidden (e.g., must all interactions happen on the platform or may some happen off the platform?)
-  * __contracts__: specifying the rights and responsibilities of the users, as well as providing a legal framework for the terms of exchange.
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Types of Networks
-
-#### Number of distinct user groups
-
-<br>
-
-<div class="fragment" />
-
-1. __One-sided networks__: one homogeneous group of users that all perform similar functions. E.g. VoIP network.  
-
-
-<br>
-
-<div class="fragment" />
-
-2. __Two-sided networks__: Two distinct groups of users, where members in each group perform a function that is not performed by other group. Each group forms one of the sides of the network. E.g. wine website.  
-
-
-<br>
-
-<div class="fragment" />
-
-
-3. __Three-sided networks__: Three distinct groups of users, where the members in each group performs a function that is not performed by users in the other group. E.g. YouTube, connecting viewers, with content contributors as well as advertisers; Google Android (vs Apple iOS).  
-
-
-<br>
-
-<div class="fragment" />
-
-
-* Maybe even more sides: 
-  * e.g. LinkedIn: individuals, recruiters, advertisers, corporates, app developers
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Networks vs. Plattforms
-
-* Multisided network platforms: e.g. eBay, Airbnb, facebook, Apple‘s App Store, Sony Playstation, PayPal, trade fairs, Eventim
-* Product patforms: e.g. Amazon Web Service
-* Reseller Platforms: e.g. Apple iTunes
-
-<br>
-
-<img data-src="img/platforms.png"  height="200" width="800">
-
-
-
-
-
-
-----  ----
-
-
-<!-- .slide: class="align-center" -->
-
-# Network Effects
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Network Effects
-
-* Demand-side economies of scale (vs. cost-side ec. of scale): users have a preference regarding the number of other users in the network.
-* Cross-side vs. same-side
-* Positive vs. negative
-* Direct vs indirect
-
-
-<br>
-
-<img data-src="img/network.png"  height="200" width="700">
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Strength of Network Effects
-
-* Metcalfe's law: `$ O(n^2) $` ("get-big-fast") vs. diminishng returns to networks size ("S"-shaped)
-* Hard to measure: market research
-* Contexts in which networks are expected to be strong:
-
-<div class="fragment" />
-
-  * __Matching Network__: 
-    * e.g. matching house buyers and house sellers, or a dating platform for men and women. 
-    * if users on each side have highly diverse preferences, then large numbers of users on both sides is beneficial.
-
-<div class="fragment" />
-
-  * __Mobility Networks__: 
-    * e.g., a credit card network; network of charging stations for electric vehicles. 
-    * large number of nodes on the other side enable mobility: number of stores, distance to next station
-
-<div class="fragment" />
-
-  * __High Demand for Novelty__:
-    * if users on the demand side have a persistent demand for novelty (e.g., always new movies, games, music), then a large number of supplers is beneficial.
-
-<div class="fragment" />
-
-  * __Unpredictable Interactions__: 
-    * when users do not have a fixed set of interaction partners, unpredictable interactions between network users
-    * e.g. VoIP network, if you don’t know yet who to call next month, then having a large user network is important
-
-
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Users’ Willingness-to-Pay
-
-<div class="fragment" />
-
-* __WTP for a Wine Platform__: 
-  * wine enthusiast’s WTP for access to the wine website will weakly increase with each additional winery
-  * an individual winery’s WTP with each additional winery because this means increased competition
-
-<div class="fragment" />
-
-* __WTP for a Gaming Console__: 
-  * Microsoft's Xbox facing two strong incumbents Playstation and Nintendo
-  * game developers, however, based their WTP on __expected__ future customer numbers
-
-<div class="fragment" />
-
-* __WTP for a VoIP service__: 
-  * non-monetary costs for joining a new VoIP service:
-    * time required for installing the software
-    * time required to become familiar with new software
-    * adding friends to the contact list
-    * maintaining multiple contact lists over time 
-  * start-up or __switching costs__ may inhibit a new network to grow if perceived to be larger than WTP (given current vs expected network size)
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Winner-Take-All Markets
-
-Generally a very small number, and perhaps just one platform, survives if:
-
-<div class="fragment" />
-
-1. __Strong Positive Network Effects__: 
-  * e.g. social networks, Facebook won over rivals Myspace and Friendster once Facebook reached a certain size
-
-<div class="fragment" />
-
-2. __High Multi-homing Costs__: 
-  * costly for users to be active in multiple networks. 
-  * e.g. credit cards: Visa, MasterCard and American Express.
-  * new entrant: Discover Card (US) with higher limits, no annual fees, high cashback bonuses, lower retailer fee
-
-<div class="fragment" />
-
-3. __Limited Demand for Differentiated Features__: 
-  * e.g. VoIP software users just want to make (video) calls, message each other, and perhaps once in a while do a group call
-  * e.g. Google+ introduced new features such as Circles and Hangouts to compete with Facebook.
-
-<div class="fragment" />
-
-4. __Natural Monopoly__: 
-  * platforms can be natural monopolies: average cost per user declines as the number of users grows
-  * e.g. social networks: high development cost, but low (to none) marginal cost per additional user
-  * e.g. wine platform where owner needs to maintain costly personal relationships with each winery
-
-
-
-
-----  ----
-
-
-<!-- .slide: class="align-center" -->
-
-# Platform Mobilization Strategies
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Platform Mobilization
-
-  <br> 
 
 <div class="row-top">
 
 <div class="column">
 
-* Trying to get a new network platform off the ground, i.e., growing the initial user base
-  * chicken-and-egg problem
-  * “Catch-22” based on a satirical novel by Joseph Heller.
-
-  <br> 
-
-* Strategies:
-  * Providing Value to Small Numbers of Users
-  * Pricing Mechanisms
-  * Staging Strategies
+* For Consumers
+  * Better, faster decisions
+  * Serendipitous discovery
+  * Access to long-tail of products, services, information
+  * Learn about the quality judgments of others
+  * Enjoyment
 
 
 </div>
 
 <div class="column">
 
-<img data-src="img/catch22.png"  height="200" width="500">
+* For Businesses
+  * Cross-sell, up-sell; market to the long-tail
+  * Develop stronger relationship with customers
+  * Improve customer satisfaction, retention
+  * Data as an asset!
+
+
+</div>
+
+</div>
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Recommender System Examples
+
+
+<img data-src="img/netflix.png"  height="200" width="1200">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Recommender System Examples
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/amazon.png"  height="200" width="1200">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Recommender System Examples
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/pandora.png"  height="200" width="1300">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Types of Recommender Systems
+
+
+1. __Content-based Systems__: user ratings are estimated based on items that have similar __attributes__ to other items a user has liked in the past.
+2. __Collaborative-Filtering Methods__: user ratings are estimated based on the collective ratings of other users, with the idea that users are collaboratively "filtering" the items that are recommended to each other.
+3. __Hybrid Approaches__: ratings are estimated based both on the attributes of items (and perhaps users), as well as the feedback from all users who are using the platform.
+
+
+<div class="fragment" />
+
+<br>
+
+* __explicit__ ratings, e.g.:
+  * metric/ ordinal: five star
+  * binary: thumbs up / down
+* __implicit__ ratings, e.g.: 
+  * purchases, views, clicks
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Content-Based Recommenders
+<!-- .element: class="no-toc-progress" -->
+
+* recommendations (estimate of a user's product rating) based on product __attributes__: 
+  * e.g. words mentioned in the description, genres / categories, music attributes (Music Genome Project, Pandora)
+  * solves "cold start problem": recommend new products to new users (given product and user attribute profiles)
+  * but trouble with new, unknown product attributes and "exploratory" recommendations to users
+
+
+
+<div class="fragment" />
+
+<br> 
+
+<div class="row-top">
+
+<div class="column">
+
+
+* __cosine similarity__ between product and user attribute profile
+
+<br> <br> <br> 
+
+<img data-src="img/cosine.png"  height="200" width="1000">
+
+
+
+
+
+</div>
+
+<div class="column">
+
+
+* __(machine) learn__ user's preference for certain attribute (e.g. logistic regression or Naive Bayes classification) to __predict__ item ratings (likes) based on attributes
+
+<br> 
+
+<img data-src="img/binary.png"  height="200" width="400">
+
+
+
 
 </div>
 
@@ -371,100 +230,338 @@ Generally a very small number, and perhaps just one platform, survives if:
 
 
 
-----
-
-<!-- .slide: class="align-top" -->
-
-## Providing Value to Small Numbers of Users
-
-Increase user value even when the network is still small:
-
-<div class="fragment" />
+----  ----
 
 
-1. __Create Stand-alone Value__: 
-  * implementing features that make the platform useful even without other users 
-  * e.g. tools for wine enthusiasts to catalog their wine collection; detailed references about different wines, or links to wine review magazines
+<!-- .slide: class="align-center" -->
 
-<div class="fragment" />
-
-2. __Attract Influencers and Marquee Users__: 
-  * presence of particularly famous users such as marquee firms, influencers, or stars. 
-  * Microsoft bought Bungie Software in 2000 to make the game Halo Xbox-exclusive
-
-
-<div class="fragment" />
-
-3. __Harvesting One Side of the Network__: 
-  * it may be possible to “harvest” the supply side of the network from other sources
-  * e.g. job website: (legally) scrape job listing of employers or other job listing websites
-
-
-<div class="fragment" />
-
-4. __Backwards Compatibility__: 
-  * reduce users’ costs for upgrading by making  software or hardware backwards compatible so that users can still interact with users using earlier version. 
-  * e.g. Microsoft: Windows 95 programs still worked under Windows XP
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Pricing Mechanisms
-
-
-<div class="fragment" />
-
-
-1. __Subsidies for Early Adopters__: 
-  * early dating platform subscribers may get six months for free
-  * pay a game developer above market price to develop games for a new platform. 
-  * VoIP accounts of early adopters could be pre-loaded with a certain number of minutes to call non-VoIP telephones
-
-<div class="fragment" />
-
-2. __Permanent Subsidies for one Side__: 
-  * Rules of thumbs: 
-    * subsidize the more price-sensitive side of the users, 
-    * charge the side of the network that offer services or products for sale (leads to selection on quality)
-
-
-<div class="fragment" />
-
-3. __Pay-as-you-go Pricing__: 
-  * it may be possible to “harvest” the supply side of the network from other sources
-  * e.g. job website: (legally) scrape job listing of employers or other job listing websites
+# Collaborative Filtering
 
 
 
 ----
 
+
 <!-- .slide: class="align-top" -->
 
-## Staging Strategies
+## User-User Collaborative Filtering
+
+<div class="row-top">
+
+<div class="column">
 
 
-<div class="fragment" />
+
+<img data-src="img/user2user.png"  height="200" width="500">
 
 
-1. __Vendor to Platform__: 
-  * hardware manufacturers (e.g., Apple or Dell) produce and sell consumer electronics such as MP3 players or laptops
-  * vendor can develop into a two-sided platform by inviting additional hardware manufacturers to also advertise their products
-  on the vendor’s website
-
-<div class="fragment" />
-
-2. __Merchant to Platform__: 
-  * merchants such as Amazon buys, stocks and sells goods from many different vendors
-  * merchants can invite vendors to directly advertise and sell products on their website, without stocking risk
 
 
-<div class="fragment" />
 
-3. __Expand from a Niche__: 
-  * costs of serving a niche may be low of users have very specific and similar need as well as cohesive interactions
-  * e.g. car rental networks start out in a big city; Facebook starting out at Harvard, then Ivy League, then all US universities, ...
+</div>
+
+<div class="column">
+
+
+
+
+
+* Find the neighborhood N_i of users, which consists of the users who are (cosine-) similar to user i, and have rated item j
+* Estimate user i's rating for item j as the (cosine-) similarity-weighted average rating on item j by the users in neighborhood N_i
+
+
+
+
+
+</div>
+
+</div>
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Item-Item Collaborative Filtering
+
+<div class="row-top">
+
+<div class="column">
+
+
+
+<img data-src="img/item2item.png"  height="200" width="500">
+
+
+
+
+
+</div>
+
+<div class="column">
+
+
+
+
+
+* Find the neighborhood N_j of items, which consists of the items who are (cosine-) similar to item j, and have been rated by user i
+* Estimate user i's rating for item j as the (cosine-) similarity-weighted average rating by user i on the items in neighborhood N_j
+
+
+
+</div>
+
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Centering and Normalization of Ratings
+<!-- .element: class="no-toc-progress" -->
+
+
+
+* __Centering__: get at unusual signals for a user
+  * Centered rating = actual rating - baseline rating
+    * baseline rating = overall rating mean +/- item specific deviation +/- user specific deviation
+  * Example: 
+    * Mean (all movies) = 3.7
+    * "The Sixth Sense" average rating is 4.2, 0.5 above mean
+    * user i's average rating is 3.5, 0.2 below mean
+    * Baseline rating = 3.7 + 0.5 - 0.2 = 4
+    * user i's actual rating of 3.6 would be interpreted as a -0.4
+
+    <br><br>
+
+* __Normalization__: cosine similarity becomes Pearson correlation coefficient and missing values can be set to zero
+  * User-normalized centered rating = centered rating - mean over users of centered ratings
+  * Item-normalized centered rating = centered rating - mean over items of centered ratings
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Item-Item Collaborative Filtering
+<!-- .element: class="no-toc-progress" -->
+
+
+
+
+<img data-src="img/example.png"  height="200" width="1300">
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## User-user vs. Item-item Collaborative Filtering
+
+1. User-user cf less effective than item-item cf in large, diverse domains: users tend to be more "complex boundary spanners" that items.
+2. Finding the neighborhood of similar users or items can become a computational bottleneck.
+3. Challenge of rating sparsity in user-user cf: no other users is close in sparse data.
+4. Both methods suffer from cold-start problems. A new item has not been rated by any users and a new user has not rated any items.
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## The Netflix Challenge
+
+<div class="row-top">
+
+<div class="column">
+
+
+
+* As of October 2006, Netflix had 1.9B ratings, 11.7M subscribers, and 85,000 titles
+* Shipping 1.5M DVDs/day
+
+<br> 
+
+* Released 100M ratings, from 480,000 users, on 18,000 titles (held back 3M ratings, 1.5M for leader board, 1.5M for prize).
+* <span>$</span>1 M prize. Improve RMSE by 10 (from 0.9514, item-item CF)
+
+
+  <br> 
+
+<img data-src="img/rmse.png"  height="200" width="500">
+
+
+
+
+</div>
+
+<div class="column">
+
+
+
+
+<img data-src="img/netflixprize.png"  height="200" width="500">
+
+</div>
+
+</div>
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Matrix Factorization
+
+
+<img data-src="img/matrixfac.png"  height="200" width="1200">
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Matrix Factorization
+<!-- .element: class="no-toc-progress" -->
+
+##### __Idea__: embedding users and products into the same, f-dimensional space
+
+<img data-src="img/matrixfac2.png"  height="200" width="800">
+
+
+
+
+
+
+
+----  ----
+
+
+<!-- .slide: class="align-center" -->
+
+# Other Recommender Approaches
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Association-Based Recommenders
+
+* recommendations based on a user's specific behavioral context
+  * in e-commerce based on shopping basket, or products recently browsed. 
+  * generete up-sell and cross-sell opportunities
+  * still collaborative filtering: based on data about other users' behavior
+  * “People who { } X also { } Y”
+
+  <br> 
+
+<img data-src="img/amazon2.png"  height="200" width="700">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Association-Based Recommenders
+<!-- .element: class="no-toc-progress" -->
+
+
+<div class="row-top">
+
+<div class="column">
+
+
+
+
+<img data-src="img/associations.png"  height="200" width="1200">
+
+
+
+</div>
+
+<div class="column">
+
+
+* Mapping transactions into a co-occurrence matrix to calculate measures for interestingness of association rules:
+  * Support
+  * Confidence
+  * Lift
+
+  <br> 
+
+<img data-src="img/rules.png"  height="200" width="1200">
+
+</div>
+
+</div>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Hybrid Approaches
+
+Four typical ways to combine content-based and collaborative-filtering methods:
+
+<br> 
+
+1. Ensemble approach, by taking some kind of combination of the rating from each recommender, for example via a majority vote.
+2. Introduce content-based user profiles into the calculation of user similarity (user-user collaborative filtering), or content-based item profiles into the calculation of item similarity (item-item collaborative filtering). For matrix factorization approaches, an alignment penalty can be introduced if two items with similar attributes are far away from each other in the factor space.
+3. Introduce a knowledge-based component, where domain knowledge is hard-coded into the recommender system; e.g., the information that "seafood" is not "vegetarian." Of course, knowledge acquisition can be costly, and this is only feasible if the knowledge can be acquired in a sufficiently automated way.
+4. Bring item attributes and user ratings together into a single, machine-learning framework, and learn to directly predict user ratings (e.g., via a deep learning approach).
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Hybrid Approaches at Pinterest
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/pinterest0.png"  height="200" width="1200">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Hybrid Approaches at Pinterest
+<!-- .element: class="no-toc-progress" -->
+
+
+<img data-src="img/pinterest.png"  height="200" width="900">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## General Design Issues
+
+* Accuracy is not enough 
+  * “you liked Star Wars I and II, I predict you will like Star Wars III, IV, V, …”
+  * No surprise! No improved decision making. No incremental sales.
+* Incrementality: How did decisions change? How did sales change? How did long-term customer satisfaction change? 
+* Optimize a “key performance indicator”; e.g., time on site, number clicks, number purchases, or profit.
+  * e.g. YouTube: clicks on content vs. watch completely
+* Need to think carefully about the appropriate objective.
+* Popularity vs relevance
+* Temporal factors (a sailing manual, vs a baby rattle)
+* Diversity of recommendations
+* Time directionality (book series)
+* Ethical and privacy considerations
+
+
 
 
 
@@ -472,7 +569,7 @@ Increase user value even when the network is still small:
 
 <!-- .slide: class="align-center" -->
 
-# Platform Control and Evolution
+# Reputation Systems
 
 
 ----
@@ -480,76 +577,135 @@ Increase user value even when the network is still small:
 
 <!-- .slide: class="align-top" -->
 
-## Platform Control
+## Role of RS
 
-* How to handle competitors?
-  * “Compete” or “cooperate” 
-  * Cooperating: sharing a platform with a competitor
-  * E.g. battle about Compact Disk (CD) standards: 
-    * Philipps and Sony ultimately formed an alliance to develop CD standards together
+* provides information about (product, brand or merchant) quality by collecting and aggregating "word-of-mouth" feedback from other users in an automated (digital) way in order to guide decisions about whether to engage in a transaction.
+* often is specific to an online plattform and a source of competitive advantage
 
+  <br> 
 
+<div class="fragment" />
+
+* __Adverse Selection__ Problem:
+  * in situations with asymmetric information between buyrers and sellers prior to transaction
+  * buyers face uncertainty in distinguishing low from high quality sellers
+  * e.g. used car markets as "market of lemmons" (Akerlof)
+  * a reputation system can be used to signal seller quality
+
+  <br> 
+
+<div class="fragment" />
+
+* __Moral Hazard__ Problem:
+  * one agent __can choose__ to deviate from a promised action, without bearing full (negative) consequences
+  * e.g. driver has purchased car insurance, and now has the choice between driving carefully or recklessly
+  * e.g. online seller has received payment, but has the choice to ship as promised or lower quality item
+  * a reputation system can provide sanctioning of bad behavior, so that it has negative consequences in the future
 
 ----
 
 
 <!-- .slide: class="align-top" -->
 
-## Platform Evolution
+## Requirements of RS
 
-Responses to changing competitive landscapes, as well as customer needs:
+* Useful reports from participants, providing information that correctly mirrors the quality of past transactions.
+  * but there can be __selection bias__: 
+    * only negative feedback (helping others); only positive feedback is left (expressing gratitude)
+    * some negative information is omitted out of respect for social norms
 
-
-
-<div class="fragment" />
-
-
-1. __Interoperability__: 
-  * open protocols to allow for compatibility with other platforms
-  * depends on relative market shares
-    * opening up makes sense among even rivals
-    * e.g. Yahoo! and MSN linked their instant messaging services 
+  <br> 
 
 <div class="fragment" />
 
-2. __Pricing__: 
-  * “free-to-pay” transition after subsidizing is often very difficult, esp. if there are still free alternatives
-  * also price shifts within a service bundle; e.g. Netflix's shift from DVD-by-mail to on-demand streaming
+* (For decentralized markets:) Participants who correctly interpret reputation information in making decisions.
+  * but information might not be granular enough, or hard to interpret:
+    * e.g., 98% positive feedback for a seller, but what if 90% of sellers have a better statistic than this?
 
+  <br> 
 
+<div class="fragment" />
 
+* Sellers who change their actions (either on the platform, or in entering the platform in the first place) because of the linking between present behavior and future reputation.
+  * but __whitewashing attacks__: sellers deliberately run down a good reputation, planning to re-enter the platform with a new identity
 
 ----
 
 
 <!-- .slide: class="align-top" -->
 
-## Platform Evolution
-<!-- .element: class="no-toc-progress" -->
+## Avoiding Whitewashing Attacks
+
+* Requiring a real identity 
+  * but costly and may reduce participation. 
+* initiation fee for the right to join a system
+  * but costly and may reduce participation. 
+* prioritize agents who have been in the system for longer
+  * automatically by the system
+  * Pay-your-dues (PYD) strategy of partcipants themselves
+    * good reputation is earned by beeing around and following the PYD strategy:
+    * (1) If both players have a good reputation, or both are new entrants, then both play C.
+    * (2) If one or both players have a bad reputation, then both play D.
+    * (3) A new entrant plays C against a veteran with a good reputation, and the veteran may defect with some probability. 
+    * PYD calls for a player with a bad reputation to re-enter, and start as a new entrant, who veterans will sometimes defect against.
 
 
-Responses to changing competitive landscapes, as well as customer needs:
+----
 
 
 
+<!-- .slide: class="align-top" -->
+
+## Design Space of RS
 
 
 
-<div class="fragment" />
+<div class="row-top">
 
-3. __Growth beyond a certain size__: 
-  * use intermediaries or affiliate with other companies in order to keep growing
-  * e.g. bundle two different software products such as Java and the Ask Toolbar
+<div class="column">
 
 
-<div class="fragment" />
+__Direction__:
+    * one-way
+    * two-way sequential
+    * two-way simultaneous  
 
-4. __Maintaining trust__: 
-  * e.g. in an online dating market, make users sure of their privacy 
-  * e.g. Amazon not unfairly promoting its own products oder other vendors' products
-  * e.g. shifts from free to price as in the case of Netflix
-  * e.g. bidders on eBay need to trust that the auction rules
+<br>
 
+__Elicitation format__:
+    * thumbs up or down
+    * positive, neutral, negative
+    * stars
+    * text
+
+</div>
+
+<div class="column">
+
+
+__Who can give feedback__?
+    * anyone
+    * restricted to those that transacted
+
+
+<br>
+
+
+__Centralized system__:
+    * yes, agregated, interpreted by plattform owner
+    * no, interpreted by users
+
+
+<br>
+
+
+__Incentives__:
+    * yes, no
+    * nudge provided in user interface
+
+</div>
+
+</div>
 
 
 
@@ -557,7 +713,109 @@ Responses to changing competitive landscapes, as well as customer needs:
 
 <!-- .slide: class="align-center" -->
 
-# Case Study
+# RS Examples
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Amazon
+
+
+
+<img data-src="img/amazonrep.png"  height="200" width="1300">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Yelp
+<!-- .element: class="no-toc-progress" -->
+
+
+
+<img data-src="img/yelp.png"  height="200" width="700">
+
+* one-star increase in the overall rating of a restaurant corresponds to an average increase in revenue of 10%.
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Uber
+
+
+* Two-way
+  * both rider and driver can provide star ratings for the other party
+* Partially sequential
+  * driver can see star rating by rider before submitting own rating, while riders cannot see rating by driver
+  * rider's reputation made available to driver when deciding to accept or reject a match
+  * if driver accepts, driver's reputation score is also made available to rider
+* Incentives:
+  * nudging: showing riders the feedback page before allowing another ride to be requested
+* Centralized:
+  * Uber uses reputation scores to weed out bad drivers (> 4.4)
+
+
+
+
+
+
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Digg
+<!-- .element: class="no-toc-progress" -->
+
+
+
+<img data-src="img/digg.png"  height="200" width="800">
+
+<br>
+
+* Digg removed the "bury" button in August 2010, because of a U.S. conservative action group working to prevent liberal articles from reaching front page
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Gogle Local Guides
+
+
+
+<img data-src="img/google.png"  height="200" width="1800">
+
+<br>
+
+* Crowdsourced feedback on places with incentive points:
+  * max 5 points per place
+  * 200 points = free 1 TB upgrade of Drive storage woth $9.99/month
+  * later reduced, then discontinued
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Airbnb
+
+
+<img data-src="img/airbnb.png"  height="200" width="1000">
+
+<br> 
+
+* Feedback is simultaneous: only made public once both have declined or given feedback after some deadline
+* Hosts can decline requests based on guests' profile page that inlcudes prior qualitative feedback
+* until 2014 feedback was sequential with concerns about retaliation or reciprocation problems
+  * experiment revealed that simultaneous design increased feedback rate and decreased five star ratings on both sides
 
 
 ----
@@ -566,15 +824,133 @@ Responses to changing competitive landscapes, as well as customer needs:
 
 <!-- .slide: class="align-top" -->
 
-## Keyreus
+## Ebay
+
+
+
+<img data-src="img/ebay1.png"  height="200" width="900">
+
+<br> 
+
+* Feedback was sequential until 2007
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## Ebay 1.0
 <!-- .element: class="no-toc-progress" -->
 
-__Questions__:
-  * What are the value propositions to members and partners?
-  * Why are user numbers so low and why is there almost no activity on the platform?
-  * Are there inherent problems with the Keyreus concept that hinder its success?
-  * Can some of the problems be alleviate or solved by changing the platform’s design and/or the pricing mechanism?
-  * What are suitable mobilization strategies to increase user numbers?
+
+
+<img data-src="img/ebay11.png"  height="200" width="800">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Ebay Lab Experiment
+<!-- .element: class="no-toc-progress" -->
+
+
+* Simultaneous reporting:
+  * feedback would only be made public either after both parties had submitted their feedback, or after a deadline to provide feedback.
+* Detailed seller rating (DSR):
+  * conventional feedback augmented with additional feedback information, only made public after the seller had provided feedback or after a deadline for the seller to provide feedback
+
+  <br> 
+
+<div class="fragment" />
+
+* Results:
+  * both designs effective in reducing the amount of strategic behavior
+  * DSRs especially promising:
+    * detailed feedback correlated with seller quality
+    * no reducetion in the amount of feedback, likxe in the simultaneous design
+
+
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## Ebay 2.0
+<!-- .element: class="no-toc-progress" -->
+
+
+
+<img data-src="img/ebay21.png"  height="200" width="800">
+
+
+  <br> 
+
+* DSR has better distribution, but only used by 1% of buyers
+* Restricting seller feedback about buyers to be positive or neutral did not improve percentage positive (PP) score
+* seller retaliation remains a concern: threatening emails and  phonecalls, even lawsuits 
+
+
+
+----
+
+
+
+<!-- .slide: class="align-top" -->
+
+## Ebay 2.0
+<!-- .element: class="no-toc-progress" -->
+
+
+
+<img data-src="img/ebay22.png"  height="200" width="1300">
+
+
+* effective percent positive score?
+  * number of positive rating over all transactions completetd, not just the rated ones
+  * assuming no rating is a negative feedback
+
+
+
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Reputation System Examples: Summary
+<!-- .element: class="no-toc-progress" -->
+
+
+  <br> 
+
+
+
+<div class="table">
+
+
+| Platform | Direction | Who can give feedback? | Elicitation | Centralized? | Incentives? |
+|-----|-----|-----|-----|-----|-----|
+|eBay (1.0) |2-way sequential |restricted| {+, o, -}, text |no |no|
+|eBay (2.0)| 2-way sequential |restricted| {+, o, -}, text |no |no|
+||1-way | |detailed seller rating|||
+|Amazon| 1-way |anyone |stars, text |no |no|
+|Yelp| 1-way |anyone |stars, text |no |no|
+|Airbnb| 2-way simultaneous |restricted |stars, text |no |no|
+|Uber| 2-way sequential |restricted |stars |yes |nudge|
+|Digg| 1-way |anyone |vote |no |no|
+|Google Local Guides| 1-way |anyone |stars, text |no |yes|
+
+</div>
+
 
 
 
@@ -591,15 +967,17 @@ __Questions__:
 
 <!-- .slide: class="align-top" -->
 
-## OP-E1: MoviePass Case
+## RS-E1: Your Favorite Platform
 <!-- .element: class="no-toc-progress" -->
 
-* Questions:
-  * What is the value proposition for cinemas and movie goers? Argue also based on the underlying network effects.
-  * What are MoviePass' revenue models with respect to cinemas and movie goers?
-  * Are movie goers subsidized? Calculate the average gross margin per user (AGMPU)!
-  * What are the critical assumptions you would want to test in this business model? How?
-  * What are possible (alternative) approaches to platform mobilization and evolution?
+* Task:
+  * Find or choose among your favorites a platform we have not yet discussed.
+  * Describe its recommender system
+  * Describe its reputation system:
+    * potential adverse selection or moral hazard problems adressed
+    * design paremeters
+    * what can be improved?
+  * Hint: you may also use secondary sources for your analysis (if available, please cite).
 
 
 
