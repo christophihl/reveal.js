@@ -7,12 +7,12 @@
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-## 9. Recommender and Reputation Systems
+## 10. Crowdsourcing
 
 
 <br> 
 
-[Christoph Ihl][1] | 2020-12-04 | [Kühne Logistics University][2] | Hamburg
+[Christoph Ihl][1] | 2020-12-10 | [Kühne Logistics University][2] | Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
@@ -26,207 +26,130 @@
 
 <!-- .slide: class="align-center" -->
 
-# Intro
+# Overview and Examples
 
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Recommender vs Reputation Systems?
-
-* Recommender system is about taste
-  * idiosyncratic preferences, using the revealed
-  * preferences of many to recommend for you
-  * subjective evaluation
-  * horizontal differentiation (econ 101)
-* Reputation system is about quality
-  * objective evaluation
-  * everyone would agree if they had access to the same information
-  * vertical differentiation (econ 101)
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Long Tail
-
-
-* Chris Anderson (2004). Wired magazine.
-
-  <br> 
-
-<img data-src="img/longtail.png"  height="200" width="800">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-## Value of Recommendations
-
-
-#### Improving Decision Quality
-
-
-  <br> 
-
-> A recommender system elicits the interests of individual consumers, and by making recommendations has the potential to support and improve the quality of the decisions that consumers make while searching for and selecting products.
-
-  <br> 
-
-
-<img data-src="img/recosys.png"  height="200" width="800">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Value of Recommendations
+## Why?
 <!-- .element: class="no-toc-progress" -->
 
 
+* Computers better than humans at many tasks
+	* mathematical operations
+	* sort and filter large amounts of strcutured data
 
-<div class="row-top">
+* Limits when it comes to tasks that involve perception, intuition, creativity; e.g.
+	* finding objects in an image
+	* determining the mood of music
+	* understanding and answering questions
+	* summarizing knowledge
 
-<div class="column">
-
-* For Consumers
-  * Better, faster decisions
-  * Serendipitous discovery
-  * Access to long-tail of products, services, information
-  * Learn about the quality judgments of others
-  * Enjoyment
-
-
-</div>
-
-<div class="column">
-
-* For Businesses
-  * Cross-sell, up-sell; market to the long-tail
-  * Develop stronger relationship with customers
-  * Improve customer satisfaction, retention
-  * Data as an asset!
-
-
-</div>
-
-</div>
-
-
+* Social and human computation systems bring together these strenghths
+	* task design
+	* incentives
+	* quality control
 
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Recommender System Examples
+## Q&A Websites: Stackoverflow
 
 
-<img data-src="img/netflix.png"  height="200" width="1200">
 
+<img data-src="img/stackoverflow.png"  height="200" width="1200">
 
 
 ----
 
+
 <!-- .slide: class="align-top" -->
 
-## Recommender System Examples
+## Image Labeling: ESP Game
+
+
+
+<img data-src="img/esp.png"  height="200" width="900">
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Digitize Books: reCAPTCHA
+
+#### Completely Automated Public Turing Test to Tell Computers and Humans Apart
+
+<img data-src="img/recaptcha.png"  height="200" width="1200">
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Real-time Answers to Visual Questions: VizWiz
 <!-- .element: class="no-toc-progress" -->
 
+#### Paid Crowdsourcing via Mechanical Turk
 
-<img data-src="img/amazon.png"  height="200" width="1200">
+<img data-src="img/vizwiz.png"  height="200" width="900">
 
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Recommender System Examples
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/pandora.png"  height="200" width="1300">
 
 
 
 ----
 
+
 <!-- .slide: class="align-top" -->
 
-## Types of Recommender Systems
+## Online Encyclopedia: Wikipedia
 
 
-1. __Content-based Systems__: user ratings are estimated based on items that have similar __attributes__ to other items a user has liked in the past.
-2. __Collaborative-Filtering Methods__: user ratings are estimated based on the collective ratings of other users, with the idea that users are collaboratively "filtering" the items that are recommended to each other.
-3. __Hybrid Approaches__: ratings are estimated based both on the attributes of items (and perhaps users), as well as the feedback from all users who are using the platform.
 
+<img data-src="img/wikipedia.png"  height="200" width="1200">
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Terminology and Taxonomy
+
+* <mark>Crowdsourcing</mark>: recruiting workers from a large, undefined group of people through open call to partcipate in following systems
+
+ <br> 
 
 <div class="fragment" />
 
-<br>
+* <mark>Social Computing</mark>: e.g. Stackoverflow
+	* value creation through social interactions among many users
+	* online platforms that make use of the wisdom of the crowds and/ or enable user-generated content
+	* voting systems, reputation systems, recommender systems, prediction markets)
 
-* __explicit__ ratings, e.g.:
-  * metric/ ordinal: five star
-  * binary: thumbs up / down
-* __implicit__ ratings, e.g.: 
-  * purchases, views, clicks
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Content-Based Recommenders
-<!-- .element: class="no-toc-progress" -->
-
-* recommendations (estimate of a user's product rating) based on product __attributes__: 
-  * e.g. words mentioned in the description, genres / categories, music attributes (Music Genome Project, Pandora)
-  * solves "cold start problem": recommend new products to new users (given product and user attribute profiles)
-  * but trouble with new, unknown product attributes and "exploratory" recommendations to users
-
-
-
+ <br> 
+ 
 <div class="fragment" />
 
-<br> 
+* <mark>Human Computation</mark>: e.g. reCAPTCHA
+	* humans are used as building block to solve a computational problem
+	* individual tasks are typically small, but situated within the context of a larger computational system
+	* human computation algorithm coordinates order of tasks and has control over work flow. 
 
-<div class="row-top">
+ <br> 
+ 
+<div class="fragment" />
 
-<div class="column">
-
-
-* __cosine similarity__ between product and user attribute profile
-
-<br> <br> <br> 
-
-<img data-src="img/cosine.png"  height="200" width="1000">
-
-
-
-
-
-</div>
-
-<div class="column">
-
-
-* __(machine) learn__ user's preference for certain attribute (e.g. logistic regression or Naive Bayes classification) to __predict__ item ratings (likes) based on attributes
-
-<br> 
-
-<img data-src="img/binary.png"  height="200" width="400">
-
-
-
-
-</div>
-
-</div>
-
-
+* <mark>Peer Production</mark>: e.g. Wikipedia, Linux
+	* decentralized collaborations among multiple people that result in successful large-scale projects
+	* without the use of monetary incentives or managerial hierarchies to organize the group of contributors
 
 
 
@@ -235,7 +158,7 @@
 
 <!-- .slide: class="align-center" -->
 
-# Collaborative Filtering
+# Incentives & Task Design
 
 
 
@@ -244,99 +167,27 @@
 
 <!-- .slide: class="align-top" -->
 
-## User-User Collaborative Filtering
+## Public Goods Game
 
-<div class="row-top">
-
-<div class="column">
+> <mark> Definition (Public Goods Game)</mark>
 
 
+> * The game has N players.
+> * Each player i has an endowment of money `$ e_i $`.
+> * All players must simultaneously choose their contribution `$ g_i $` to the public good, with `$ g_i \in [0, e_i]$`; the players keep the remainder, i.e., `$ e_i - g_i $`.
+> * The value of the public good is `$ G = m \cdot \sum_{i} g_i $`, with `$ m > 0 $`; all players get access to it.
+> * Thus, the payoff for each player is: `$ \pi_i = e_i - g_i + m \cdot \sum_{i} g_i $`
 
-<img data-src="img/user2user.png"  height="200" width="500">
+ <br> 
+ 
+<div class="fragment" />
 
-
-
-
-
-</div>
-
-<div class="column">
-
-
-
-
-
-* Find the neighborhood N_i of users, which consists of the users who are (cosine-) similar to user i, and have rated item j
-* Estimate user i's rating for item j as the (cosine-) similarity-weighted average rating on item j by the users in neighborhood N_i
-
-
-
-
-
-</div>
-
-</div>
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Item-Item Collaborative Filtering
-
-<div class="row-top">
-
-<div class="column">
-
-
-
-<img data-src="img/item2item.png"  height="200" width="500">
-
-
-
-
-
-</div>
-
-<div class="column">
-
-
-
-
-
-* Find the neighborhood N_j of items, which consists of the items who are (cosine-) similar to item j, and have been rated by user i
-* Estimate user i's rating for item j as the (cosine-) similarity-weighted average rating by user i on the items in neighborhood N_j
-
-
-
-</div>
-
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Centering and Normalization of Ratings
-<!-- .element: class="no-toc-progress" -->
-
-
-
-* __Centering__: get at unusual signals for a user
-  * Centered rating = actual rating - baseline rating
-    * baseline rating = overall rating mean +/- item specific deviation +/- user specific deviation
-  * Example: 
-    * Mean (all movies) = 3.7
-    * "The Sixth Sense" average rating is 4.2, 0.5 above mean
-    * user i's average rating is 3.5, 0.2 below mean
-    * Baseline rating = 3.7 + 0.5 - 0.2 = 4
-    * user i's actual rating of 3.6 would be interpreted as a -0.4
-
-    <br><br>
-
-* __Normalization__: cosine similarity becomes Pearson correlation coefficient and missing values can be set to zero
-  * User-normalized centered rating = centered rating - mean over users of centered ratings
-  * Item-normalized centered rating = centered rating - mean over items of centered ratings
+* m is called the marginal per capital return (MPCR): how much value an individual contribution creates for society
+* if 1/N < m < 1, then public goods game: player gets back marginally less than he invested; free rinding is NE
+* Example: game with N = 4 players, each endowed with $100 and m = 0.5
+	* if `$ g_i = 0 $` for all players, then `$ \pi_i = \$100 $`
+	* if `$ g_i = \$100 $` for all players, then `$ \pi_i = 100 − 100 + 0.5 · 400 = 200 $`
+	* If only the fourth player contributes nothing, then `$ \pi_4 = 100 − 0 + 0.5 · 300 = 250 $`
 
 
 ----
@@ -344,222 +195,200 @@
 
 <!-- .slide: class="align-top" -->
 
-## Item-Item Collaborative Filtering
-<!-- .element: class="no-toc-progress" -->
+## Types of Rewards
 
 
 
+ 
+<div class="fragment" />
 
-<img data-src="img/example.png"  height="200" width="1300">
+1. <mark>Monetary rewards</mark> are experienced by a user when he receives actual money in return
+for exerting effort (e.g., by a worker who receives a payment on MTurk; open source Linux coders who receive future employment contracts).
 
+* __Pro__: easy to implment and scale
+* __Con__: crowding out intrinsic motivation and quality, cheating
 
-----
+ <br> 
+ 
+<div class="fragment" />
 
+2. <mark>Intrinsic (hedonic) rewards</mark> describe the intrinsic joy a user experiences from taking
+an action (e.g., from editing an article on Wikipedia which the user is passionate about).
 
-<!-- .slide: class="align-top" -->
+* __Pro__: no cost, effective if task can be gamified, meaningful, purposeful
+* __Con__: limited applicability, less scalable and quality
 
-## User-user vs. Item-item Collaborative Filtering
-
-1. User-user cf less effective than item-item cf in large, diverse domains: users tend to be more "complex boundary spanners" that items.
-2. Finding the neighborhood of similar users or items can become a computational bottleneck.
-3. Challenge of rating sparsity in user-user cf: no other users is close in sparse data.
-4. Both methods suffer from cold-start problems. A new item has not been rated by any users and a new user has not rated any items.
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## The Netflix Challenge
-
-<div class="row-top">
-
-<div class="column">
+ <br> 
+ 
+<div class="fragment" />
 
 
-
-* As of October 2006, Netflix had 1.9B ratings, 11.7M subscribers, and 85,000 titles
-* Shipping 1.5M DVDs/day
-
-<br> 
-
-* Released 100M ratings, from 480,000 users, on 18,000 titles (held back 3M ratings, 1.5M for leader board, 1.5M for prize).
-* <span>$</span>1 M prize. Improve RMSE by 10 (from 0.9514, item-item CF)
+3. <mark>Social-psychological rewards</mark> are experienced by a user as a result of interactions with
+the rest of society (e.g., when a user on Stack Overflow is ranked high on its leaderboard).
 
 
-  <br> 
+* __Pro__: no cost, effective if task can be gamified, meaningful, purposeful and contributions visible
+* __Con__: limited applicability, less scalable and quality (but better compared to intrinsic rewards)
 
-<img data-src="img/rmse.png"  height="200" width="500">
-
-
-
-
-</div>
-
-<div class="column">
-
-
-
-
-<img data-src="img/netflixprize.png"  height="200" width="500">
-
-</div>
-
-</div>
 
 
 
 ----
 
-
 <!-- .slide: class="align-top" -->
 
-## Matrix Factorization
+## Organization via Task Design
 
 
-<img data-src="img/matrixfac.png"  height="200" width="1200">
-
+* __division of labor__
+	* <mark>task division:</mark>  mapping goals of an organization into tasks and sub-tasks
+	* <mark>task allocation:</mark>  mapping tasks obtained through task division to individual agents and groups of agents
+* __integration of effort__
+	* <mark>motivational/ incentive problem:</mark>  
+		* whether the task will be done, who will do the task, how well it will be done
+		* tradional: employment contracts, work contracts, market prices
+	* <mark>coordination problem:</mark> 
+		* formalized delegation, monitoring and reporting structures
+		* tradional: hierarchical structure with managers delegating to workers
 
 
 ----
 
+<!-- .slide: class="align-top" -->
+
+## Crowdsourcing via Task Design
+
+* Hierarchical structure not present in crowdsourcing
+* Three design criteria:
+	* <mark>High Modularity:</mark> 
+		* overall task should be divisible into subtasks that are independent from each other
+		* thousands of users, possibly with varying capabilities and interests, can do many tasks in parallel
+	* <mark>Low Granularity:</mark> 
+		* subtasks should be fine-grained sp that little incentive is needed
+		* heterogeneity of subtasks allow better fit with individual users' interests and capabilities
+	* <mark>Low-cost Integration:</mark> 
+		* low-cost quality assurance: e.g., review process, filtering process, sufficient redundancy
+		* low-cost integration process, for combining subtasks into final product 
+* conflicting goals! Uploading images on Instragram vs. reconciling conflict pver an Wikipedia article
+
+
+----
 
 <!-- .slide: class="align-top" -->
 
-## Matrix Factorization
-<!-- .element: class="no-toc-progress" -->
+## Advantages of Non-Hierarchical Systems
 
-##### __Idea__: embedding users and products into the same, f-dimensional space
+* <mark>Information gains:</mark>:
+	* task assignment based on self-selection
+		* users know best their fit of motvations and skills with the task
+		* managers cannot know all that private information about motvations and skills
 
-<img data-src="img/matrixfac2.png"  height="200" width="800">
-
-
-
-
+* <mark>Allocation gains:</mark>  
+	* due to information gains a __larger, more diverse pool of people__ with diverse resources and skills can be handled 
+	* by selecting from a larger pool of users, better matches between user skills and subtasks can be realized
 
 
 
 ----  ----
 
-
 <!-- .slide: class="align-center" -->
 
-# Other Recommender Approaches
+# Human Computation Systems
 
 
 ----
 
+
 <!-- .slide: class="align-top" -->
 
-## Association-Based Recommenders
+## Human Computation Algorithms
 
-* recommendations based on a user's specific behavioral context
-  * in e-commerce based on shopping basket, or products recently browsed. 
-  * generete up-sell and cross-sell opportunities
-  * still collaborative filtering: based on data about other users' behavior
-  * “People who { } X also { } Y”
+* 5 properties of an algorithm:
+	* Input: e.g. images
+	* Output_ e.g. labels of images
+	* Finiteness: output reached after finite iterations (e.g. may not be true fro Wikipedia articles)
+	* Effectiveness: each operation is small enough to be completed within time
+	* Definiteness: precisely defined algorithm leads to same output each time
+* last three properties can only be achieved to a certai degree with humans involved
 
-  <br> 
 
-<img data-src="img/amazon2.png"  height="200" width="700">
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Control Structures
+
+* Sequence (or Iteration): order in which operations are executed
+* Selection (or Choice): operation to be executed if conditions (if-then-else) satisfied
+* Repetition (or Looping): operation to be executed repeatedly until termination condition met
+* Parallel: set of operations that shall be executed simultaneously
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Problem Decomposition, Correctness, and Effciency
+
+* Instead of rigid control structure, let users decompose the task and choose which operation to perform next
+	* harder to guarantee finiteness, effectiveness and definiteness, but also upside potential
+* Correctness: 
+	* does the algorithm lead to a correct solution in a finite number of steps?
+	* only absolute guarantees, but probabilities
+* Efficiency: 
+	* How many resources does the algorithm require to produce an output, relative to the input size?
+	* e.g., time to completion, number of queries sent, or money paid.
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Reasons for Noisy Data
+
+* Lack of expertise
+* Suboptimal physical/psychological condition: e.g. tired
+* No incentives for high quality work
+* Malicious workers
+* Individual differences in perception/interpretation
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Quality Control and Output Aggregation
+
+* __Voting-Based Quality Control__
+	* __Simple Majority Voting__
+	* __Model-based Voting:__
+		* learn abilities of workers and weigh accordingly
+		* Ballot Model: probability of correct answer based on worker ability and task difficulty
+* __Intelligent Game Design__
+	*	__Output agreement:__ 
+		* e.g. ESP game to label images
+	*	__Input agreement:__ 
+		* output agremment difficult for music tagging
+		* given tags of others, decide whether song is the same
+	* __Problem inversion__
 
 
 
 ----
 
+
 <!-- .slide: class="align-top" -->
 
-## Association-Based Recommenders
+## Input agreement and Problem inversion
 <!-- .element: class="no-toc-progress" -->
 
 
-<div class="row-top">
 
-<div class="column">
+<img data-src="img/control.png"  height="200" width="1200">
 
-
-
-
-<img data-src="img/associations.png"  height="200" width="1200">
-
-
-
-</div>
-
-<div class="column">
-
-
-* Mapping transactions into a co-occurrence matrix to calculate measures for interestingness of association rules:
-  * Support
-  * Confidence
-  * Lift
-
-  <br> 
-
-<img data-src="img/rules.png"  height="200" width="1200">
-
-</div>
-
-</div>
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Hybrid Approaches
-
-Four typical ways to combine content-based and collaborative-filtering methods:
-
-<br> 
-
-1. Ensemble approach, by taking some kind of combination of the rating from each recommender, for example via a majority vote.
-2. Introduce content-based user profiles into the calculation of user similarity (user-user collaborative filtering), or content-based item profiles into the calculation of item similarity (item-item collaborative filtering). For matrix factorization approaches, an alignment penalty can be introduced if two items with similar attributes are far away from each other in the factor space.
-3. Introduce a knowledge-based component, where domain knowledge is hard-coded into the recommender system; e.g., the information that "seafood" is not "vegetarian." Of course, knowledge acquisition can be costly, and this is only feasible if the knowledge can be acquired in a sufficiently automated way.
-4. Bring item attributes and user ratings together into a single, machine-learning framework, and learn to directly predict user ratings (e.g., via a deep learning approach).
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Hybrid Approaches at Pinterest
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/pinterest0.png"  height="200" width="1200">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Hybrid Approaches at Pinterest
-<!-- .element: class="no-toc-progress" -->
-
-
-<img data-src="img/pinterest.png"  height="200" width="900">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## General Design Issues
-
-* Accuracy is not enough 
-  * “you liked Star Wars I and II, I predict you will like Star Wars III, IV, V, …”
-  * No surprise! No improved decision making. No incremental sales.
-* Incrementality: How did decisions change? How did sales change? How did long-term customer satisfaction change? 
-* Optimize a “key performance indicator”; e.g., time on site, number clicks, number purchases, or profit.
-  * e.g. YouTube: clicks on content vs. watch completely
-* Need to think carefully about the appropriate objective.
-* Popularity vs relevance
-* Temporal factors (a sailing manual, vs a baby rattle)
-* Diversity of recommendations
-* Time directionality (book series)
-* Ethical and privacy considerations
 
 
 
@@ -569,143 +398,463 @@ Four typical ways to combine content-based and collaborative-filtering methods:
 
 <!-- .slide: class="align-center" -->
 
-# Reputation Systems
+# Social Computing System: Badge Design
 
 
 ----
 
-
 <!-- .slide: class="align-top" -->
 
-## Role of RS
-
-* provides information about (product, brand or merchant) quality by collecting and aggregating "word-of-mouth" feedback from other users in an automated (digital) way in order to guide decisions about whether to engage in a transaction.
-* often is specific to an online plattform and a source of competitive advantage
-
-  <br> 
-
-<div class="fragment" />
-
-* __Adverse Selection__ Problem:
-  * in situations with asymmetric information between buyrers and sellers prior to transaction
-  * buyers face uncertainty in distinguishing low from high quality sellers
-  * e.g. used car markets as "market of lemmons" (Akerlof)
-  * a reputation system can be used to signal seller quality
-
-  <br> 
-
-<div class="fragment" />
-
-* __Moral Hazard__ Problem:
-  * one agent __can choose__ to deviate from a promised action, without bearing full (negative) consequences
-  * e.g. driver has purchased car insurance, and now has the choice between driving carefully or recklessly
-  * e.g. online seller has received payment, but has the choice to ship as promised or lower quality item
-  * a reputation system can provide sanctioning of bad behavior, so that it has negative consequences in the future
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Requirements of RS
-
-* Useful reports from participants, providing information that correctly mirrors the quality of past transactions.
-  * but there can be __selection bias__: 
-    * only negative feedback (helping others); only positive feedback is left (expressing gratitude)
-    * some negative information is omitted out of respect for social norms
-
-  <br> 
-
-<div class="fragment" />
-
-* (For decentralized markets:) Participants who correctly interpret reputation information in making decisions.
-  * but information might not be granular enough, or hard to interpret:
-    * e.g., 98% positive feedback for a seller, but what if 90% of sellers have a better statistic than this?
-
-  <br> 
-
-<div class="fragment" />
-
-* Sellers who change their actions (either on the platform, or in entering the platform in the first place) because of the linking between present behavior and future reputation.
-  * but __whitewashing attacks__: sellers deliberately run down a good reputation, planning to re-enter the platform with a new identity
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Avoiding Whitewashing Attacks
-
-* Requiring a real identity 
-  * but costly and may reduce participation. 
-* initiation fee for the right to join a system
-  * but costly and may reduce participation. 
-* prioritize agents who have been in the system for longer
-  * automatically by the system
-  * Pay-your-dues (PYD) strategy of partcipants themselves
-    * good reputation is earned by beeing around and following the PYD strategy:
-    * (1) If both players have a good reputation, or both are new entrants, then both play C.
-    * (2) If one or both players have a bad reputation, then both play D.
-    * (3) A new entrant plays C against a veteran with a good reputation, and the veteran may defect with some probability. 
-    * PYD calls for a player with a bad reputation to re-enter, and start as a new entrant, who veterans will sometimes defect against.
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Design Space of RS
-
-
-
-<div class="row-top">
-
-<div class="column">
-
-
-__Direction__:
-    * one-way
-    * two-way sequential
-    * two-way simultaneous  
+## Functions & Machanisms of Badges
 
 <br>
 
-__Elicitation format__:
-    * thumbs up or down
-    * positive, neutral, negative
-    * stars
-    * text
+1. <mark>Goal Setting:</mark> sets a goal for the users to motivate them to complete those tasks (faster).
+2. <mark>Instruction:</mark> overview of the most common/desired actions in the system.
+3. <mark>Reputation:</mark> device to signal a user’s reputation, experience, or credibility.
+4. <mark>Status/Affirmation:</mark> status symbols, signaling to other users that they have achieved significant success.
+5. <mark>Group Identification:</mark> Users with same badge share experiences and a sense of group identity.
 
-</div>
+<br><br><br>
 
-<div class="column">
+1. <mark>Relative Standards Mechanism:</mark> badges are awarded to top contributors among all users. Induces competition.
+2. <mark>Absolute Standards Mechanism:</mark> badges are awarded to users for meeting some absolute level of contribution/effort.
 
 
-__Who can give feedback__?
-    * anyone
-    * restricted to those that transacted
+----
+
+<!-- .slide: class="align-top" -->
+
+## Formal Model of Badge Design
+
+* recursive definition of the user’s utility of choosing probablity distribution of actions given current state
+	* `$ a $` = current state, i.e. vector of counts of how many times action i out of n was taken in the past
+		* e.g. actions on Stackoverflow: post a question, answer a question, vote a question, vote an answer
+		* `$ a + e_i $` = new action vector after taking action i
+	* `$ x_a $` = probablity of taking actions i given state a
+		* `$ x^{i}_a $` = probablity distribution of actions to do next given state a
+	* `$ I_b(a) $` = beeing assigned badge b at current state a
+		* `$ v_b $` = value from badge b
+	* `$ \delta $` = discount factor of future utility; or probability of staying on site
+	* `$ c(x_a , p ) $` = cost to user of deviating from an ideal action distribution of actions when no badges are available
+
+<br> 
+
+<img data-src="img/model.png"  height="200" width="800">
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Formal Model of Badge Design
+<!-- .element: class="no-toc-progress" -->
+
+* Model simulation and empirical observations on Stackoverflow
+
+<br> 
+
+<img data-src="img/simulation.png"  height="200" width="1400">
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Formal Model of Badge Design
+<!-- .element: class="no-toc-progress" -->
+
+* Threshold badge: optimal badge boundary?
+	* too low: incentive washes out early
+	* too high: incentive effect never kicks in
+* Maximize yield: total fraction of the targeted action over a user’s lifetime
+	* Compare to intrinsic yield given `$ \delta = 0.99 $`: `$  \sum_{t=0}^{\infty} 0.99^t \cdot 0.05 = 5 $`
+
+
+<br> 
+
+<img data-src="img/simulation2.png"  height="200" width="700">
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Wisdom of the Crowd
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+
+## Traditional Information Elicitation
+
+* Opinion Poll
+	* Sampling
+	* No incentive to be truthful
+	* Equally weighted information
+	* Hard to be real time
+* Ask Experts
+	* Identfying experts is hard
+	* Incentives
+	* Combining opinions can be difficult
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Prediction Markets
+
+* A market designed for information aggregation and prediction
+* Trade contracts (or security), with payoff associated with an observed outcome in future
+	* Monetary incentives 
+	* Monetary-weighted information
+	* Real-time
+	* Self-organizing
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Verification
+
+* __Information elicitation with verification, e.g:__
+	* Will it start raining before noon in the middle of town?
+	* Will a new restaurant open before Christmas? 
+	* Will the global average temperature next year be the warmest on record?
+	* What will Ford F-150 sales be next week?
+	* Will Facebook’s Libra currency launch in 2020?
+	* Which party will win the next U.S. presidential election?
+	* What will the inflation rate be in the Eurozone three years from now?
+	* When will the first academic staff move into a new engineering building?
+* __Asking for information that is not easily verifiable, and perhaps even subjective. e.g.:__
+	* Whether a restaurant is good for groups
+	* Whether a plumber did a good job, 
+	* Whether a movie was funny
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Example
+<!-- .element: class="no-toc-progress" -->
+
+
+* contract that pays amount <span>$</span>10 if global temperature in 2011 is the warmest on record, and $0 otherwise.
+* continuous double auction (CDA):
+	* anyone can post offer to buy (a bid) or  offer to sell (an ask) providing a quantity and price
+	* trades whenever an offer to sell is below highest bid or an offer to buy above lowest ask
+
+
+<br> 
+
+<img data-src="img/globalwarm.png"  height="200" width="900">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Types of Contracts
+
+* Binary (e.g. "Biden" or “Trump”).
+	* winner-take all contract ($10 if Biden)
+* Multi-valued (e.g. "Biden" or "Trump" or "Independent")
+	* multiple binary contracts
+	* <span>$</span>10 if Biden, <span>$</span>10 if Trump, <span>$</span>10 if Independent.
+* Continuous (e.g. popular vote share)
+	* index contract (pay $1 for each percentage point)
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Types pf Prediction Markets
+
+* __Real-money prediction markets__:
+	* Iowa Electronic Markets (IEM) for science questions
+	* PredictIt for elections
+	* regulated similar to commodity future markets and gambling
+	* Intrade.com shut down (followed by Augur.net: decentralized prediction market based on Ethereum blockchain?)
+* __Play-money prediction markets__:
+	* Hollywood Stock Exchange (HSX)
+	* Foresight Exchange: various applications
+	* CrowdMed market: help with the diagnosis of difficult medical conditions
+	* fun, altruism, status (leaderboards, private leagues)
+* __Private prediction markets, including corporate markets__:
+	* forecast sales, product quality ratings, drug success etc.
+	* Intel, Ford, Google, Microsoft, Eli Lilly
+	* service providers: e.g. Consensus Point, CultivateLabs, Hypermind, 
+	* fun, status, prizes
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Accuracy of Prediction Markets
+
+
+<img data-src="img/accuracy1.png"  height="200" width="900">
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Accuracy of Prediction Markets
+<!-- .element: class="no-toc-progress" -->
+
+<img data-src="img/accuracy2.png"  height="200" width="900">
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Accuracy of Prediction Markets
+<!-- .element: class="no-toc-progress" -->
+
+<img data-src="img/accuracy3.png"  height="200" width="900">
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Accuracy of Prediction Markets
+<!-- .element: class="no-toc-progress" -->
+
+<img data-src="img/accuracy4.png"  height="200" width="900">
+
+
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Market Designs
+
+* Call Markets
+	* ??
+
+* Continuous Double Auction (CDA)
+	* Hollywood Stock exchange
+	* Hypermind
+	* Iowa Electronic Markets (IEM)
+	* PredictIt
+
+* Automated Market Maker (LMSR)
+	* CultivateLabs
+	* ConsensusPoint
+	* CrowdMed
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Call Markets
+
+* bids and asks cleared in batches with same clearing price chosen at a given moment to maximize number of trades
+* maximizes liquidity, but slower to aggregate new information in real time
+
+<br>
+
+<img data-src="img/call.png"  height="200" width="900">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Continuous Double Auction
+
+* used in stock markets as well
+* example order book:
+	* Buyer Bids: 33, 32, 30,…
+	* Seller Asks: 36, 38, 40,…
+	* new bid arrives at 35: added to order book
+	* new bid arrives at 38, trades with ask for 36 (and bid and ask removed)
+* trade at price of first order in the book
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Continuous Double Auction
+<!-- .element: class="no-toc-progress" -->
+
+* Example: Intrade.com
+	* bid-ask spread = $0.30
+* Price-time prioritization:
+	* asks with lower price are preferred
+	* bids with higher price are preferred
+	* earlier-time priority in the case of ties for both bids and asks
+* Partial matching:
+	* bid at $0.57 for 35 shares would match with first two asks
+		* at <span>$</span>0.50 for 10; at <span>$</span>0.55 for 20; leaving bid at <span>$</span>0.57 for 5 on the order book
+
 
 
 <br>
 
+<img data-src="img/cda1.png"  height="200" width="1000">
 
-__Centralized system__:
-    * yes, agregated, interpreted by plattform owner
-    * no, interpreted by users
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Continuous Double Auction
+<!-- .element: class="no-toc-progress" -->
+
+* Example: Intrade.com
+* Short-selling:
+	* seller thinks price is currently too high 
+	* seller borrows some contracts she does not have, with a commitment to eventually buy them
 
 
 <br>
 
+<img data-src="img/cda2.png"  height="200" width="1000">
 
-__Incentives__:
-    * yes, no
-    * nudge provided in user interface
 
-</div>
+----
 
-</div>
+<!-- .slide: class="align-top" -->
+
+## Continuous Double Auction
+<!-- .element: class="no-toc-progress" -->
+
+* Short-selling example
+
+
+<br>
+
+<img data-src="img/cda3.png"  height="200" width="1000">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Continuous Double Auction
+<!-- .element: class="no-toc-progress" -->
+
+* can suffer from low market liquidity
+* signs of market liquidity
+	* small bid-ask spread
+	* prices do not vary (much) for different quantities
+
+
+<br>
+
+<img data-src="img/cda4.png"  height="200" width="1000">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Automated Market Maker
+
+* Goal: improve liquidity, and thus information aggregation
+* Assumption: 
+	* contract for each possible outcome
+	* automated Market maker can quote a price to buy or sell any quantity
+* Example:
+	* first contract "2021" that pays $1 when (temp 2021 > temp 2009)
+	* second contract "2009" that pays $1 when (temp 2021 < temp 2009)
+	* AMM always willing to sell and buy any (fractional) number of units of a contract
+	* AMM can quote the payment required to “buy 9.7 units on the 2021 contract,” or the negative payment required to “sell 4.2 units on the 2009 contract.”
+
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Automated Market Maker
+<!-- .element: class="no-toc-progress" -->
+
+* m outcomes to predict
+* Current market state x:
+	* vector of positive quantities sold of each contract
+	* initial state (0 , ... , 0)
+	* `$ x_k $`: quantitiy sold of contract k in current state, with `$ k = 0,1,..., m-1 $` 
+* `$ Q_k $`: quantitity of contract k bought (positive) or sold (negative) in next trade
+* Cost-function-based market maker defines the payment made for bext trade `$ Q_k $` in market state x:
+
+
+
+
+
+<br>
+
+<img data-src="img/amm.png"  height="200" width="1000">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Automated Market Maker
+<!-- .element: class="no-toc-progress" -->
+
+
+* Example:
+	* first contract "2021" that pays $1 when (temp 2021 > temp 2009)
+	* second contract "2009" that pays $1 when (temp 2021 < temp 2009)
+		* Buy 10 "2021": Trader pays C(10,0) – C(0,0)
+		* Buy 5 "2009": Trader pays C(10,5) – C(10,0)
+		* Sell 2 "2021": Trader pays C(8,5) – C(10,5) (-> negative!)
+		* Buy 3 "2021": Trader pays C(11,5) – C(8,5).
+* Total payment to AMM: `$ C(x) - C(0, ... , 0) = C(11,5) – C(0,0) $`
+* Loss to AMM: `$ max(x_j) - C(x) - C(0, ... , 0) $`
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## LMSR Market Maker
+
+* __Logarithmic market scoring rule__ market maker
+	* widely used in practive
+	* makes use of a specific cost function with nice properties
+
+<br>
+
+<img data-src="img/lmsr.png"  height="200" width="1300">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Desirable Properties
+
+
+LMSR Market Maker has desirable properties:
+* No round-trip arbitrage
+* Prices strictly positive, sum to one
+* Responsiveness (if buy then price increases, if sell then price decreases)
+* Liquidity (trade any quantity, don’t move price very much).
+* Myopic incentives (e.g., buy until buy price equal belief)
+* Bounded loss to the market-maker
+
+
+
+
 
 
 
@@ -713,271 +862,57 @@ __Incentives__:
 
 <!-- .slide: class="align-center" -->
 
-# RS Examples
-
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Amazon
-
-
-
-<img data-src="img/amazonrep.png"  height="200" width="1300">
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Yelp
+# Exercises
 <!-- .element: class="no-toc-progress" -->
 
 
-
-<img data-src="img/yelp.png"  height="200" width="700">
-
-* one-star increase in the overall rating of a restaurant corresponds to an average increase in revenue of 10%.
-
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Uber
-
-
-* Two-way
-  * both rider and driver can provide star ratings for the other party
-* Partially sequential
-  * driver can see star rating by rider before submitting own rating, while riders cannot see rating by driver
-  * rider's reputation made available to driver when deciding to accept or reject a match
-  * if driver accepts, driver's reputation score is also made available to rider
-* Incentives:
-  * nudging: showing riders the feedback page before allowing another ride to be requested
-* Centralized:
-  * Uber uses reputation scores to weed out bad drivers (> 4.4)
-
-
-
-
-
-
-
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Digg
+## CS-E1: CDA and Call markets
 <!-- .element: class="no-toc-progress" -->
 
 
-
-<img data-src="img/digg.png"  height="200" width="800">
-
-<br>
-
-* Digg removed the "bury" button in August 2010, because of a U.S. conservative action group working to prevent liberal articles from reaching front page
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Gogle Local Guides
-
-
-
-<img data-src="img/google.png"  height="200" width="1800">
-
-<br>
-
-* Crowdsourced feedback on places with incentive points:
-  * max 5 points per place
-  * 200 points = free 1 TB upgrade of Drive storage woth $9.99/month
-  * later reduced, then discontinued
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Airbnb
-
-
-<img data-src="img/airbnb.png"  height="200" width="1000">
+* Consider a prediction market where contracts can be bought and sold that will pay out $1 if Hamburg Alster will be frozen in Winter 20/21. 
+* Bids and asks are placed in the market in the following sequence (B = buy, A = ask):
 
 <br> 
-
-* Feedback is simultaneous: only made public once both have declined or given feedback after some deadline
-* Hosts can decline requests based on guests' profile page that inlcudes prior qualitative feedback
-* until 2014 feedback was sequential with concerns about retaliation or reciprocation problems
-  * experiment revealed that simultaneous design increased feedback rate and decreased five star ratings on both sides
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Ebay
-
-
-
-<img data-src="img/ebay1.png"  height="200" width="900">
-
-<br> 
-
-* Feedback was sequential until 2007
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Ebay 1.0
-<!-- .element: class="no-toc-progress" -->
-
-
-
-<img data-src="img/ebay11.png"  height="200" width="800">
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Ebay Lab Experiment
-<!-- .element: class="no-toc-progress" -->
-
-
-* Simultaneous reporting:
-  * feedback would only be made public either after both parties had submitted their feedback, or after a deadline to provide feedback.
-* Detailed seller rating (DSR):
-  * conventional feedback augmented with additional feedback information, only made public after the seller had provided feedback or after a deadline for the seller to provide feedback
-
-  <br> 
-
-<div class="fragment" />
-
-* Results:
-  * both designs effective in reducing the amount of strategic behavior
-  * DSRs especially promising:
-    * detailed feedback correlated with seller quality
-    * no reducetion in the amount of feedback, likxe in the simultaneous design
-
-
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Ebay 2.0
-<!-- .element: class="no-toc-progress" -->
-
-
-
-<img data-src="img/ebay21.png"  height="200" width="800">
-
-
-  <br> 
-
-* DSR has better distribution, but only used by 1% of buyers
-* Restricting seller feedback about buyers to be positive or neutral did not improve percentage positive (PP) score
-* seller retaliation remains a concern: threatening emails and  phonecalls, even lawsuits 
-
-
-
-----
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Ebay 2.0
-<!-- .element: class="no-toc-progress" -->
-
-
-
-<img data-src="img/ebay22.png"  height="200" width="1300">
-
-
-* effective percent positive score?
-  * number of positive rating over all transactions completetd, not just the rated ones
-  * assuming no rating is a negative feedback
-
-
-
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Reputation System Examples: Summary
-<!-- .element: class="no-toc-progress" -->
-
-
-  <br> 
-
-
 
 <div class="table">
 
 
-| Platform | Direction | Who can give feedback? | Elicitation | Centralized? | Incentives? |
-|-----|-----|-----|-----|-----|-----|
-|eBay (1.0) |2-way sequential |restricted| {+, o, -}, text |no |no|
-|eBay (2.0)| 2-way sequential |restricted| {+, o, -}, text |no |no|
-||1-way | |detailed seller rating|||
-|Amazon| 1-way |anyone |stars, text |no |no|
-|Yelp| 1-way |anyone |stars, text |no |no|
-|Airbnb| 2-way simultaneous |restricted |stars, text |no |no|
-|Uber| 2-way sequential |restricted |stars |yes |nudge|
-|Digg| 1-way |anyone |vote |no |no|
-|Google Local Guides| 1-way |anyone |stars, text |no |yes|
+
+| B1 | A2 | A3 | B4 | A5 | B6 | B7 | B8 | A9 | A10 | A11| 
+|--|--|--|--|--|--|--|--|--|--|--|
+| 0.1 | 0.8 | 0.65 | 0.7 | 0.25 | 0.3 | 0.75 | 0.5 | 0.6 | 0.45 | 0.4 | 
+
 
 </div>
 
 
 
-
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Exercise
-<!-- .element: class="no-toc-progress" -->
+* What trades take place in a CDA, with the market clearing based on price-time prioritization and trades priced at the price of the earlier of two matched orders?
+* What trades take place in a call market that waits for all offers before clearing the market (assume that trades take place at a mid-point price)?
+* Describe two qualitative differences between the outcomes in the two designs.
 
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-## RS-E1: Your Favorite Platform
+## CS-E2: LMSR automated market maker
 <!-- .element: class="no-toc-progress" -->
 
-* Task:
-  * Find or choose among your favorites a platform we have not yet discussed.
-  * Describe its recommender system
-  * Describe its reputation system:
-    * potential adverse selection or moral hazard problems adressed
-    * design paremeters
-    * what can be improved?
-  * Hint: you may also use secondary sources for your analysis (if available, please cite).
+* Three agents take turns trading with the LMSR automated market maker, with `$ \beta = 1 $` so that the cost function in market state `$ x = (x_0, x_1) $` is <br>
+`$ C(x_0, x_1) = ln(e^{x_0} + e^{x_1}) $`, <br>
+where contract 0 pays <span>$</span>1 when Hamburg Alster freezes and contract 1 pays <span>$</span>1 when Hamburg Alster does not freeze in Winter 20/21. Suppose the market starts at market state `$ (x_0, x_1) = (0, 0) $`.
+
+* (a) Describe how the agents trade, assuming that agent 1, 2, 3 make their trades in that order, and that each agent buys until the price is such that this is no longer profitable.
+* (b) Compute the profit to agent 1 in the event that Hamburg Alster does not freeze, considering both the payment made to the market maker and payments received (if any) when the outcome is realized.
+* (c) Compute the total payments received by the market maker in the event that Hamburg Alster freezes (consider payments made in settling contracts as well as payments received in selling contracts).
+* (d) Compare the results of part (c) with those in part (b). What do you notice? Suggest a simple explanation for why the LMSR has a bounded loss, even if it was to sell an unbounded quantity of contract 0, and even in the event that the record is broken and contract 0 pays out.
+
 
 
 
