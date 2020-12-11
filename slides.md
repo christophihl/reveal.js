@@ -768,7 +768,7 @@ the rest of society (e.g., when a user on Stack Overflow is ranked high on its l
 * Goal: improve liquidity, and thus information aggregation
 * Assumption: 
 	* contract for each possible outcome
-	* automated Market maker can quote a price to buy or sell any quantity
+	* automated market maker can quote a price to buy or sell any quantity
 * Example:
 	* first contract "2021" that pays $1 when (temp 2021 > temp 2009)
 	* second contract "2009" that pays $1 when (temp 2021 < temp 2009)
@@ -819,7 +819,31 @@ the rest of society (e.g., when a user on Stack Overflow is ranked high on its l
 		* Sell 2 "2021": Trader pays C(8,5) – C(10,5) (-> negative!)
 		* Buy 3 "2021": Trader pays C(11,5) – C(8,5).
 * Total payment to AMM: `$ C(x) - C(0, ... , 0) = C(11,5) – C(0,0) $`
-* Loss to AMM: `$ max(x_j) - C(x) - C(0, ... , 0) $`
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Desirable Properties
+
+##### How to choose the cost function?
+
+* <mark>No round-trip arbitrage:</mark> trader payement is zero if start equals end position
+* <mark> Instantaneous prices reflect market beliefs:</mark> 
+	* strictly positive for all markets states x: `$ \pi_k(x) > 0 $` 
+	* normalized: should sum to one at every market state; `$ \pi_k(x) > 0 $` 
+	* responsive: should go strictly up and down in respinse of buys and sells
+* <mark> Myopic incentive:</mark>  
+	* optimal strategy for risk-neutral and myopic trader (that will only trade once):
+		* trade as much such that instantaneous prices equal to trader’s belief about the outcome
+* <mark> Adjustable liquidity:</mark> 
+	* the market maker has a parameter to make prices more or less sensitive to trades
+		* lower sensitivity of prices => high market iquidity
+* <mark> Bounded loss to the market-maker: </mark> 
+	* independent of the number of traders or number of trades
+
 
 
 ----
@@ -837,23 +861,40 @@ the rest of society (e.g., when a user on Stack Overflow is ranked high on its l
 <img data-src="img/lmsr.png"  height="200" width="1300">
 
 
+
 ----
 
 <!-- .slide: class="align-top" -->
 
-## Desirable Properties
+## LMSR Market Maker: Example
+<!-- .element: class="no-toc-progress" -->
 
+* Assume `$ \beta = 1 $`, and two outcomes. The initial instantaneous prices are (0.5, 0.5), since `$ e^{0}/(e^{0} + e^{0}) = 0.5 $`.
 
-LMSR Market Maker has desirable properties:
-* No round-trip arbitrage
-* Prices strictly positive, sum to one
-* Responsiveness (if buy then price increases, if sell then price decreases)
-* Liquidity (trade any quantity, don’t move price very much).
-* Myopic incentives (e.g., buy until buy price equal belief)
-* Bounded loss to the market-maker
+<div class="fragment" />
 
+* __Trader 1__ thinks the price on outcome 0 is too low, and buys two units:
+	* payment `$ C(2, 0) − C(0, 0) = ln(e^2 + e^0) − ln(e^0 + e^0) = \$1.43 $` 
+	* new instantaneous prices are `$ p_0(2, 0) = e^2/(e^2 + e^0) = \$0.88 $` and `$ p_1(2, 0) = e^0/(e^2 + e^0) = \$0.12 $`
 
+<div class="fragment" />
 
+* __Trader 2__ thinks the price on outcome 1 is too low, and buys 3 units
+	* payment `$ C(2, 3) − C(2, 0) = ln(e^2 + e^3) − ln(e^2 + e^0) = \$1.19 $` 
+	* new instantaneous prices are `$ p_0(2, 3) = e^2/(e^2 + e^3) = \$0.27 $` and `$ p_1(2, 3) = e^3/(e^2 + e^3) = \$0.73 $`
+
+<div class="fragment" />
+
+* __Trader 1__ now thinks the price on outcome 0 is too high, and sells one unit:
+	* payment `$ C(1, 3) − C(2, 3) = ln(e^1 + e^3) − ln(e^2 + e^3) = -\$0.19 $` 
+	* new instantaneous prices are `$ p_0(1, 3) = e^1/(e^1 + e^3) = \$0.88 $` and `$ p_1(1, 3) = e^1/(e^1 + e^3) = \$0.12 $`
+
+<div class="fragment" />
+
+* __Market maker payment__: 1.43 + 1.19 - 0.19 = <span>$</span>2.43, or, `$ C(1, 3) − C(0, 0) = ln(e^2 + e^3) − ln(e^0 + e^0) = \$2.43 $`
+* Suppose realized outcome is 1
+	* __Market maker loss__: 3 - 2.43 = <span>$</span>0.57
+	* Tader 1 loss: 0 - 1.43 + 0.19 = -<span>$</span>1.24; Trader 2 profit: 3 - 1.19 = <span>$</span>1.81
 
 
 
@@ -907,13 +948,16 @@ LMSR Market Maker has desirable properties:
 * Three agents take turns trading with the LMSR automated market maker, with `$ \beta = 1 $` so that the cost function in market state `$ x = (x_0, x_1) $` is <br>
 `$ C(x_0, x_1) = ln(e^{x_0} + e^{x_1}) $`, <br>
 where contract 0 pays <span>$</span>1 when Hamburg Alster freezes and contract 1 pays <span>$</span>1 when Hamburg Alster does not freeze in Winter 20/21. Suppose the market starts at market state `$ (x_0, x_1) = (0, 0) $`.
+Further suppose the following 6 trades in the given order:
+	* Trader 1 buys 2 units of contract 0.
+	* Trader 2 buys 3 units of contract 1.
+	* Trader 3 buys 2 units of contract 0.
+	* Trader 2 sells 2 units contracts of 1.
+	* Trader 3 sells 1 unit of contract 0.
+	* Trader 1 buys 1 units of contract 1. 
 
-* (a) Describe how the agents trade, assuming that agent 1, 2, 3 make their trades in that order, and that each agent buys until the price is such that this is no longer profitable.
-* (b) Compute the profit to agent 1 in the event that Hamburg Alster does not freeze, considering both the payment made to the market maker and payments received (if any) when the outcome is realized.
-* (c) Compute the total payments received by the market maker in the event that Hamburg Alster freezes (consider payments made in settling contracts as well as payments received in selling contracts).
-* (d) Compare the results of part (c) with those in part (b). What do you notice? Suggest a simple explanation for why the LMSR has a bounded loss, even if it was to sell an unbounded quantity of contract 0, and even in the event that the record is broken and contract 0 pays out.
-
-
+* Calculate the payments of all traders after each trade and the resulting overall payment to the market maker.
+* Assume that Hamburg Alster will actually freeze in February 2021 (and we can all go ice skating). What is the resulting profit/ loss for all three traders and the market maker?
 
 
 
