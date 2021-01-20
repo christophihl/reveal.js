@@ -3,292 +3,73 @@
 
 <!-- .slide: data-state="no-toc-progress" --> <!-- don't show toc progress bar on this slide -->
 
-# Digital Economy
+# Organizing Entrepreneurial Teams
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-## 11. Blockchain and Digital Currency
+## A Natural Field Experiment of the Autonomy in Choosing Teams and Ideas
 
 
 <br> 
 
-[Christoph Ihl][1] | 2020-12-11 | [Kühne Logistics University][2] | Hamburg
+[Christoph Ihl][1] (joint with Tia Boss & Linus Dahlander)
+
+<br> 
+
+
+2020-01-20 | [MST-Research Seminar Series][2] | TU Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
 
 
 [1]: https://www.startupengineer.io/authors/ihl/
-[2]: https://www.the-klu.org
-
-----  ----
-
-
-<!-- .slide: class="align-center" -->
-
-# Role of Money
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Why is money useful?
-
-
-* avoid double coincidence of wants
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Important Properties
-
-
-* Divisible
-* Storable
-* Exchangeable
-* Hard to fake
-* Sustains its value
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Gold Standard
-
-
-* First gold coins minted around 610 BC. Why gold?
-* Later: paper currency. Countries adopt “gold standard” in 1800s to build trust
-* But pressure in wars (want to print money)
-* Bretton Woods System 1946 (DM -> USD -> Gold)
-	* ollapsed during Vietnam war
-* Swiss Franc on gold standard until 2000
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Fiat Currency
-
-
-* “fiat” = “let it be done” (Latin)
-* Value unrelated to any physical quantity
-* Originated in 11th Century China
-* Value relies on trust in the government or central bank that is responsible for keeping a supply of money in circulation
-* Today mostly digital payments
-	* requires trust in banks and service providers like PayPal
-
-
-
-
-----  ----
-
-
-<!-- .slide: class="align-center" -->
-
-# Digital Currency
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Why Digital Currencies?
-
-* __Lower cost:__
-	* transacting via computer code: money = bits
-	* traditional digital payments have no marginal cost
-	* despite transction fees that intermediaries charge
-* __Resilience:__
-	* fully decentralized
-	* cannot be regulated stopped (send anywhere) - good or bad?
-* __Privacy__ if well designed - good or bad?
-* __Control of Money Supply:__
-	* well-designed digital currency can limit, by design, the creation of new money
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Potential Challenges
-
-* __Bugs, security problems, or unintended behaviors:__
-	* participants must trust that the technology
-* __Money printing:__
-	* counterfeiting must also be made as difficult
-* __Double spending:__
-	* spending money no more than once, e.g. by copying a digital coin
-* __Theft:__
-	* must be as difficult as breaking into physical bank
-
-
-
-
+[2]: https://www.tuhh.de/alt/sdw
 
 
 ----  ----
 
 <!-- .slide: class="align-center" -->
 
-# Bitcoin
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Bitcoin
-<!-- .element: class="no-toc-progress" -->
-
-
-* Invented in 2008
-
-<br> 
-
-<img data-src="img/bitcoin1.png"  height="200" width="1000">
+# Motivation
 
 ----
 
-
 <!-- .slide: class="align-top" -->
 
-## Bitcoin
-<!-- .element: class="no-toc-progress" -->
-
-* First purchase in 2010
-
-<br> 
-
-<img data-src="img/bitcoin2.png"  height="200" width="1000">
+## Corporate Innovation & Entrepreneurship
 
 
-----
 
+* Companies try to spur innovation and entrepreneurship throughout their organizations 
+  
+  (Burgelman, 1983; Kanter, 1985)<!-- .element: class="reference" -->   
 
-<!-- .slide: class="align-top" -->
+* Methods such as: 
 
-## Bitcoin Exchange Rate
-
-* Most successful digital currency to date
-
-<br> 
-
-<img data-src="img/bitcoin3.png"  height="200" width="1000">
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Market Cap
-
-* Caomparison with other cryptocurrencies
-
-<br> 
-
-<img data-src="img/bitcoin4.png"  height="200" width="1400">
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Bitcoin Properties
-
-
-* Fiat currency
-* Blockchain:
-	* database that cryptographically links entries, i.e. Bitcoin transactions, in chains
-* Distributed ledger ("accounting") system
-* Total number of Bitcoins bounded, rate of new Bitcoin creation is controlled
-	* Creating a new entry or block in distributed ledger system is costly to make, costly to change
-	* Entries und thus coins can be copied, but ledger system allows everybody to check onwership und thus prevents double spending
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Bitcoin Network
-
-* Peer-to-Peer
-* Workers (“miners”) are paid coins do the work to maintain the ledger
-* Miners try to form blocks that contain transactions, suggest blocks
-* If block valid, minder “gossip” the new block
+<br>
+<img data-src="img/animals.png"  height="200" width="1000">
 
 
 
 
-----  ----
+  * Tiger Teams  
 
-<!-- .slide: class="align-center" -->
+    (Wheelwright & Clark, 1992)<!-- .element: class="reference" --> 
 
-# Cryptography & Blockchain
+  * Skunk works, Bootlegging  
 
+    (Criscuolo et al., 2014)<!-- .element: class="reference" --> 
 
-----
+  * *X% Projects* in companies like 3M, google, Valve, Oticon, github
 
+    (Biancani et al., 2014; Lovas & Ghoshal 2000; Puranam & Häakonsson. 2015)<!-- .element: class="reference" --> 
 
+  * Agile Development 
 
-
-
-
-<!-- .slide: class="align-top" -->
-
-## Cryptography
+    (e.g. at Spotify in "tribes" and "squads")<!-- .element: class="small" --> 
 
 
-* Public-Key Infrastructure
-	* public key `$ PK_A $`, secret key `$ SK_A $`
-	* `$ sign(X)_{SK_A} $` 
-		* need `$ SK_A $` to generate
-		* anyone can use `$ PK_A $` to verify A signed
-
-<br> 
-
-
-* Now, user A can give a "coin" X to user B
-	* `$ sign([X, PK_B])_{SK_A} $` 
-	* also check X was earlier signed over to A
-
-
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Cryptography
-
-
-* Hash Function
-	* algorithm that takes as input a string of bits, and produces as output a hash value of some fixed size
-	* "SHA-256" => hexadecimal number of 64 digits
-	* Y=Hash(X)
-	* only one way to get Y is to hash on X
-	* cannot go from Y to X
-	* one way: designed to make it computationally infeasible to find an input that hashes to a particular value
-* `$ Hash([X, PK_B]) $` 
-	* represents coin X bound together with user B
-* Allows Proof of Work
-	* find me a “nonce” such that `$ Hash([X, nonce]) $` has 19 leading zeros
-	* "nonce" = "number only used once"
-	* proof of work is "mining", what "miners" do (verify gold, rather than finding gold)
 
 
 
@@ -298,44 +79,70 @@
 
 <!-- .slide: class="align-top" -->
 
-## The Blockchain
-
-* __Transaction__: A transfer of coins, recorded as an entry in the ledger.
-* __Block__: A page in the ledger, containing records of transactions 
-	* <= 1MB: 4200-8400 transactions
-* __Blockchain__: The entire ledger. Puts an ordering on transactions.
-* new blocks are created by __miners__.
-* transactions not in the chain are unconfirmed
+## The Role of Autonomy
 
 
-
-
-
-----
-
-
-<!-- .slide: class="align-top" -->
-
-## Transactions
-
-
-<img data-src="img/transact.png"  height="200" width="1000">
-
-
-
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Structure of the Blockchain
-
-* As of Nov 2019, a valid block must have at least 19 leading 0s
+> "If You Love Your Employees, Set Them Free: Autonomy Is Key To Employee Engagement."
+>
+> -- <cite>Stan Phelps, Forbes, 2019</cite>
 
 <br>
 
-<img data-src="img/blockchain.png"  height="200" width="1000">
+<div class="row-top">
+
+
+<div class="column">
+
+#### Advantages
+
+* Creativity  
+
+  (Amabile & Gitomer, 1984)<!-- .element: class="reference" --> 
+
+* Ideation  
+
+  (Miner, 1994)<!-- .element: class="reference" --> 
+
+* Invention  
+
+  (Gambardella et al., 2020)<!-- .element: class="reference" --> 
+
+* Entrepreneurship 
+
+  (Lumpkin et al., 2009)<!-- .element: class="reference" --> 
+
+
+
+</div>
+
+
+<div class="column">
+
+#### Disadvantages
+
+* Opportunistic behavior and agency risks 
+
+  (Shimizu, 2012)<!-- .element: class="reference" --> 
+
+* Coordination problems & lack of focus
+
+  (Van de Ven, 1986)<!-- .element: class="reference" --> 
+
+* Find the right balance with control  
+
+  (Simon et al., 1999)<!-- .element: class="reference" --> 
+
+* Benefits unfold only in right context
+
+  (Criscuolo et al., 2014; Gambardella et al., 2020)<!-- .element: class="reference" --> 
+
+
+
+
+</div>
+
+</div>
+
 
 
 
@@ -344,11 +151,37 @@
 
 <!-- .slide: class="align-top" -->
 
-## Example
+## Disentangling Autonomy
+
+* Autonomy has different dimensions:
+
+  * Strategic vs. operational autonomy: what to do vs. how to do it
+
+    (Bailyn, 1985)<!-- .element: class="reference" --> 
+
+  * Firm level: HR practices such as delegation of decision making
+
+    (Lumpkin et al., 2009, Foss et al., 2011)<!-- .element: class="reference" --> 
+
+  * Inidvidual level: selection of tasks vs. time allocation
+
+    (Gambardella et al., 2020)<!-- .element: class="reference" -->
+<br>
+* <!-- .element: class="fragment" -->This paper:
+
+  * (Entrepreneurial) Team level
+
+    (Bailyn, 1985)<!-- .element: class="reference" --> 
+
+  * Organizational design perspective: task division v. task allocation
+
+    (e.g. Galbraith, 1967)<!-- .element: class="reference" --> 
+
+  * Managerial assignment vs. Autonomous self-selection or choice
+
+    (Puranam et al., 2014)<!-- .element: class="reference" --> 
 
 
-
-<img data-src="img/example.png"  height="200" width="1600">
 
 
 
@@ -356,15 +189,488 @@
 
 <!-- .slide: class="align-top" -->
 
-## Concentraion of Mining Power
+## Practical Relevance
+
+* Different organizational designs of entrepreneurship can be observed:
+
+
+<br>
+<img data-src="img/matrix.png"  height="200" width="1000">
 
 
 
-<img data-src="img/power.png"  height="200" width="600">
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Theory
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Autonomy in Choosing Teams
+
+
+<img data-src="img/team.png"  height="100" width="300">
+<br>
+
+
+
+<div class="row-top">
+
+
+<div class="column">
+
+#### Advantages
+
+* Choice based on prior ties leads to cohesion  
+
+  (Reagans et al., 2004)<!-- .element: class="reference" --> 
+
+* Familarity improves coordination 
+
+  (Huckman et al., 2009; Cattani et al. 2013)<!-- .element: class="reference" --> 
+
+* Choice based on complementary skills  
+
+  (McPherson et al., 2001)<!-- .element: class="reference" --> 
+
+* Sorting based on ambition 
+
+  (Brannon et al., 2013)<!-- .element: class="reference" --> 
+
+
+
+</div>
+
+
+<div class="column">
+
+#### Disadvantages
+
+* Relational interia
+
+  (Gulati & Gargiulo, 1999, Seabright et al., 1992)<!-- .element: class="reference" --> 
+
+* Stay inside social comfort zone
+
+  (Ingram & Morris, 2007)<!-- .element: class="reference" --> 
+
+* Suffer from "competency discount"
+
+  (Ruef et al., 2003)<!-- .element: class="reference" -->
+
+
+</div>
+
+</div>
+
+<div class="fragment" />
+
+<br>
+
+> Hypothesis 1:
+> Autonomy in choice of team members leads to higher entrepreneurial team performance.
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Autonomy in Choosing Ideas
+
+<img data-src="img/idea.jpg"  height="100" width="300">
+<br>
+
+
+
+<div class="row-top">
+
+
+<div class="column">
+
+#### Advantages
+
+* Source of intrinsic motivation; procedural utility
+
+  (Lovas & Ghoshal 2000; Sauermann & Cohen, 2010, Benz & Frey, 2008)<!-- .element: class="reference" --> 
+
+* Greater sense of ownership 
+
+  (Thompson, 2000)<!-- .element: class="reference" --> 
+
+* Better match with interests and skills
+
+  (Moreland & Argote, 2003; Hackman & Oldham 1975; MacCormack et al., 2012)<!-- .element: class="reference" --> 
 
 
 
 
+
+
+
+</div>
+
+
+<div class="column">
+
+#### Disadvantages
+
+* Psychological ownership can cause a preference for the status quo
+
+  (Pierce et al., 2001)<!-- .element: class="reference" --> 
+
+
+
+</div>
+
+</div>
+
+<div class="fragment" />
+
+<br>
+
+> Hypothesis 2:
+> Autonomy in choice of ideas leads to higher entrepreneurial team performance.
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Autonomy in Choosing *Both* Teams and Ideas
+
+<img data-src="img/both.png"  height="100" width="800">
+<br>
+
+
+
+<div class="row-top">
+
+
+<div class="column">
+
+#### Complements
+
+* Exploration space of ideas & skills becomes larger
+
+  (Hackmann, 2002)<!-- .element: class="reference" --> 
+
+* "Collective ownership" around one's idea more likely to develop among familiar teammates
+
+  (Gray et al., 2020)<!-- .element: class="reference" -->
+
+
+
+
+
+
+
+</div>
+
+
+<div class="column">
+
+#### Substitutes
+
+* Self-selected teams lack cognitive diversity to elaborate novel ideas
+
+  (Shin et al., 2012)<!-- .element: class="reference" --> 
+
+* Self-selected teams and ideas as "quick wins" lead to confidence and complacency too early
+
+  (Gist, 1987, Sitkin 1992, Lindsley et al., 1995, Knight et al., 2001, Goncalo et al., 2010, Rapp et al., 2014)<!-- .element: class="reference" --> 
+
+
+
+
+
+</div>
+
+</div>
+
+<div class="fragment" />
+
+<br>
+
+> Hypothesis 3:
+> The autonomy in choice of team and ideas are (a) complementary or (b) substitutes on entrepreneurial team performance.
+
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Methods
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Experimental Setting
+
+<img data-src="img/tuhh.png"  height="100" width="400">
+<br>
+
+* 3 cohorts of GBWL students mastering the entrepreneurship project for 11 weeks
+  * 937 students in 310 teams
+* Procedure (pre-registered and approved by ethics board):
+  1. Entry survey
+  2. Course with treatments
+  3. Exit survey
+  4. External evaluation
+* <!-- .element: class="fragment" -->"Natural field experiment": non-convenience task, subject not aware of experiment
+
+  (Harrison and List, 2004)<!-- .element: class="reference" --> 
+
+* <!-- .element: class="fragment" -->Students vs. employees (not seasoned entrepreneurs): results do not necessarily differ
+  
+  (Bolton et al., 2012, Frechette, 2016)<!-- .element: class="reference" -->
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Experimental Treatments
+
+<img data-src="img/treatments.png"  height="100" width="800">
+<br>
+
+<div class="fragment" />
+
+
+* "Assign" conditions: random (instead of managerial)
+  * good benchmark
+
+    (Clement & Puranam, 2018)<!-- .element: class="reference" --> 
+  
+  * especially for novel tasks where managers lack knowledge about people's specific skills
+
+    (Puranam et al., 2014)<!-- .element: class="reference" --> 
+
+  * approximates reality 
+
+    (Liu et al., 2016)<!-- .element: class="reference" --> 
+
+* "Raw" quality of 15 __pre-defined__ ideas does not differ from __self-chosen__ ideas
+  * Robustness check on "Mechanical turk"
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Experimental Treatments
+<!-- .element: class="no-toc-progress" -->
+
+<img data-src="img/students.png"  height="100" width="1000">
+<br>
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## External Evaluation
+
+<img data-src="img/evaluation.png"  height="100" width="1000">
+<br>
+
+<div class="fragment" />
+
+* 40 external evaluators, who were practicing entrepreneurs, business angels, or venture capitalists
+  * each evaluated 23.25 pitch decks on average => 3 evaluation per team
+  * Criteria:
+
+    (Maxwell, 2011; Dean et al., 2006)<!-- .element: class="reference" --> 
+
+    * Novelty, Feasibility, Market potential, Success potential, Invitation probability
+    * Investment: Evaluators could distribute 1 million among the projects they evaluated
+
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+## Analysis
+
+* Linear regression accounting for non-independence of repeated and cross-nested observations with respect to mentors, experts, evaluation order, and cohorts:
+
+<br>
+<br>
+
+`$ y_{ij} = \beta_{0} + \beta_{1}*(Choose\;team)_i + \beta_{2}*(Choose\;idea)_i + \beta_{3}*(Choose\;both)_i + \gamma_{i} + \delta_{i} + \zeta_{ij} + \eta_{j} + \epsilon_{ij} $`
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Results
+
+<img data-src="img/grandma.png"  height="100" width="1000">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Main Results
+
+<br>
+
+<img data-src="img/results1.png"  height="100" width="1000">
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Main Results
+<!-- .element: class="no-toc-progress" -->
+
+<br>
+
+<img data-src="img/results2.png"  height="100" width="1000">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Kernel Densities and Quantile Regression
+
+<br>
+
+<img data-src="img/results3.png"  height="100" width="1000">
+
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Channels of Mediation 
+
+<br>
+
+<img data-src="img/why.png"  height="100" width="600">
+
+* Regression of intermediate outcomes on treatments:
+  * Homophily
+  * Prior ties
+  * Team heterogeneity
+  * Idea team fit
+  * Collaboration quality
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Causal Mediation Analysis
+
+* Average Causal Mediation Effects (ACME)
+  * control for pre-treatment variables to ensure sequential ignorability (conditional exogeneity of mediator)
+  * quasi-Bayesian Monte Carlo method based on normal approximation with 1,000 simulations
+
+    (Imai et al, 2010)<!-- .element: class="reference" --> 
+
+
+
+
+<br>
+
+<img data-src="img/results4.png"  height="100" width="800">
+
+<br>
+
+* Larger direct effects: changes in unobserved inputs induced by the treatments (e.g. motivation, effort)
+
+  (Heckman & Pinto, 2015)<!-- .element: class="reference" --> 
+   
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Overconfidence as Mechanim
+
+<img data-src="img/results5.png"  height="100" width="800">
+
+
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Conclusion
+
+----
+
+<!-- .slide: class="align-top" -->
+
+## Conclusion
+
+<div class="row-top">
+
+
+<div class="column">
+
+#### Contributions
+
+* __Theoretical__:
+
+  * Organizational design and microfoundations of autonomy
+
+  * Autonomy and entrepreneurial (over-) confidence
+
+<br>
+
+
+* __Practical__:
+
+  * Professionalization of (corporate) entrepreneurship
+
+  * Understand the design and limits of current practices
+
+
+
+</div>
+
+
+<div class="column">
+
+#### Limitations & outlook
+
+
+* Field experiment with real organization
+  * Managerial assignment
+  * Realistic degrees of freedom in choice
+    * More or less contraint depending on organizational context (goals, structure) 
+
+
+<br>
+
+* Mechanism studies in more controlled environments
+
+
+
+</div>
+
+</div>
 
 
 
