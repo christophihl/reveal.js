@@ -6,18 +6,18 @@
 
 		<title>StartupEngineer.io</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/dark.css" id="theme">
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/dark.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/dracula.css" id="highlight-theme">
+		<link rel="stylesheet" href="../plugin/highlight/dracula.css" id="highlight-theme">
 
 
-		<link rel="stylesheet" href="plugin/title-footer/title-footer.css">
+		<link rel="stylesheet" href="../plugin/title-footer/title-footer.css">
 
 		<!-- TOC-Progress plugin -->
-		<link rel="stylesheet" href="plugin/toc-progress/toc-progress.css">
+		<link rel="stylesheet" href="../plugin/toc-progress/toc-progress.css">
 
 		<!-- chalkboard plugin -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -39,21 +39,24 @@
 			</div>
 		</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script src="plugin/zoom/zoom.js"></script>
-		<script src="plugin/search/search.js"></script>
-		<script src="plugin/menu/menu.js"></script>
-		<script src="plugin/math/math.js"></script>
-		<script src="plugin/chalkboard/plugin.js"></script>
-		<script src="plugin/pdfexport/pdfexport.js"></script>
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script src="../plugin/zoom/zoom.js"></script>
+		<script src="../plugin/search/search.js"></script>
+		<script src="../plugin/menu/menu.js"></script>
+		<script src="../plugin/math/math.js"></script>
+		<script src="../plugin/chalkboard/plugin.js"></script>
+		<script src="../plugin/pdfexport/pdfexport.js"></script>
+		<script src="../plugin/chalkboard/screenfull.min.js"></script>
+		
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				// embedded: true,
 				controls: true,
 				controlsTutorial: true,
 				// Determines where controls appear, "edges" or "bottom-right"
@@ -67,7 +70,7 @@
 				
 				disableLayout: false,
 				display: 'flex',
-				center: false,
+				center: true,
 
 				// Custom scaling wide macbook
 				// width: 1440,
@@ -75,9 +78,6 @@
 				// Custom scaling 4/3 ipad
 				width: 1440,
 				height: 1020,
-				// Default scaling 4/3
-				// width: 960,
-				// height: 700,
 				margin: 0.04,
 				minScale: 0.1,
 				maxScale: 1.0,
@@ -93,11 +93,12 @@
 			        boardmarkerWidth: 3,
 			        chalkWidth: 3,
 			        chalkEffect: 0,
-			        src: "plugin/chalkboard/chalkboard.json",
+			        src: "../plugin/chalkboard/chalkboard.json",
 			        readOnly: undefined,
-			        toggleChalkboardButton: { left: "80px", bottom: "30px", top: "auto", right: "auto" },
-			        toggleNotesButton: { left: "130px", bottom: "30px", top: "auto", right: "auto" },
-			        downloadButton: { left: "180px", bottom: "30px", top: "auto", right: "auto" },
+			        fullscreenButton: { left: "60px", bottom: "30px", top: "auto", right: "auto" },
+			        toggleChalkboardButton: { left: "90px", bottom: "30px", top: "auto", right: "auto" },
+			        toggleNotesButton: { left: "120px", bottom: "30px", top: "auto", right: "auto" },
+			        downloadButton: { left: "150px", bottom: "30px", top: "auto", right: "auto" },
 			        transition: 800,
 			        theme: "whiteboard",
 			        background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ],
@@ -127,8 +128,8 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu, RevealZoom, RevealSearch, RevealMath, RevealChalkboard, PdfExport ],
 
 				dependencies: [
-					{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(null ,null); } },
-					{ src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize('scroll', null, 'body'); toc_progress.create(); } } ],
+					{ src: '../plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(null ,null); } },
+					{ src: '../plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize('scroll', null, 'body'); toc_progress.create(); } }],
 				menu: {
 				    side: 'left',
 				    width: 'normal',
@@ -165,16 +166,16 @@
 				    themes: [
 				        {
 				           name: 'Dark',
-				           theme: 'dist/theme/dark.css',
-				           highlightTheme: 'plugin/highlight/dracula.css'
+				           theme: '../dist/theme/dark.css',
+				           highlightTheme: '../plugin/highlight/dracula.css'
 				        },
 				        {
 				           name: 'Bright',
-				           theme: 'dist/theme/bright.css',
-				           highlightTheme: 'plugin/highlight/github.css'
+				           theme: '../dist/theme/bright.css',
+				           highlightTheme: '../plugin/highlight/github.css'
 				        }
      				],
-				    themesPath: 'dist/theme/',
+				    themesPath: '../dist/theme/',
 				    transitions: true,
 				    openButton: true,
 				    openSlideNumber: false,
