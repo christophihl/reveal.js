@@ -318,7 +318,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   text-align: left; }
   .reveal section .align-top {
     justify-content: flex-start;
-    padding-top: 3rem;
+    padding-top: 0rem;
     text-align: left; }
   .reveal section .align-center {
     text-align: center; }
