@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://www.startupengineer.io">
-  <img src="logo.png">
+  <img src="/logo.png">
   </a>
 </a>
 </p>
